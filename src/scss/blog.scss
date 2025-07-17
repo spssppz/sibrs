@@ -1,0 +1,113 @@
+.blog {
+	padding: rem(45) rem(0) rem(50);
+	@media (max-width: $tablet) {
+		padding: rem(45) rem(0) rem(40);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(10);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(25);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobileSmall) {
+				margin-bottom: rem(12);
+			}
+		}
+	}
+	&__tabs {
+	}
+	&__navigation {
+		border: rem(1) solid #f4f4f4;
+		border-radius: rem(15);
+		padding: rem(6);
+		background: $white-gray;
+		display: inline-flex;
+		gap: rem(5);
+		@media (max-width: $tablet) {
+			border-radius: rem(11);
+			padding: rem(4);
+		}
+		@media (max-width: $mobile) {
+			display: flex;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+	&__tab-btn {
+		font-weight: 500;
+		line-height: math.div(21, 17);
+		padding: rem(20) rem(45);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: rem(65);
+		border-radius: rem(10);
+		color: $gray;
+		transition: 0.3s;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+			padding: rem(15) rem(30);
+			min-height: rem(55);
+			border-radius: rem(7);
+		}
+		@media (max-width: $mobile) {
+			flex: auto;
+			font-size: rem(15);
+			padding: rem(10);
+			min-height: rem(45);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: $blue;
+				color: #fff;
+			}
+		}
+		&._tab-active {
+			background: $blue;
+			color: #fff;
+		}
+	}
+	&__content {
+	}
+	&__body {
+	}
+	&__cols {
+		display: grid;
+		gap: rem(20);
+		grid-template-columns: 1fr 1fr 1fr;
+		@media (max-width: $pc) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(420), 1fr));
+		}
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
+			gap: rem(20);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+		}
+	}
+	&__item {
+		min-width: auto;
+		@media (min-width: em(1300)) {
+			min-width: auto;
+		}
+		@media (min-width: $tablet) {
+			margin-right: 0;
+		}
+		@media (max-width: $tablet) {
+			min-width: auto;
+		}
+	}
+}

@@ -90,3 +90,10 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home"; // Главная
+@import "cats"; // Категории
+@import "catalog"; // Каталог
+@import "stocks"; // Акции!
+@import "blog"; // Блог
+@import "404"; // 404
+@import "contacts"; // Контакты
+@import "favs"; // Избранное

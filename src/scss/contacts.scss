@@ -1,0 +1,127 @@
+.contacts {
+	padding: rem(45) rem(0) rem(100);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(80);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(50);
+	}
+	&__body {
+		display: flex;
+		gap: rem(20);
+		@media (min-width: $tablet) {
+			justify-content: space-between;
+		}
+		@media (max-width: $tablet) {
+			gap: rem(50);
+			flex-direction: column;
+		}
+	}
+	&__left {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+	&__lines {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__line {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__descr {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		color: #9c9c9c;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(14);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(10);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(5);
+			}
+		}
+	}
+	&__phone,
+	&__mail,
+	&__address,
+	&__work-time {
+		font-weight: 500;
+		font-size: rem(25);
+		color: #000;
+		line-height: 1.2;
+		@media (max-width: $tablet) {
+			font-size: rem(22);
+			line-height: 1.5;
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(19);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(5);
+			}
+		}
+	}
+	&__phone,
+	&__mail {
+		transition: opacity 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+	&__map {
+		background-color: #fff;
+		height: rem(537);
+		flex: 0 0 percent(960, 1660);
+		@media (min-width: $pc) {
+			margin-top: rem(15);
+		}
+		@media (max-width: $pc) {
+			flex: 0 0 52%;
+		}
+		@media (max-width: $tablet) {
+			flex: auto;
+			height: rem(693);
+		}
+	}
+}
+a.contacts__link {
+	font-size: rem(16);
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	color: #9c9c9c;
+	transition: color 0.3s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor;
+		}
+	}
+}

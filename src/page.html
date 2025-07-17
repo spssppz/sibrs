@@ -11,11 +11,24 @@
 		@@include('html/header.html')
 		<main class="page">
 
+			<nav class="breadcrumbs" aria-label="Хлебные крошки">
+				<ul class="breadcrumbs__list">
+					<li>
+						<a class="breadcrumbs__link" href="">Главная</a>
+					</li>
+					<li>
+						<a class="breadcrumbs__link" href=""></a>
+					</li>
+					<li aria-current="page">
+						<span class="breadcrumbs__item"></span>
+					</li>
+				</ul>
+			</nav>
 		</main>
 		@@include('html/footer.html')
 	</div>
 
-	<!-- @@include('html/popup.html') -->
+	@@include('html/popup.html')
 
 	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
 	@@include('html/js.html')

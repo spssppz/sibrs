@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Категории"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<section class="cats">
+				<div class="cats__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li>
+								<a class="breadcrumbs__link" href="">Каталог</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Комлектующие</span>
+							</li>
+						</ul>
+					</nav>
+					<h2 class="cats__title title">Серверные комплектующие</h2>
+					<ul class="cats__cols">
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Процессоры</h3>
+							<div class="cat-item__descr">354 модели</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/1@2x.png 2x" src="@img/cats/1.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Блок питания</h3>
+							<div class="cat-item__descr">457 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/2@2x.png 2x" src="@img/cats/2.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Жесткие диски</h3>
+							<div class="cat-item__descr">248 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/3@2x.png 2x" src="@img/cats/3.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Корзина HDD</h3>
+							<div class="cat-item__descr">248 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/4@2x.png 2x" src="@img/cats/4.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Материнские платы</h3>
+							<div class="cat-item__descr">275 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/5@2x.png 2x" src="@img/cats/5.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Оперативная память</h3>
+							<div class="cat-item__descr">87 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/6@2x.png 2x" src="@img/cats/6.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Охлаждение</h3>
+							<div class="cat-item__descr">129 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/7@2x.png 2x" src="@img/cats/7.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Салазки HDD</h3>
+							<div class="cat-item__descr">248 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/8@2x.png 2x" src="@img/cats/8.png" width="400" height="302" alt="">
+							</div>
+						</li>
+						<li class="cat-item">
+							<a class="cat-item__link" href=""></a>
+							<h3 class="cat-item__cap">Сетевые карты</h3>
+							<div class="cat-item__descr">155 моделей</div>
+							<div class="cat-item__image">
+								<img srcset="@img/cats/9@2x.png 2x" src="@img/cats/9.png" width="400" height="302" alt="">
+							</div>
+						</li>
+					</ul>
+					<div class="cats__descr">
+						<p><span>Серверные компоненты</span> представляют собой ключевые элементы, из которых формируется вычислительная система, соответствующая требованиям по производительности и другим характеристикам для профессионального, корпоративного или промышленного применения. Каждый элемент
+							выполняет определённые задачи, поэтому при проектировании новых серверов или подборе деталей для обновления устаревшего оборудования важно учитывать не только их стоимость, но и уровень совместимости — как аппаратной, так и программной.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>

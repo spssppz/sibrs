@@ -101,50 +101,69 @@ function initSliders() {
 
 window.addEventListener("load", () => initSliders())
 
-// if (document.querySelector('.news-main__slider')) {
-// 	new Swiper('.news-main__slider', {
-// 		// modules: [Navigation],
-// 		slidesPerView: 3,
-// 		spaceBetween: 20,
-// 		speed: 800,
+const serverSliders = document.querySelectorAll('.server__slider')
+if (serverSliders) {
+	serverSliders.forEach(serverSlider => {
+		const track = serverSlider.querySelector('.server__track')
+		const items = serverSlider.querySelectorAll('.server__image')
+		const pag = serverSlider.querySelector('.server__pagination')
+		let current = 0
 
-// 		//loop: true,
+		const goTo = i => {
+			current = Math.max(0, Math.min(i, items.length - 1))
+			track.style.transform = `translateX(-${current * 100}%)`
+			pag.querySelectorAll('button').forEach((btn, idx) => {
+				btn.classList.toggle('active', idx === current)
+			})
+		}
 
-// 		// pagination: {
-// 		// 	el: '.swiper-pagination',
-// 		// 	clickable: true,
-// 		// },
+		// Пагинация
+		if (items.length > 1) {
+			items.forEach((_, i) => {
+				const dot = document.createElement('button')
+				if (i === 0) dot.classList.add('active')
+				dot.addEventListener('click', () => goTo(i))
+				pag.appendChild(dot)
+			})
+		} else pag.style.display = 'none'
 
-// 		// scrollbar: {
-// 		// 	el: '.swiper-scrollbar',
-// 		// 	draggable: true,
-// 		// },
 
-// 		// navigation: {
-// 		// 	prevEl: '.swiper-button-prev',
-// 		// 	nextEl: '.swiper-button-next',
-// 		// },
+		// Общие переменные для свайпа
+		let startX = 0
+		let isDragging = false
 
-// 		// breakpoints: {
-// 		// 	320: {
-// 		// 		slidesPerView: 1,
-// 		// 		spaceBetween: 0,
-// 		// 		autoHeight: true,
-// 		// 	},
-// 		// 	768: {
-// 		// 		slidesPerView: 2,
-// 		// 		spaceBetween: 20,
-// 		// 	},
-// 		// 	992: {
-// 		// 		slidesPerView: 3,
-// 		// 		spaceBetween: 20,
-// 		// 	},
-// 		// 	1268: {
-// 		// 		slidesPerView: 4,
-// 		// 		spaceBetween: 30,
-// 		// 	},
-// 		// },
+		// --- TOUCH EVENTS ---
+		track.addEventListener('touchstart', e => {
+			startX = e.touches[0].clientX
+			isDragging = true
+		})
 
-// 		// on: {}
-// 	})
-// }
+		track.addEventListener('touchend', e => {
+			if (!isDragging) return
+			const endX = e.changedTouches[0].clientX
+			handleSwipe(endX - startX)
+			isDragging = false
+		})
+
+		// --- MOUSE EVENTS ---
+		track.addEventListener('mousedown', e => {
+			startX = e.clientX
+			isDragging = true
+		})
+
+		document.addEventListener('mouseup', e => {
+			if (!isDragging) return
+			const endX = e.clientX
+			handleSwipe(endX - startX)
+			isDragging = false
+		})
+
+		// Обработка свайпа
+		function handleSwipe(diff) {
+			if (Math.abs(diff) > 50) {
+				if (diff < 0 && current < items.length - 1) goTo(current + 1)
+				else if (diff > 0 && current > 0) goTo(current - 1)
+			}
+		}
+	})
+}

@@ -94,7 +94,7 @@
 		border-radius: rem(10);
 		padding: rem(12);
 		min-width: auto;
-		// backdrop-filter: blur(30px);
+		backdrop-filter: blur(15px);
 		box-shadow:
 			0 6px 12px 0 rgba(227, 227, 227, 0.1),
 			0 22px 22px 0 rgba(227, 227, 227, 0.09),
@@ -200,7 +200,7 @@
 			@media (max-width: $tablet) {
 				flex: 0 0 rem(18);
 				width: rem(18);
-				gap: 16;
+				gap: rem(16);
 			}
 		}
 	}
@@ -236,12 +236,10 @@
 		max-height: rem(44);
 		overflow: hidden;
 		display: -webkit-box;
-		-webkit-line-clamp: 2; /* number of lines to show */
-		line-clamp: 2;
+		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 		@media (max-width: $tablet) {
 			-webkit-line-clamp: 3;
-			line-clamp: 3;
 			font-size: rem(15);
 			line-height: 1.4;
 			max-height: rem(63);

@@ -1,0 +1,31 @@
+.stocks {
+	padding: rem(45) rem(0) rem(90);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(40);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(10);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(25);
+			}
+		}
+	}
+	&__cols {
+		display: grid;
+		gap: rem(15);
+		grid-template-columns: repeat(auto-fit, minmax(rem(380), 1fr));
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			gap: rem(20);
+		}
+	}
+}

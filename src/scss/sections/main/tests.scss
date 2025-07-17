@@ -87,6 +87,7 @@
 		}
 	}
 	&__btn {
+		min-width: rem(246);
 		@media (max-width: $mobileSmall) {
 			width: 100%;
 		}

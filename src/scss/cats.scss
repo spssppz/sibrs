@@ -1,0 +1,169 @@
+.cats {
+	padding: rem(45) rem(0) rem(100);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(80);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(50);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(56);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(45);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(35);
+			}
+			@media (max-width: $mobileSmall) {
+				margin-bottom: rem(25);
+			}
+		}
+	}
+	&__cols {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: rem(20);
+		@media (max-width: $pc) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media (max-width: $tablet) {
+			gap: rem(15);
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (max-width: $mobile) {
+			gap: rem(10);
+		}
+		@media (max-width: $mobileSmall) {
+			gap: rem(5);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(60);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(50);
+			}
+		}
+	}
+	&__descr {
+		p {
+			line-height: 1.4;
+			color: #808080;
+			@media (max-width: $tablet) {
+				font-size: rem(16);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(14);
+				line-height: 1.5;
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: rem(13);
+			}
+			span {
+				font-weight: 500;
+			}
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+}
+
+.cat-item {
+	background-color: #fff;
+	border-radius: rem(15);
+	position: relative;
+	aspect-ratio: 400 / 302;
+	box-shadow:
+		0px 88px 35px rgba(227, 227, 227, 0.01),
+		0px 50px 30px rgba(227, 227, 227, 0.05),
+		0px 22px 22px rgba(227, 227, 227, 0.09),
+		0px 6px 12px rgba(227, 227, 227, 0.1);
+	overflow: hidden;
+	padding: rem(25);
+	@media (max-width: $tablet) {
+		border-radius: rem(10);
+		backdrop-filter: blur(15px);
+		padding: rem(20);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(20) rem(15);
+		aspect-ratio: 400 / 360;
+	}
+	@media (max-width: $mobileSmall) {
+		padding: rem(15) rem(10);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			.cat-item__cap {
+				opacity: 0.7;
+			}
+		}
+	}
+	&__link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+	}
+	&__cap {
+		font-family: $second-family;
+		font-size: rem(27);
+		color: #000;
+		transition: opacity 0.3s;
+		position: relative;
+		z-index: 2;
+		@media (max-width: $tablet) {
+			font-size: rem(24);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(11);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(7);
+			}
+		}
+	}
+	&__descr {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		color: #b6b6b6;
+		position: relative;
+		z-index: 2;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom right;
+		}
+	}
+}

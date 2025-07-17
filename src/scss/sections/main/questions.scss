@@ -206,6 +206,9 @@
 		}
 	}
 	&__btn {
+		@media (min-width: $mobileSmall) {
+			min-width: rem(338);
+		}
 	}
 	&__checkbox {
 	}

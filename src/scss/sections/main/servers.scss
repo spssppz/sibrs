@@ -1,0 +1,415 @@
+.servers {
+	padding: rem(50) rem(0) rem(125);
+	@media (max-width: $tablet) {
+		padding: rem(40) rem(0);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(25) rem(0);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: rem(15);
+		grid-template-columns: repeat(auto-fit, minmax(rem(380), 1fr));
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			gap: rem(20);
+		}
+	}
+}
+
+.server {
+	background: #fff;
+	padding: rem(22) rem(24);
+	display: flex;
+	flex-direction: column;
+	@media (max-width: $tablet) {
+		padding: rem(15) rem(20);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(10) rem(13) rem(18);
+	}
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(7);
+		&:not(:last-child) {
+			margin-bottom: rem(34);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(25);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__tag {
+		border: rem(1) solid #ff9000;
+		border-radius: rem(10);
+		padding: rem(10) rem(15);
+		min-height: rem(49);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		font-size: rem(14);
+		color: #ff9000;
+		@media (max-width: $tablet) {
+			font-size: rem(13);
+			min-height: rem(42);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(10);
+			font-size: rem(12);
+			min-height: rem(34);
+			border-radius: rem(7);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(11);
+		}
+		&_discount,
+		&_avail,
+		&_stock {
+			gap: rem(10);
+			font-size: rem(15);
+			@media (max-width: $tablet) {
+				font-size: rem(13);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(12);
+				gap: rem(7);
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: rem(11);
+			}
+			&::before {
+				content: "";
+			}
+		}
+		&_discount {
+			color: #a100ff;
+			border-color: rgba(162, 0, 255, 0.2);
+			&::before {
+				content: "";
+				flex: 0 0 rem(24);
+				width: rem(24);
+				height: rem(24);
+				background: url("@img/icons/discount-icon.svg") 50% / 100% no-repeat;
+			}
+		}
+		&_stock {
+			color: #0dd359;
+			border-color: rgba(13, 211, 89, 0.2);
+			&::before {
+				flex: 0 0 rem(12);
+				width: rem(12);
+				height: rem(12);
+				background: currentColor;
+				border-radius: 50%;
+				@media (max-width: $tablet) {
+					flex: 0 0 rem(8);
+					width: rem(8);
+					height: rem(8);
+				}
+			}
+		}
+		&_avail {
+			color: #ff3d00;
+			border-color: rgba(255, 61, 0, 0.2);
+			&::before {
+				flex: 0 0 rem(25);
+				width: rem(25);
+				height: rem(25);
+				background: url("@img/icons/avail-icon.svg") 50% / 100% no-repeat;
+				@media (max-width: $tablet) {
+					flex: 0 0 rem(17);
+					width: rem(17);
+					height: rem(17);
+				}
+			}
+		}
+	}
+	&__slider {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		touch-action: pan-y;
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+	&__track {
+		display: flex;
+		transition: transform 0.3s ease;
+		will-change: transform;
+	}
+	&__image {
+		flex: 0 0 100%;
+		user-select: none;
+		background: #fbfbfb;
+		img {
+			-webkit-user-drag: none;
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__pagination {
+		position: absolute;
+		bottom: rem(7);
+		left: 50%;
+		transform: translate(-50%, 0);
+		display: flex;
+		align-items: center;
+		gap: rem(6);
+		button {
+			border-radius: rem(3);
+			flex: 0 0 rem(26);
+			width: rem(26);
+			height: rem(3);
+			background: #eaeaea;
+			transition: background 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					background: $blue;
+				}
+			}
+			&.active {
+				background: $blue;
+			}
+		}
+	}
+	&__label-wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: rem(14);
+		&:not(:last-child) {
+			margin-bottom: rem(27);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__label {
+		height: rem(57);
+		@media (min-width: $mobile) {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		@media (max-width: $tablet) {
+			height: rem(47);
+		}
+		@media (max-width: $mobile) {
+			height: auto;
+		}
+		a {
+			font-weight: 500;
+			font-size: rem(22);
+			line-height: 1.3;
+			color: #000;
+			transition: opacity 0.3s;
+			@media (max-width: $tablet) {
+				font-size: rem(18);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(16);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	&__rating {
+		line-height: 1.4;
+		color: $gray;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(7);
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(21);
+			width: rem(21);
+			height: rem(21);
+			background: url("@img/icons/rating.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(16);
+				width: rem(16);
+				height: rem(16);
+			}
+		}
+	}
+	&__descrs {
+		flex: auto;
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__descr {
+		display: flex;
+		align-items: center;
+		gap: rem(14);
+		line-height: 1.5;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		span {
+			&:first-child {
+				color: #000;
+			}
+			&:last-child {
+				font-size: rem(16);
+				color: $gray;
+				@media (max-width: $tablet) {
+					font-size: rem(15);
+				}
+				@media (max-width: $mobile) {
+					font-size: rem(14);
+				}
+				@media (max-width: $mobileSmall) {
+					font-size: rem(13);
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(6);
+		}
+	}
+	&__price {
+		font-weight: 500;
+		font-size: rem(27);
+		line-height: math.div(25, 20);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(25);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(22);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(20);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(7);
+		}
+	}
+	&__price-descr {
+		font-size: rem(14);
+		color: #909195;
+		line-height: math.div(15, 12);
+		@media (max-width: $tablet) {
+			font-size: rem(13);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__btns {
+		display: flex;
+		gap: rem(10);
+	}
+	&__btn {
+		flex: auto;
+		border-radius: rem(10);
+		background: #eff4ff;
+		padding: rem(10) rem(15);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 500;
+		font-size: rem(16);
+		color: $blue;
+		height: rem(68);
+		transition: 0.3s;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+			border-radius: rem(7);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: #eff4ff;
+				background: $blue;
+			}
+		}
+		&_buy {
+			@media (min-width: $tablet) {
+				gap: rem(14);
+			}
+			@media (max-width: $tablet) {
+				font-size: 0;
+				flex: 0 0 rem(68);
+				width: rem(68);
+				background: $blue;
+			}
+			@media (max-width: $mobile) {
+				font-size: 0;
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: 0;
+			}
+			svg {
+				path {
+					stroke: currentColor;
+					@media (max-width: $tablet) {
+						stroke: #fff;
+					}
+				}
+			}
+		}
+	}
+}

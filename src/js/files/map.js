@@ -1,20 +1,13 @@
 const apikey = '51092280-e018-4241-bc97-180570de25d4'
-const coordsLocationMain = [55.03, 82.9141955999]
+const coordsLocationMain = [55.006884569692986, 73.36514849999996]
 
 function initMap() {
-	if (document.querySelector('#map')) {
-		let map = new ymaps.Map('map', {
+	if (document.querySelector('#contacts-map')) {
+		let map = new ymaps.Map('contacts-map', {
 			center: coordsLocationMain,
-			zoom: 15,
+			zoom: 18,
 		})
 
-		// let placemark = new ymaps.Placemark(coordsLocationMain, {}, {
-		// 	iconLayout: 'default#image',
-		// 	iconImageHref: 'img/icons/location.svg',
-		// 	iconImageSize: [33, 46],
-		// })
-
-		// map.geoObjects.add(placemark)
 	}
 };
 

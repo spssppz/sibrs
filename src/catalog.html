@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Каталог"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<div class="catalog">
+				<div class="catalog__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Серверы</span>
+							</li>
+						</ul>
+					</nav>
+					<div class="catalog__title-wrapper">
+						<h2 class="catalog__title title">Серверы</h2>
+						<div class="catalog__count">357 товаров</div>
+					</div>
+					<div class="top-catalog">
+						<ul class="catalog-tags">
+							<li class="catalog-tags__item"><button class="active">Серверы для 1C</button></li>
+							<li class="catalog-tags__item"><button>Серверы для IP-телефонии</button></li>
+							<li class="catalog-tags__item"><button>Серверы для базы данных</button></li>
+							<li class="catalog-tags__item"><button>Серверы для видеонаблюдения</button></li>
+							<li class="catalog-tags__item"><button>Серверы для виртуализации</button></li>
+							<li class="catalog-tags__item"><button>Серверы для офиса</button></li>
+							<li class="catalog-tags__item"><button>Серверы с GPU</button></li>
+							<li class="catalog-tags__item"><button>Файловые серверы</button></li>
+						</ul>
+						<button class="top-catalog__filter-show">Фильтры</button>
+						<div class="catalog-sort">
+							<div class="catalog-sort__descr">Сортировать по</div>
+							<div class="catalog-sort__wrapper">
+								<button class="catalog-sort__title">Умолчанию</button>
+								<div class="catalog-sort__sub">
+									<button class="is-active">Умолчанию</button>
+									<button>Популярности</button>
+									<button>Рейтингу</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>

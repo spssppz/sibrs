@@ -35,10 +35,9 @@
 .main-cat {
 	border-radius: rem(15);
 	overflow: hidden;
-	background-color: #fff;
 	padding: rem(25);
 	min-height: rem(511);
-	background: url("@img/main/cats/serv-bg.png") 50% / cover no-repeat;
+	background: $blue url("@img/main/cats/serv-bg.png") 50% / cover no-repeat;
 	@media (max-width: $tablet) {
 		border-radius: rem(10);
 		padding: rem(25) rem(17);
@@ -51,7 +50,6 @@
 		min-height: 82.62vw;
 	}
 	&_serv {
-		background-color: $blue;
 		position: relative;
 		&::before,
 		&::after {
@@ -89,10 +87,10 @@
 		}
 	}
 	&_serv-for-task {
-		background-image: url("@img/main/cats/serv-for-task-bg.png");
+		background: #fff url("@img/main/cats/serv-for-task-bg.png") 50% / cover no-repeat;
 	}
 	&_comp {
-		background-image: url("@img/main/cats/comp-bg.png");
+		background: #fff url("@img/main/cats/comp-bg.png") 50% / cover no-repeat;
 	}
 	&__label {
 		font-family: $second-family;

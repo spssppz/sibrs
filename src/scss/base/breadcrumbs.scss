@@ -2,45 +2,64 @@
 // Сниппет (HTML): breadcrumbs
 
 .breadcrumbs {
+	&:not(:last-child) {
+		margin-bottom: rem(30);
+		@media (max-width: $tablet) {
+			margin-bottom: rem(25);
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			margin-bottom: rem(15);
+		}
+	}
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
+		row-gap: rem(5);
 		li {
-			position: relative;
-			padding-right: rem(20);
-			&:last-child {
-				padding: 0;
+			display: flex;
+			align-items: center;
+			&:not(:last-child) {
 				&::after {
-					display: none;
+					content: "";
+					margin: 0 rem(12);
+					flex: 0 0 rem(4);
+					width: rem(4);
+					height: rem(8);
+					background: url("@img/icons/breadcrumbs-arrow.svg") 50% / 100% no-repeat;
+					@media (max-width: $tablet) {
+						margin: rem(0) rem(10);
+					}
+					@media (max-width: $mobile) {
+						margin: rem(0) rem(8);
+					}
 				}
 			}
-			&:not(:first-child) {
-				margin-left: rem(20);
-			}
-			&::after {
-				content: "";
-				position: absolute;
-				background: #002c57;
-				width: rem(7);
-				height: rem(7);
-				right: 0;
-				top: 50%;
-				transform: translateY(-50%);
-			}
+		}
+	}
+	&__link,
+	&__item {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		color: #808080;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
 		}
 	}
 	&__link {
-		font-size: rem(14);
-		line-height: math.div(20, 14);
-		color: #002445;
 		@media (any-hover: hover) {
 			&:hover {
 				text-decoration: underline;
+				text-decoration-skip-ink: none;
 			}
 		}
-	}
-	&__item {
-		font-size: rem(14);
-		line-height: math.div(20, 14);
-		color: #002445;
 	}
 }
