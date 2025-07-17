@@ -1,0 +1,212 @@
+.questions {
+	@media (min-width: $tablet) {
+		padding-top: rem(50);
+	}
+	@media (max-width: $tablet) {
+		padding: rem(40) rem(6) 0;
+	}
+	&__wrapper {
+		border-radius: rem(40) rem(40) 0 0;
+		padding: rem(54) rem(0) rem(68);
+		background-color: #fff;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			height: rem(187);
+			width: rem(413);
+			background: url("@img/main/questions/bg-decor.png") 50% / 100% no-repeat;
+			@media (min-width: $tablet) {
+				bottom: rem(54);
+			}
+			@media (max-width: $tablet) {
+				top: rem(40);
+				height: rem(144);
+				width: rem(318);
+			}
+			@media (max-width: $mobile) {
+				top: rem(24);
+				height: rem(131);
+				width: rem(289);
+			}
+		}
+		@media (max-width: $tablet) {
+			border-radius: rem(20) rem(20) 0 0;
+			padding: rem(20) rem(0) rem(40);
+			box-shadow:
+				0 6px 12px 0 rgba(227, 227, 227, 0.1),
+				0 22px 22px 0 rgba(227, 227, 227, 0.09),
+				0 50px 30px 0 rgba(227, 227, 227, 0.05),
+				0 88px 35px 0 rgba(227, 227, 227, 0.01),
+				0 138px 39px 0 rgba(227, 227, 227, 0);
+		}
+		@media (max-width: $mobile) {
+			border-radius: rem(10) rem(10) 0 0;
+			padding: rem(8) rem(0) rem(25);
+		}
+	}
+	&__container {
+		display: flex;
+		gap: rem(30);
+		@media (min-width: $tablet) {
+			justify-content: space-between;
+		}
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			padding: rem(0) rem(14);
+		}
+	}
+}
+.left-quest {
+	@media (max-width: $tablet) {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		font-size: rem(45);
+		@media (max-width: $tablet) {
+			font-size: rem(37);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(30);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(25);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(12);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(7);
+			}
+		}
+	}
+	&__descr {
+		font-size: rem(18);
+		line-height: 1.33;
+		color: #909090;
+		max-width: rem(635);
+		@media (max-width: $tablet) {
+			font-size: rem(17);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+	&__socials {
+		&:not(:last-child) {
+			@media (min-width: $tablet) {
+				margin-bottom: rem(27);
+			}
+		}
+	}
+	&__decor {
+		width: rem(321);
+		position: relative;
+		z-index: 2;
+		@media (max-width: $tablet) {
+			order: -1;
+			width: rem(280);
+		}
+		@media (max-width: $mobile) {
+			width: rem(238);
+		}
+		&:not(:last-child) {
+			@media (max-width: $tablet) {
+				margin-bottom: rem(15);
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.quest-form {
+	flex: 0 0 percent(846, 1660);
+	&__inputs {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+			@media (max-width: $pc) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: rem(20);
+		@media (max-width: $pc) {
+			grid-template-columns: 1fr;
+		}
+		@media (max-width: $mobile) {
+			gap: rem(15);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+			@media (max-width: $pc) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__inp-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: rem(7);
+	}
+	&__cap {
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&_req {
+			&::after {
+				content: " *";
+				font-size: rem(13);
+				line-height: 1.5;
+				color: $blue;
+			}
+		}
+	}
+	&__input {
+	}
+	&__actions {
+		display: flex;
+		gap: rem(34);
+		@media (max-width: $pc) {
+			flex-direction: column;
+			gap: rem(25);
+		}
+		@media (max-width: $mobile) {
+			gap: rem(15);
+		}
+	}
+	&__btn {
+	}
+	&__checkbox {
+	}
+}

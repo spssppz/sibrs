@@ -1,0 +1,124 @@
+.terms {
+	padding: rem(50) rem(0);
+	@media (max-width: $tablet) {
+		padding: rem(40) rem(0);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(25) rem(0);
+	}
+	&__container {
+	}
+	&__slider {
+		overflow: visible;
+	}
+	&__wrapper {
+		grid-template-columns: 1fr 1fr 1fr;
+		@media (max-width: $pc) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (min-width: $tablet) {
+			display: grid;
+			gap: rem(20);
+		}
+		&:not(:last-child) {
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__pagination {
+		@media (min-width: $tablet) {
+			display: none;
+		}
+	}
+}
+
+.term {
+	padding: rem(34) rem(29);
+	border-radius: rem(15);
+	overflow: hidden;
+	box-shadow:
+		0 6px 12px 0 rgba(227, 227, 227, 0.1),
+		0 22px 22px 0 rgba(227, 227, 227, 0.09),
+		0 50px 30px 0 rgba(227, 227, 227, 0.05),
+		0 88px 35px 0 rgba(227, 227, 227, 0.01),
+		0 138px 39px 0 rgba(227, 227, 227, 0);
+	background: rgba(255, 255, 255, 0.5);
+	@media (max-width: $tablet) {
+		margin-right: rem(10);
+		min-width: calc(50% - rem(10));
+		padding: rem(25) rem(20);
+	}
+	@media (max-width: $mobile) {
+		min-width: auto;
+		flex: 0 0 100%;
+		padding: rem(18) rem(11);
+	}
+	&__icon {
+		margin-top: rem(-34);
+		margin-left: rem(-29);
+		width: rem(126);
+		height: rem(120);
+		@media (max-width: $tablet) {
+			width: rem(101);
+			height: rem(96);
+			margin-top: rem(-25);
+			margin-left: rem(-20);
+		}
+		@media (max-width: $mobile) {
+			margin-top: rem(-18);
+			margin-left: rem(-11);
+			width: rem(78);
+			height: rem(75);
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(15);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+	&__label {
+		font-family: $second-family;
+		font-size: rem(25);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(23);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(21);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(18);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(5);
+			}
+		}
+	}
+	&__descr {
+		line-height: 1.4;
+		color: #808080;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+	}
+}

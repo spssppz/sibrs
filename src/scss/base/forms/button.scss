@@ -1,0 +1,57 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: rem(0) rem(0);
+	font-weight: 500;
+	color: #fff;
+	line-height: math.div(21, 17);
+	padding: rem(25) rem(114);
+	min-height: rem(82);
+	background: $blue;
+	border-radius: rem(10);
+	transition: background-color 0.3s;
+	@media (max-width: $tablet) {
+		min-height: rem(75);
+		border-radius: rem(7);
+		font-size: rem(16);
+		padding: rem(20) rem(70);
+	}
+	@media (max-width: $mobile) {
+		min-height: rem(68);
+		font-size: rem(14);
+	}
+	@media (max-width: $mobileSmall) {
+		font-size: rem(12);
+		padding: rem(20) rem(50);
+	}
+	&:hover {
+		background: rgba($blue, 0.8);
+	}
+	&_decor {
+		gap: rem(14);
+		&::after {
+			content: "";
+			flex: 0 0 rem(10);
+			width: rem(10);
+			height: rem(10);
+			background: url("@img/icons/btn-send-arrow.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobileSmall) {
+				flex: 0 0 rem(8);
+				width: rem(8);
+				height: rem(8);
+			}
+		}
+	}
+	&_generate {
+		&::after {
+			flex: 0 0 rem(25);
+			width: rem(25);
+			height: rem(25);
+			background-image: url("@img/icons/btn-generate-decor.svg");
+		}
+	}
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Главная"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			@@include('html/sections/main/terms.html')
+			@@include('html/sections/main/cats.html')
+			<!--  -->
+			@@include('html/sections/main/reasons.html')
+			@@include('html/sections/main/news.html')
+			@@include('html/sections/main/serv-gen.html')
+			@@include('html/sections/main/tests.html')
+			@@include('html/sections/main/questions.html')
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	<!-- @@include('html/popup.html') -->
+	@@include('html/js.html')
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+.checkbox {
+	cursor: pointer;
+	position: relative;
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus + .checkbox__text::before {
+			box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
+		}
+		&:checked + .checkbox__text::after {
+			opacity: 1;
+		}
+	}
+	&__text {
+		line-height: 1.5;
+		display: inline-block;
+		position: relative;
+		padding-left: rem(35);
+		font-size: rem(16);
+		color: #808080;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+			padding-left: rem(27);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: rem(2);
+			width: rem(17);
+			height: rem(17);
+		}
+		&::before {
+			border: rem(1) solid #e4e4e4;
+			background: #fbfbfb;
+		}
+		&::after {
+			background: url("@img/icons/check.svg") 50% / 100% no-repeat;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+		a {
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,176 @@
+.main-cats {
+	padding: rem(50) rem(0);
+	@media (max-width: $tablet) {
+		padding: rem(40) rem(0);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(25) rem(0);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(26);
+			}
+		}
+	}
+	&__cols {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: rem(20);
+		@media (max-width: $pc) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (max-width: $tablet) {
+			gap: rem(15);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.main-cat {
+	border-radius: rem(15);
+	overflow: hidden;
+	background-color: #fff;
+	padding: rem(25);
+	min-height: rem(511);
+	background: url("@img/main/cats/serv-bg.png") 50% / cover no-repeat;
+	@media (max-width: $tablet) {
+		border-radius: rem(10);
+		padding: rem(25) rem(17);
+		min-height: rem(409);
+	}
+	@media (max-width: $mobile) {
+		min-height: 80vw;
+	}
+	@media (max-width: $mobileSmall) {
+		min-height: 82.62vw;
+	}
+	&_serv {
+		background-color: $blue;
+		position: relative;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: rem(23);
+			height: rem(23);
+			pointer-events: none;
+			@media (max-width: $tablet) {
+				width: rem(15);
+				height: rem(15);
+			}
+		}
+		&::before {
+			top: rem(25);
+			right: rem(25);
+			border-top-right-radius: rem(3);
+			border-top: rem(2) solid #fff;
+			border-right: rem(2) solid #fff;
+			@media (max-width: $tablet) {
+				top: rem(15);
+				right: rem(15);
+			}
+		}
+		&::after {
+			bottom: rem(25);
+			left: rem(25);
+			border-bottom-left-radius: rem(3);
+			border-left: rem(2) solid #fff;
+			border-bottom: rem(2) solid #fff;
+			@media (max-width: $tablet) {
+				bottom: rem(15);
+				left: rem(15);
+			}
+		}
+	}
+	&_serv-for-task {
+		background-image: url("@img/main/cats/serv-for-task-bg.png");
+	}
+	&_comp {
+		background-image: url("@img/main/cats/comp-bg.png");
+	}
+	&__label {
+		font-family: $second-family;
+		font-size: rem(25);
+		color: #000;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(15);
+		@media (max-width: $tablet) {
+			font-size: rem(22);
+			gap: rem(10);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(19);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(24);
+			width: rem(24);
+			height: rem(24);
+			background: url("@img/main/cats/serv-label.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(22);
+				width: rem(22);
+				height: rem(22);
+			}
+		}
+		&_serv {
+			color: #fff;
+		}
+		&_serv-for-task {
+			&::before {
+				background-image: url("@img/main/cats/serv-for-task-label.svg");
+			}
+		}
+		&_comp {
+			&::before {
+				background-image: url("@img/main/cats/comp-label.svg");
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(21);
+			}
+		}
+	}
+	&__list {
+	}
+	&__item {
+		a {
+			line-height: math.div(21, 17);
+			color: #808080;
+			transition: color 0.3s;
+			@media (max-width: $tablet) {
+				font-size: rem(16);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(15);
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: rem(14);
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+			.main-cat_serv & {
+				color: #fff;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(13);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(8);
+			}
+		}
+	}
+}

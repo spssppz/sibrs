@@ -1,0 +1,74 @@
+.title {
+	font-family: $second-family;
+	font-size: rem(40);
+	line-height: 1.2;
+	color: #000;
+	@media (max-width: $tablet) {
+		font-size: rem(34);
+	}
+	@media (max-width: $mobile) {
+		font-size: rem(28);
+	}
+	@media (max-width: $mobileSmall) {
+		font-size: rem(23);
+	}
+}
+
+.slider-nav {
+	display: flex;
+	gap: rem(12);
+	@media (max-width: $tablet) {
+		gap: rem(10);
+	}
+	&__btn {
+		flex: 0 0 rem(64);
+		width: rem(64);
+		height: rem(64);
+		border-radius: rem(10);
+		background: #fbfbfb url("@img/icons/slider-arrow.svg") 50% no-repeat;
+		transition: opacity 0.3s;
+		@media (max-width: $pc) {
+			background-color: #fff;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(51);
+			width: rem(51);
+			height: rem(51);
+		}
+		&.swiper-button-disabled {
+			pointer-events: none;
+			opacity: 0.3;
+		}
+		&_prev {
+		}
+		&_next {
+			transform: rotate(180deg);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+.slider-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: rem(6);
+	.swiper-pagination-bullet {
+		flex: 0 0 rem(6);
+		width: rem(6);
+		height: rem(6);
+		border-radius: rem(3);
+		background: #dbdbdb;
+		transition: 0.3s;
+	}
+	.swiper-pagination-bullet-active {
+		background: $blue;
+		flex: 0 0 rem(18);
+		width: rem(18);
+		height: rem(3);
+	}
+}
