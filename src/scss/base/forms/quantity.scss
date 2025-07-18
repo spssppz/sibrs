@@ -3,15 +3,10 @@
 .quantity {
 	display: inline-flex;
 	align-items: center;
-	&::before {
-		content: "Quantity:";
-		color: rgba(0, 0, 0, 0.6);
-		font-weight: 500;
-		line-height: normal;
-		margin-right: rem(12);
-	}
+	gap: rem(15);
 	&__button {
-		font-weight: 500;
+		font-size: rem(18);
+		color: #000;
 		&_plus {
 		}
 		&_minus {
@@ -21,6 +16,8 @@
 		flex: 0 0 rem(20);
 		input {
 			height: 100%;
+			color: #000;
+			font-size: rem(18);
 			width: 100%;
 			text-align: center;
 		}

@@ -168,32 +168,6 @@
 			}
 		}
 	}
-	&__inp-wrapper {
-		display: flex;
-		flex-direction: column;
-		gap: rem(7);
-	}
-	&__cap {
-		font-size: rem(15);
-		line-height: math.div(19, 15);
-		color: #000;
-		@media (max-width: $tablet) {
-			font-size: rem(14);
-		}
-		@media (max-width: $mobileSmall) {
-			font-size: rem(13);
-		}
-		&_req {
-			&::after {
-				content: " *";
-				font-size: rem(13);
-				line-height: 1.5;
-				color: $blue;
-			}
-		}
-	}
-	&__input {
-	}
 	&__actions {
 		display: flex;
 		gap: rem(34);

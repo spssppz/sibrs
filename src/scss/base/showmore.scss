@@ -3,6 +3,31 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: rem(16);
+	color: $blue;
+	gap: rem(10);
+	margin-top: rem(35);
+	line-height: math.div(20, 16);
+	@media (max-width: $tablet) {
+		margin-top: rem(25);
+	}
+	&::after {
+		content: "";
+		flex: 0 0 rem(10);
+		width: rem(10);
+		height: rem(5);
+		background: url("@img/icons/showmore-arrow.svg") 50% / 100% no-repeat;
+		transform: rotate(180deg);
+		transition: transform 0.3s;
+	}
+	._showmore-active & {
+		&::after {
+			transform: rotate(0deg);
+		}
+	}
 	span {
 		&:last-child {
 			display: none;

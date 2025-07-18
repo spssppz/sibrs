@@ -1,25 +1,75 @@
 .pagging {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	&__arrow {
+	gap: rem(5);
+	&:not(:last-child) {
+		margin-bottom: rem(45);
+		@media (max-width: $tablet) {
+			margin-bottom: rem(50);
+		}
 	}
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
+		gap: rem(5);
+		@media (max-width: $mobile) {
+			gap: rem(4);
+		}
 	}
 	&__item {
+		flex: 0 0 rem(52);
+		width: rem(52);
+		height: rem(52);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(38);
+			width: rem(38);
+			height: rem(38);
+		}
 	}
+	&__arrow,
 	&__link {
-		font-weight: 700;
-		font-size: rem(15);
-		color: #3d3d3d;
-		display: inline-flex;
+		font-size: rem(16);
+		color: $gray;
+		background: #f0f2f4;
+		border-radius: rem(10);
+		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: rem(2) solid #eaeaea;
+		height: 100%;
+		transition: 0.3s;
+		@media (max-width: $tablet) {
+			border-radius: rem(7);
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+		svg {
+			path {
+				stroke: $gray;
+				transition: stroke 0.3s;
+			}
+		}
 		&_active {
-			background: #f73313;
 			color: #fff;
+			box-shadow: 0 rem(3) rem(21) 0 rgba(93, 145, 254, 0.55);
+			background: $blue;
+			@media (max-width: $tablet) {
+				box-shadow: 0 rem(2) rem(15) 0 rgba(93, 145, 254, 0.55);
+			}
+		}
+		&:hover {
+			color: #fff;
+			box-shadow: 0 rem(3) rem(20) 0 rgba(93, 145, 254, 0.55);
+			background: $blue;
+			@media (max-width: $tablet) {
+				box-shadow: 0 rem(2) rem(15) 0 rgba(93, 145, 254, 0.55);
+			}
+			svg path {
+				stroke: #fff;
+			}
 		}
 	}
 }

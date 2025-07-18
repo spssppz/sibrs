@@ -1,7 +1,7 @@
 import * as noUiSlider from 'nouislider';
 
-if (document.querySelector('.price-catalog__slider')) {
-	const priceSlider = document.querySelector('.price-catalog__slider')
+if (document.querySelector('.filter-price__slider')) {
+	const priceSlider = document.querySelector('.filter-price__slider')
 
 	const priceFrom = +priceSlider.dataset.from
 	const priceTo = +priceSlider.dataset.to
@@ -21,8 +21,8 @@ if (document.querySelector('.price-catalog__slider')) {
 		}
 	})
 
-	const inputFrom = document.querySelector('.price-catalog__input_from')
-	const inputTo = document.querySelector('.price-catalog__input_to')
+	const inputFrom = document.querySelector('.filter-price__input_from')
+	const inputTo = document.querySelector('.filter-price__input_to')
 
 	inputFrom.addEventListener('change', setPriceValues)
 	inputTo.addEventListener('change', setPriceValues)

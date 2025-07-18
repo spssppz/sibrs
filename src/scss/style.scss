@@ -9,7 +9,6 @@
 // Шрифт по умолчанию
 $fontFamily: "CoFoSans";
 $second-family: "IgraSans", sans-serif;
-$third-family: "YandexSansText", sans-serif;
 
 $fontSize: rem(17); // размер шрифта по умолчанию
 
@@ -97,3 +96,5 @@ body {
 @import "404"; // 404
 @import "contacts"; // Контакты
 @import "favs"; // Избранное
+@import "guarantee"; // Гарантия и Доставка
+@import "product"; // Карточка товара

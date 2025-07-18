@@ -10,7 +10,7 @@ flsFunctions.isWebp();
 // flsFunctions.addLoadedClass();
 
 /* Модули для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 // flsFunctions.closeMenuWithSwipe();
 
 /* Модуль для плавной прокрутки к якорям */
@@ -20,7 +20,7 @@ flsFunctions.isWebp();
 // flsFunctions.fullVHfix();
 
 /* Модуль работы со спойлерами */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /* lazyload */
 // import './files/lazyload.js'
@@ -29,7 +29,7 @@ flsFunctions.isWebp();
 flsFunctions.tabs();
 
 /* Модуль "показать еще" */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /* Попапы Сниппет (HTML): pl */
 import './libs/popup.js'
@@ -49,7 +49,7 @@ import * as flsForms from "./files/forms/forms.js";
 // flsForms.formSubmit();
 
 /* Модуль формы "количество" */
-// flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
 // flsForms.formRating();
@@ -62,7 +62,7 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Модуль работы с ползунком */
 /* Документация плагина: https://refreshless.com/nouislider/ */
-// import "./files/forms/range.js";
+import "./files/forms/range.js";
 
 /* Модуль работы с подсказками (tippy) Сниппет (HTML): tip  */
 /* Документация плагина: https://atomiks.github.io/tippyjs/ */

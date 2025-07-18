@@ -313,6 +313,7 @@
 				border: none;
 				background-color: #fff;
 			}
+			.sidebar &,
 			.questions & {
 				background: #f8f8f8;
 				border: none;
@@ -377,6 +378,7 @@ a.footer-contacts__link {
 			align-items: flex-start;
 		}
 	}
+
 	&__dev {
 		color: #a7a7a7;
 		display: inline-flex;
@@ -405,7 +407,14 @@ a.footer-contacts__link {
 		}
 	}
 }
-
+a.bottom-footer__policy {
+	transition: color 0.3s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor;
+		}
+	}
+}
 .footel-label {
 	font-size: rem(21);
 	color: #000;

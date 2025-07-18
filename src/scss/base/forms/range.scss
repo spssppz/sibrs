@@ -1,7 +1,9 @@
 .noUi-base {
-	height: rem(1);
+	height: rem(3);
 	position: relative;
 	z-index: 1;
+	background: #eaeaea;
+	border-radius: rem(5);
 }
 
 .noUi-connect,
@@ -18,20 +20,20 @@
 }
 
 .noUi-horizontal {
-	height: rem(16);
+	height: rem(13);
 }
 
 .noUi-connect {
-	background: #000;
+	background: $blue;
 }
 
 .noUi-handle {
 	position: absolute;
-	width: rem(16);
-	height: rem(16);
-	right: rem(-8);
-	top: rem(-8);
-	background-color: #000;
+	width: rem(13);
+	height: rem(13);
+	right: rem(-6);
+	top: rem(-6);
+	background-color: $blue;
 	border-radius: 50%;
 	cursor: pointer;
 }

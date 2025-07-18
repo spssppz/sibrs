@@ -37,7 +37,7 @@
 							<li class="catalog-tags__item"><button>Серверы с GPU</button></li>
 							<li class="catalog-tags__item"><button>Файловые серверы</button></li>
 						</ul>
-						<button class="top-catalog__filter-show">Фильтры</button>
+						<button class="top-catalog__filter-show filter-btn">Фильтры</button>
 						<div class="catalog-sort">
 							<div class="catalog-sort__descr">Сортировать по</div>
 							<div class="catalog-sort__wrapper">
@@ -50,8 +50,556 @@
 							</div>
 						</div>
 					</div>
+					<div class="catalog__body">
+						<aside class="aside-catalog">
+							<div class="aside-catalog__top">
+								<div class="aside-catalog__title">Фильтры</div>
+								<button class="aside-catalog__close filter-btn" aria-label="Закрыть фильтр"></button>
+							</div>
+							<div class="aside-catalog__col aside-cats">
+								<div class="aside-title">Категории</div>
+								<ul class="aside-cats__spollers" data-spollers>
+									<li class="aside-cats__spoller">
+										<button class="aside-cats__title" data-spoller>Серверы</button>
+										<div class="aside-cats__body">
+											<ul class="aside-cats__list">
+												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы AMD EPYC</a></li>
+												<li class="aside-cats__item"><a href="">Серверы ASUS DDR5</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HUAWEI</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="aside-cats__spoller">
+										<button class="aside-cats__title" data-spoller>Серверы под задачи</button>
+										<div class="aside-cats__body">
+											<ul class="aside-cats__list">
+												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы AMD EPYC</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="aside-cats__spoller">
+										<a class="aside-cats__link" href="">В наличии</a>
+									</li>
+									<li class="aside-cats__spoller">
+										<button class="aside-cats__title" data-spoller>Комплектующие</button>
+										<div class="aside-cats__body">
+											<ul class="aside-cats__list">
+												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы AMD EPYC</a></li>
+												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
+												<li class="aside-cats__item"><a href="">Серверы Supermicro</a></li>
+												<li class="aside-cats__item"><a href="">Серверы AMD EPYC</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="aside-cats__spoller">
+										<a class="aside-cats__link" href="">Рабочие станции</a>
+									</li>
+									<li class="aside-cats__spoller">
+										<a class="aside-cats__link" href="">Сетевые хранилища NAS/СХД</a>
+									</li>
+									<li class="aside-cats__spoller">
+										<a class="aside-cats__link" href="">Сетевое оборудование</a>
+									</li>
+								</ul>
+							</div>
+							<div class="aside-catalog__col aside-filter">
+								<div class="aside-filter__label aside-title">Параметры</div>
+								<div class="filter-price">
+									<div class="filter-price__cap">Цена (₽)</div>
+									<div class="filter-price__inputs">
+										<div class="filter-price__inp-wrapper">
+											<span class="filter-price__descr">От</span>
+											<input class="filter-price__input filter-price__input_from" autocomplete="off" type="number" name="price_from">
+										</div>
+										<div class="filter-price__inp-wrapper">
+											<span class="filter-price__descr">До</span>
+											<input class="filter-price__input filter-price__input_to" autocomplete="off" type="number" name="price_to">
+										</div>
+									</div>
+									<div class="filter-price__slider" data-from="12000" data-to="40000" data-min="200" data-max="100000"></div>
+								</div>
+								<ul class="aside-filter__spollers" data-spollers>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Производитель</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
+													<span class="filter-checkbox__text">ASUS <span>(187)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="2" name="filter_prod">
+													<span class="filter-checkbox__text">DELL <span>(246)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="3" name="filter_prod">
+													<span class="filter-checkbox__text">H3C <span>(78)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="4" name="filter_prod">
+													<span class="filter-checkbox__text">Hewlett-Packard <span>(54)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="5" name="filter_prod">
+													<span class="filter-checkbox__text">Huawei <span>(65)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="6" name="filter_prod">
+													<span class="filter-checkbox__text">Inspur <span>(36)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
+													<span class="filter-checkbox__text">SuperMicro <span>(112)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Наличие</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
+													<span class="filter-checkbox__text">ASUS <span>(187)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="5" name="filter_prod">
+													<span class="filter-checkbox__text">Huawei <span>(65)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="6" name="filter_prod">
+													<span class="filter-checkbox__text">Inspur <span>(36)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
+													<span class="filter-checkbox__text">SuperMicro <span>(112)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Форм-фактор</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="6" name="filter_prod">
+													<span class="filter-checkbox__text">Inspur <span>(36)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
+													<span class="filter-checkbox__text">SuperMicro <span>(112)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Корзина</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
+													<span class="filter-checkbox__text">ASUS <span>(187)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="2" name="filter_prod">
+													<span class="filter-checkbox__text">DELL <span>(246)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="3" name="filter_prod">
+													<span class="filter-checkbox__text">H3C <span>(78)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Поколение процессоров</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
+													<span class="filter-checkbox__text">ASUS <span>(187)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="2" name="filter_prod">
+													<span class="filter-checkbox__text">DELL <span>(246)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="3" name="filter_prod">
+													<span class="filter-checkbox__text">H3C <span>(78)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="4" name="filter_prod">
+													<span class="filter-checkbox__text">Hewlett-Packard <span>(54)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="5" name="filter_prod">
+													<span class="filter-checkbox__text">Huawei <span>(65)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="6" name="filter_prod">
+													<span class="filter-checkbox__text">Inspur <span>(36)</span></span>
+												</label>
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
+													<span class="filter-checkbox__text">SuperMicro <span>(112)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+									<li class="aside-filter__spoller">
+										<button class="aside-filter__title" data-spoller>Тип памяти</button>
+										<div class="aside-filter__body">
+											<div class="aside-filter__checkbox">
+												<label class="filter-checkbox">
+													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
+													<span class="filter-checkbox__text">SuperMicro <span>(112)</span></span>
+												</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</aside>
+						<div class="catalog__right">
+							<ul class="catalog__cols">
+
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag server__tag_stock">В наличии</li>
+										<li class="server__tag server__tag_avail">Выгодно!</li>
+										<li class="server__tag">Б/У</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+										<div class="server__rating">3.8</div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>HDD:</span> <span>24x (SFF) 2.5”</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 156 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag">Б/У</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+										<div class="server__rating">3.8</div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>HDD:</span> <span>24x (SFF) 2.5”</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 12 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag server__tag_stock">В наличии</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF aFF</a></div>
+										<div class="server__rating">2.8</div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 156 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag server__tag_stock">В наличии</li>
+										<li class="server__tag server__tag_avail">Выгодно!</li>
+										<li class="server__tag">Б/У</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF 12L 123 aFF S S11</a></div>
+										<div class="server__rating">4.2</div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>HDD:</span> <span>24x (SFF) 2.5”</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 156 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag server__tag_avail">Выгодно!</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell</a></div>
+										<div class="server__rating">1.2</div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>HDD:</span> <span>24x (SFF) 2.5”</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 156 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+								<li class="server">
+									<ul class="server__tags">
+										<li class="server__tag server__tag_stock">В наличии</li>
+										<li class="server__tag server__tag_avail">Выгодно!</li>
+										<li class="server__tag">Б/У</li>
+									</ul>
+									<div class="server__slider">
+										<div class="server__track">
+											<div class="server__image">
+												<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" loading="lazy" alt="Сервер Dell PowerEdge R740xd 12LFF">
+											</div>
+										</div>
+										<div class="server__pagination"></div>
+									</div>
+									<div class="server__label-wrapper">
+										<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									</div>
+									<ul class="server__descrs">
+										<li class="server__descr">
+											<span>CPU:</span> <span>AMD EPYC 9004/9005</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>RAM:</span> <span>До 6TB DDR5</span>
+										</li>
+										<li class="server__descr">
+											<span>HDD:</span> <span>24x (SFF) 2.5”</span>
+										</li>
+										<li class="server__descr">
+											<span>Блок питания:</span> <span>4x 2 000W (2+2)</span>
+										</li>
+									</ul>
+									<div class="server__price">От 2 221 900 руб.</div>
+									<span class="server__price-descr">Цена включает НДС 5%</span>
+									<div class="server__btns">
+										<a class="server__btn server__btn_buy" href="">
+											<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+													stroke-width="1.7" />
+											</svg>
+											В корзину</a>
+										<a class="server__btn" href="">Сконфигурировать</a>
+									</div>
+								</li>
+
+							</ul>
+							@@include('html/pagging.html')
+							<div class="catalog__bottom" data-showmore="items">
+								<div class="catalog__content content" data-showmore-content="1">
+									<div class="content-text">
+										<p>Компания SibRS предлагает широкий ассортимент серверов Dell, Intel, IBM и других ведущих IT-брендов – в наличии и под заказ, новых и бывших в эксплуатации. Все модели прошли тестирование и надлежащую сертификацию.</p>
+										<p>Большинство из представленных в каталоге моделей можно конфигурировать, адаптировав под ваши потребности. Например, заменить процессор, расширить оперативную память, поставить RAID-контроллер для правильной работы с несколькими жёсткими дисками, и так далее. </p>
+										<p>Серверы сопровождаются официальной гарантией. Заказанное оборудование бесплатно доставляем по всей России.</p>
+									</div>
+									<div class="content-text">
+										<h2>Каталог серверов Dell, IBM, Intel</h2>
+										<p>В нашем каталоге представлено несколько десятков конфигурируемых моделей серверов от таких брендов, как Dell, IBM, Intel, HP, Huawei, SuperMicro и так далее. Поэтому вы можете найти модель, которая идеально подходит под ваши потребности – от бюджетного варианта для небольшой
+											компании до модульных устройств форм-факторов 1U и 2U для создания стоек под высокие нагрузки.</p>
+										<p class="p-cap">Большинство серверов – конфигурируемые. Это значит, что вы можете самостоятельно выбрать комплектующие. Например: </p>
+										<ul>
+											<li>Процессор. Напрямую определяет производительность сервера; </li>
+											<li>Оперативная память. Чем больше виртуальных машин вы хотите запускать – тем больше RAM вам требуется; </li>
+											<li>Накопители. HDD для долгосрочного хранения большого количества данных или SSD для высокоскоростного доступа к файлам; и так далее. </li>
+										</ul>
+										<p>На все модели распространяется гарантия. Стандартный срок – 3 года, но можно увеличить или уменьшить его. </p>
+									</div>
+									<div class="content-text">
+										<h2>Бесплатная доставка по России</h2>
+										<p>Перед тем, как отправить вам сервер, мы соберём его и протестируем под рабочей нагрузкой, чтобы убедиться в полной функциональности. У вас также будет 14 дней на самостоятельную проверку – если что-то не работает, можно затребовать возврат.</p>
+										<p>На все модели распространяется гарантия. Стандартный срок – 3 года, но можно увеличить или уменьшить его. </p>
+										<p>Отправляем оборудование по всей России. Доставка серверов бесплатна для каждого заказа.</p>
+									</div>
+								</div>
+								<button class="catalog__more" hidden data-showmore-button><span>Развернуть</span><span>Свернуть</span></button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			@@include('html/sections/main/questions.html')
 		</main>
 		@@include('html/footer.html')
 	</div>

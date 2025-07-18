@@ -1,8 +1,116 @@
-<div class="popup" id="popup" aria-hidden="true">
+<div class="popup" id="consult" aria-hidden="true">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button class="popup__close" data-close type="button">Закрыть</button>
-			<div class="popup__text">
+			<button class="popup__close" data-close type="button" aria-label="Закрыть форму"></button>
+			<div class="consult">
+				<div class="consult__label">Консультация IT-специалиста</div>
+				<form class="consult-form" action="#">
+					<label class="consult-form__line inp-line">
+						<span class="inp-line__cap inp-line__cap_req">Имя</span>
+						<input class="input" autocomplete="off" type="text" name="consult_name" placeholder="Представьтесь">
+					</label>
+					<label class="consult-form__line inp-line">
+						<span class="inp-line__cap inp-line__cap_req">Номер телефона</span>
+						<input class="input" autocomplete="off" type="text" name="consult_phone">
+					</label>
+					<div class="consult-form__checkbox">
+						<label class="checkbox">
+							<input class="checkbox__input" type="checkbox" value="1" name="consult_policy">
+							<span class="checkbox__text">Нажимая на кнопку Подписаться я соглашаюсь с <a href="">Политикой в отношении обработки персональных данных</a></span>
+						</label>
+					</div>
+					<button class="consult-form__btn btn btn_decor">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup" id="cart" aria-hidden="true">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<div class="cart-popup">
+				<div class="cart-popup__top">
+					<div class="cart-popup__label">Корзина покупок</div>
+					<button class="popup__close cart-popup__close" data-close type="button" aria-label="Закрыть форму"></button>
+				</div>
+				<ul class="cart-popup__items">
+					<li class="cart-popup-item">
+						<a class="cart-popup-item__image" href="">
+							<img srcset="@img/servers/cart@2x.png 2x" src="@img/servers/cart.png" width="99" height="67" loading="lazy" alt="Сервер Dell PowerEdge R7525">
+						</a>
+						<div class="cart-popup-item__right">
+							<div class="cart-popup-item__top">
+								<div class="cart-popup-item__title"><a href="">Сервер Dell PowerEdge R7525</a></div>
+
+								<div class="quantity">
+									<button class="quantity__button quantity__button_minus">-</button>
+									<div class="quantity__input">
+										<input autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button class="quantity__button quantity__button_plus">+</button>
+								</div>
+								<div class="cart-popup-item__price">721 725 руб.</div>
+							</div>
+							<div class="cart-popup-item__links">
+
+								<a class="cart-popup-item__link" href="">Смотреть характеристики</a>
+								<a class="cart-popup-item__link" href="">характеристики в корзине</a>
+							</div>
+						</div>
+						<button class="cart-popup-item__clear" aria-label="Удалить товар из корзины"></button>
+					</li>
+					<li class="cart-popup-item">
+						<a class="cart-popup-item__image" href="">
+							<img srcset="@img/servers/cart@2x.png 2x" src="@img/servers/cart.png" width="99" height="67" loading="lazy" alt="Сервер Dell PowerEdge R7525">
+						</a>
+						<div class="cart-popup-item__right">
+							<div class="cart-popup-item__top">
+								<div class="cart-popup-item__title"><a href="">Сервер Dell PowerEdge R7525</a></div>
+
+								<div class="quantity">
+									<button class="quantity__button quantity__button_minus">-</button>
+									<div class="quantity__input">
+										<input autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button class="quantity__button quantity__button_plus">+</button>
+								</div>
+								<div class="cart-popup-item__price">721 725 руб.</div>
+							</div>
+							<div class="cart-popup-item__links">
+
+								<a class="cart-popup-item__link" href="">Смотреть характеристики</a>
+								<a class="cart-popup-item__link" href="">характеристики в корзине</a>
+							</div>
+						</div>
+						<button class="cart-popup-item__clear" aria-label="Удалить товар из корзины"></button>
+					</li>
+					<li class="cart-popup-item">
+						<a class="cart-popup-item__image" href="">
+							<img srcset="@img/servers/cart@2x.png 2x" src="@img/servers/cart.png" width="99" height="67" loading="lazy" alt="Сервер Dell PowerEdge R7525">
+						</a>
+						<div class="cart-popup-item__right">
+							<div class="cart-popup-item__top">
+								<div class="cart-popup-item__title"><a href="">Сервер Dell PowerEdge R7525</a></div>
+
+								<div class="quantity">
+									<button class="quantity__button quantity__button_minus">-</button>
+									<div class="quantity__input">
+										<input autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button class="quantity__button quantity__button_plus">+</button>
+								</div>
+								<div class="cart-popup-item__price">721 725 руб.</div>
+							</div>
+							<div class="cart-popup-item__links">
+
+								<a class="cart-popup-item__link" href="">Смотреть характеристики</a>
+								<a class="cart-popup-item__link" href="">характеристики в корзине</a>
+							</div>
+						</div>
+						<button class="cart-popup-item__clear" aria-label="Удалить товар из корзины"></button>
+					</li>
+				</ul>
+				<a class="cart-popup__btn btn btn_decor" href="">Перейти в корзину</a>
 			</div>
 		</div>
 	</div>

@@ -12,6 +12,14 @@ input[type="date"] {
 	display: flex;
 	align-items: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
 .input {
 	border-radius: rem(10) !important;
 	width: 100%;
@@ -50,5 +58,39 @@ textarea.input {
 	}
 	@media (max-width: $mobile) {
 		height: rem(136);
+	}
+}
+
+.inp-line {
+	display: flex;
+	flex-direction: column;
+	gap: rem(7);
+	font-size: rem(15);
+	line-height: math.div(19, 15);
+	color: #000;
+	@media (max-width: $tablet) {
+		font-size: rem(14);
+	}
+	@media (max-width: $mobileSmall) {
+		font-size: rem(13);
+	}
+	&__cap {
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&_req {
+			&::after {
+				content: " *";
+				font-size: rem(13);
+				line-height: 1.5;
+				color: $blue;
+			}
+		}
 	}
 }

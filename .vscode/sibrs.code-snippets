@@ -6,11 +6,4 @@
 			"font-family: \\$second-family;",
 		],
 	},
-	"third-family": {
-		"scope": "scss",
-		"prefix": "tf",
-		"body": [
-			"font-family: \\$third-family;",
-		],
-	},
 }

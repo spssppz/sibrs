@@ -58,3 +58,63 @@
 		}
 	}
 }
+
+.filter-checkbox {
+	cursor: pointer;
+	position: relative;
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus + .filter-checkbox__text::before {
+			box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
+		}
+		&:checked + .filter-checkbox__text::after {
+			opacity: 1;
+		}
+	}
+	&__text {
+		line-height: math.div(20, 16);
+		display: inline-flex;
+		gap: rem(10);
+		position: relative;
+		padding-left: rem(37);
+		font-size: rem(16);
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+			padding-left: rem(32);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		span {
+			color: #909195;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: rem(5);
+			width: rem(22);
+			height: rem(22);
+			@media (max-width: $tablet) {
+				top: rem(-1);
+			}
+			@media (max-width: $mobile) {
+				top: rem(-3);
+			}
+		}
+		&::before {
+			border: rem(1) solid #ddd;
+		}
+		&::after {
+			background: url("@img/icons/filter-check.svg") 50% / 100% no-repeat;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+	}
+}
