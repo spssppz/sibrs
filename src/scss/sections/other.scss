@@ -1,0 +1,86 @@
+.other {
+	padding: rem(50) rem(0);
+	@media (max-width: $tablet) {
+		padding: rem(40) rem(0);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(25) rem(0) rem(10);
+	}
+	&__container {
+	}
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+		&:not(:last-child) {
+			margin-bottom: rem(42);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(30);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__title {
+	}
+	&__slider-nav {
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+	&__slider-btn {
+		background-color: #fff;
+		&_prev {
+		}
+		&_next {
+		}
+	}
+	&__slider {
+		@media (max-width: $tablet) {
+			overflow: visible;
+		}
+	}
+	&__wrapper {
+		@media (max-width: $tablet) {
+			margin-bottom: rem(26);
+		}
+	}
+	&__slide {
+		margin-right: rem(20);
+		flex: 0 0 calc((100% - rem(60)) / 4);
+		@media (max-width: $pc) {
+			flex: 0 0 calc((100% - rem(40)) / 3);
+		}
+		@media (max-width: em(1299.98)) {
+			flex: 0 0 calc((100% - rem(20)) / 2);
+		}
+		@media (max-width: $tablet) {
+			margin-right: rem(10);
+		}
+		@media (max-width: $mobile) {
+			flex: 0 0 100%;
+		}
+	}
+	&__pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(6);
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		.swiper-pagination-bullet {
+			border-radius: rem(3);
+			flex: 0 0 rem(26);
+			width: rem(26);
+			height: rem(3);
+			background: #eaeaea;
+			transition: background 0.3s;
+		}
+		.swiper-pagination-bullet-active {
+			background: $blue;
+		}
+	}
+}

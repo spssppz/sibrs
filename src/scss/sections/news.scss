@@ -83,9 +83,9 @@
 	border-radius: rem(15);
 	background-color: #fff;
 	padding: rem(15);
-	min-width: calc(50% - rem(20));
+	flex: 0 0 calc((100% - rem(20)) / 2);
 	@media (min-width: em(1300)) {
-		min-width: calc(33.333% - rem(40));
+		flex: 0 0 calc((100% - rem(40)) / 3);
 	}
 	@media (min-width: $tablet) {
 		margin-right: rem(20);
@@ -93,7 +93,6 @@
 	@media (max-width: $tablet) {
 		border-radius: rem(10);
 		padding: rem(12);
-		min-width: auto;
 		backdrop-filter: blur(15px);
 		box-shadow:
 			0 6px 12px 0 rgba(227, 227, 227, 0.1),

@@ -99,15 +99,8 @@
 		}
 	}
 	&__item {
-		min-width: auto;
-		@media (min-width: em(1300)) {
-			min-width: auto;
-		}
 		@media (min-width: $tablet) {
 			margin-right: 0;
-		}
-		@media (max-width: $tablet) {
-			min-width: auto;
 		}
 	}
 }

@@ -2,10 +2,17 @@
 // Снипет (HTML): rating
 .rating {
 	display: flex;
-	align-items: flex-end;
-	font-size: rem(40);
+	align-items: center;
+	gap: rem(10);
+	font-size: rem(29);
 	line-height: 0.75;
 	transition: opacity 0.3s ease 0s;
+	@media (max-width: $tablet) {
+		font-size: rem(25);
+	}
+	@media (max-width: $mobile) {
+		font-size: rem(22);
+	}
 	&.rating_sending {
 		opacity: 0.2;
 	}
@@ -51,8 +58,17 @@
 		opacity: 0;
 	}
 	&__value {
-		font-size: 50%;
-		line-height: 1;
-		padding-left: rem(10);
+		color: $gray;
+		line-height: math.div(21, 17);
+		font-size: rem(17);
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
 	}
 }

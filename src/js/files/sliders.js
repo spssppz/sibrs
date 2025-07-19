@@ -96,8 +96,7 @@ function initSliders() {
 				480: {
 					direction: 'horizontal',
 					slidesPerView: 4,
-					spaceBetween: 0,
-
+					spaceBetween: 5,
 				},
 				768: {
 					direction: 'vertical',
@@ -114,6 +113,45 @@ function initSliders() {
 			thumbs: {
 				swiper: productThumbs,
 				slideThumbActiveClass: 'product__thumb_current',
+			},
+		})
+	}
+
+	if (document.querySelector('.other__slider')) {
+		new Swiper('.other__slider', {
+			modules: [Navigation, Pagination],
+			speed: 800,
+			noSwiping: true,
+			noSwipingClass: 'slider-init',
+			pagination: {
+				el: '.other__pagination',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: '.other__slider-btn_prev',
+				nextEl: '.other__slider-btn_next',
+			},
+			breakpoints: {
+				375: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				992: {
+					spaceBetween: 20,
+					slidesPerView: 2,
+				},
+				1300: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1700: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
 			},
 		})
 	}
@@ -156,8 +194,10 @@ if (serverSliders) {
 
 		// Пагинация
 		if (items.length > 1) {
+			serverSlider.classList.add('slider-init')
 			items.forEach((_, i) => {
 				const dot = document.createElement('button')
+				dot.setAttribute('aria-label', `Перейти к ${i + 1} слайду`)
 				if (i === 0) dot.classList.add('active')
 				dot.addEventListener('click', () => goTo(i))
 				pag.appendChild(dot)

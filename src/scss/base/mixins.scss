@@ -1,3 +1,13 @@
+/// Рассчитывает ширину слайда для Swiper'а
+/// @param {Number} $per-view - Кол-во слайдов в экране (например, 4)
+/// @param {Number} $gap - Промежуток между слайдами (например, 20px или rem(20))
+@mixin swiperSlideWidth($per-view, $gap) {
+	$gap-count: $per-view - 1;
+	$total-gap: $gap * $gap-count;
+	width: calc((100% - #{$total-gap}) / #{$per-view});
+	flex: 0 0 calc((100% - #{$total-gap}) / #{$per-view});
+}
+
 //Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
@@ -16,9 +26,12 @@
 	@return $result;
 }
 //REM
+// @function rem($px) {
+// 	$result: math.div($px, 16) + rem;
+// 	@return $result;
+// }
 @function rem($px) {
-	$result: math.div($px, 16) + rem;
-	@return $result;
+	@return #{math.div($px, 16)}rem;
 }
 //EM
 @function em($px, $current: 16) {
