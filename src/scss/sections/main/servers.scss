@@ -56,92 +56,6 @@
 			}
 		}
 	}
-	&__tag {
-		border: rem(1) solid #ff9000;
-		border-radius: rem(10);
-		padding: rem(10) rem(15);
-		min-height: rem(49);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: 500;
-		font-size: rem(14);
-		color: #ff9000;
-		@media (max-width: $tablet) {
-			font-size: rem(13);
-			min-height: rem(42);
-		}
-		@media (max-width: $mobile) {
-			padding: rem(10);
-			font-size: rem(12);
-			min-height: rem(34);
-			border-radius: rem(7);
-		}
-		@media (max-width: $mobileSmall) {
-			font-size: rem(11);
-		}
-		&_discount,
-		&_avail,
-		&_stock {
-			gap: rem(10);
-			font-size: rem(15);
-			@media (max-width: $tablet) {
-				font-size: rem(13);
-			}
-			@media (max-width: $mobile) {
-				font-size: rem(12);
-				gap: rem(7);
-			}
-			@media (max-width: $mobileSmall) {
-				font-size: rem(11);
-			}
-			&::before {
-				content: "";
-			}
-		}
-		&_discount {
-			color: #a100ff;
-			border-color: rgba(162, 0, 255, 0.2);
-			&::before {
-				content: "";
-				flex: 0 0 rem(24);
-				width: rem(24);
-				height: rem(24);
-				background: url("@img/icons/discount-icon.svg") 50% / 100% no-repeat;
-			}
-		}
-		&_stock {
-			color: #0dd359;
-			border-color: rgba(13, 211, 89, 0.2);
-			&::before {
-				flex: 0 0 rem(12);
-				width: rem(12);
-				height: rem(12);
-				background: currentColor;
-				border-radius: 50%;
-				@media (max-width: $tablet) {
-					flex: 0 0 rem(8);
-					width: rem(8);
-					height: rem(8);
-				}
-			}
-		}
-		&_avail {
-			color: #ff3d00;
-			border-color: rgba(255, 61, 0, 0.2);
-			&::before {
-				flex: 0 0 rem(25);
-				width: rem(25);
-				height: rem(25);
-				background: url("@img/icons/avail-icon.svg") 50% / 100% no-repeat;
-				@media (max-width: $tablet) {
-					flex: 0 0 rem(17);
-					width: rem(17);
-					height: rem(17);
-				}
-			}
-		}
-	}
 	&__slider {
 		overflow: hidden;
 		position: relative;
@@ -239,34 +153,7 @@
 			}
 		}
 	}
-	&__rating {
-		line-height: 1.4;
-		color: $gray;
-		display: inline-flex;
-		align-items: center;
-		gap: rem(7);
-		@media (max-width: $tablet) {
-			font-size: rem(16);
-		}
-		@media (max-width: $mobile) {
-			font-size: rem(15);
-		}
-		@media (max-width: $mobileSmall) {
-			font-size: rem(14);
-		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(21);
-			width: rem(21);
-			height: rem(21);
-			background: url("@img/icons/rating.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobile) {
-				flex: 0 0 rem(16);
-				width: rem(16);
-				height: rem(16);
-			}
-		}
-	}
+
 	&__descrs {
 		flex: auto;
 		&:not(:last-child) {

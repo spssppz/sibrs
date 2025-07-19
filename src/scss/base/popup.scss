@@ -175,6 +175,12 @@ body::after {
 	&__btn {
 		width: 100%;
 		min-height: rem(77);
+		@media (max-width: $tablet) {
+			min-height: rem(75);
+		}
+		@media (max-width: $mobile) {
+			min-height: rem(68);
+		}
 		&::before {
 			content: "";
 			flex: 0 0 rem(22);

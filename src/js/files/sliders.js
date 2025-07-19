@@ -1,7 +1,7 @@
 /* Документация слайдера: https://swiperjs.com/ */
 
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, EffectFade, Lazy, Manipulation
@@ -77,6 +77,43 @@ function initSliders() {
 				1300: {
 					spaceBetween: 20,
 				},
+			},
+		})
+	}
+	if (document.querySelector('.product__thumbs') && document.querySelector('.product__slider')) {
+		const productThumbs = new Swiper('.product__thumbs', {
+			modules: [Navigation],
+			speed: 800,
+			navigation: {
+				nextEl: '.product__thumbs-btn_next',
+			},
+			breakpoints: {
+				375: {
+					direction: 'horizontal',
+					slidesPerView: 3,
+					spaceBetween: 5,
+				},
+				480: {
+					direction: 'horizontal',
+					slidesPerView: 4,
+					spaceBetween: 0,
+
+				},
+				768: {
+					direction: 'vertical',
+					slidesPerView: 'auto',
+					spaceBetween: 5,
+				},
+			},
+		})
+		new Swiper('.product__slider', {
+			modules: [Thumbs],
+			speed: 800,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			thumbs: {
+				swiper: productThumbs,
+				slideThumbActiveClass: 'product__thumb_current',
 			},
 		})
 	}
