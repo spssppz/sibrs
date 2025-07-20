@@ -155,6 +155,30 @@ function initSliders() {
 			},
 		})
 	}
+
+	if (document.querySelector('.other-posts__slider')) {
+		new Swiper('.other-posts__slider', {
+			speed: 800,
+
+			breakpoints: {
+				375: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				992: {
+					spaceBetween: 20,
+				},
+				1300: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+			},
+		})
+	}
 	if (window.innerWidth >= 992) {
 		if (document.querySelector('.news-main__slider')) {
 			new Swiper('.news-main__slider', {

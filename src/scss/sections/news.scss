@@ -1,4 +1,5 @@
 .news-main {
+	overflow: hidden;
 	padding: rem(50) rem(0) rem(35);
 	@media (max-width: $tablet) {
 		padding: rem(40) rem(0);

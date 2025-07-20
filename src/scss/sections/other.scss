@@ -1,5 +1,7 @@
 .other {
 	padding: rem(50) rem(0);
+	overflow: hidden;
+
 	@media (max-width: $tablet) {
 		padding: rem(40) rem(0);
 	}

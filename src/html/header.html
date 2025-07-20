@@ -91,19 +91,22 @@
 			</a>
 			<ul class="bottom-header__list">
 				<li class="bottom-header__item bottom-header__item_coml">
-					<a class="bottom-header__link bottom-header__link_comp" href="">Комплектующие</a>
+					<a class="bottom-header__link bottom-header__link_comp" href=""><span>Комплектующие</span></a>
 				</li>
 				<li class="bottom-header__item bottom-header__item_generate">
-					<a class="bottom-header__link bottom-header__link_generate" href="">Конфигуратор серверов</a>
+					<a class="bottom-header__link bottom-header__link_generate" href=""><span>Конфигуратор серверов</span></a>
 				</li>
 				<li class="bottom-header__item bottom-header__item_servers">
-					<a class="bottom-header__link bottom-header__link_servers" href="">Серверы</a>
+					<a class="bottom-header__link bottom-header__link_servers" href=""><span>Серверы</span></a>
 				</li>
 				<li class="bottom-header__item bottom-header__item_network">
-					<a class="bottom-header__link bottom-header__link_network" href="">Сетевое оборудование</a>
+					<a class="bottom-header__link bottom-header__link_network" href=""><span>Сетевое оборудование</span></a>
 				</li>
 			</ul>
-			<button class="bottom-header__search-btn" aria-label="Открыть поиск"></button>
+			<div class="header-search">
+				<input class="header-search__input" autocomplete="off" type="text" name="header_search" placeholder="Поиск по каталогу товаров...">
+				<button class="header-search__btn" aria-label="Открыть поиск"></button>
+			</div>
 			<div class="serv-actions">
 				<ul class="serv-actions__list">
 					<li class="serv-actions__item">
@@ -206,6 +209,18 @@
 						</svg>
 					</a>
 				</li>
+			</ul>
+		</div>
+		<div class="servers-sidebar">
+			<div class="servers-sidebar__top">
+				<button class="servers-sidebar__back">Назад</button>
+				<button class="servers-sidebar__close icon-menu" aria-label="Закрыть меню"></button>
+			</div>
+			<ul class="servers-sidebar__list">
+				<li class="servers-sidebar__item"><a class="servers-sidebar__link" href="">Серверы Dell</a></li>
+				<li class="servers-sidebar__item"><a class="servers-sidebar__link" href="">Серверы HP</a></li>
+				<li class="servers-sidebar__item"><a class="servers-sidebar__link" href="">Серверы SuperMicro</a></li>
+				<li class="servers-sidebar__item"><a class="servers-sidebar__link" href="">Серверы AMD EPYC</a></li>
 			</ul>
 		</div>
 	</aside>

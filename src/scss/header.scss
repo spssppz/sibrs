@@ -257,7 +257,7 @@ a.header-contacts__link {
 		align-items: center;
 		gap: rem(40);
 		@media (max-width: em(1419.98)) {
-			gap: rem(30);
+			gap: rem(25);
 		}
 		@media (max-width: $tablet) {
 			gap: rem(40);
@@ -405,7 +405,20 @@ a.header-contacts__link {
 		display: inline-flex;
 		align-items: center;
 		gap: rem(7);
-		transition: opacity 0.3s;
+		transition: 0.3s;
+		span {
+			transition: 0.3s;
+			white-space: nowrap;
+			max-width: rem(200);
+			.search-show & {
+				max-width: 0;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		.search-show & {
+			gap: 0;
+		}
 		&::before {
 			content: "";
 			flex: 0 0 rem(26);
@@ -436,21 +449,99 @@ a.header-contacts__link {
 			}
 		}
 	}
-	&__search-btn {
+}
+.header-search {
+	display: flex;
+	height: rem(62);
+	@media (min-width: $tablet) {
+		gap: rem(13);
+	}
+	@media (min-width: $tablet) {
+		justify-content: flex-end;
+		flex: auto;
+	}
+	@media (max-width: $tablet) {
+		margin-left: auto;
+		height: rem(48);
+	}
+	&__input {
+		border-radius: rem(10);
+		background: #f9f9f9;
+		z-index: 2;
+		font-size: rem(16);
+		color: #a7a7a7;
+		height: 100%;
+		transition: 0.3s;
+		pointer-events: none;
+		opacity: 0;
+		visibility: hidden;
+		padding: rem(0) rem(29);
+		@media (min-width: $tablet) {
+			flex: 0 0 0;
+			width: 0;
+			padding: 0;
+		}
+		@media (max-width: $tablet) {
+			height: rem(48);
+			background-color: #fff;
+			border: rem(1) solid #e8e8e8;
+			position: absolute;
+			left: rem(20);
+			right: rem(20);
+			top: calc(100% - rem(10));
+		}
+		.search-show & {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			padding: rem(0) rem(29);
+			@media (min-width: $tablet) {
+				flex: auto;
+				width: 100%;
+			}
+			@media (max-width: $tablet) {
+				top: calc(100% + rem(3));
+			}
+		}
+	}
+	&__btn {
+		position: relative;
 		flex: 0 0 rem(60);
 		width: rem(60);
-		height: rem(62);
 		border-radius: rem(10);
-		background: $blue url("@img/icons/search-icon.svg") 50% no-repeat;
-		transition: opacity 0.3s;
+		background: $blue;
+		transition: 0.3s;
 		@media (max-width: $tablet) {
 			flex: 0 0 rem(48);
 			width: rem(48);
-			height: rem(48);
 			border-radius: rem(5);
 		}
-		@media (min-width: $mobile) {
-			margin-left: auto;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: rem(24);
+			height: rem(24);
+			transition: opacity 0.3s;
+			background: url("@img/icons/search-icon.svg") 50% / 100% no-repeat;
+		}
+		&::after {
+			width: rem(8);
+			height: rem(8);
+			background-image: url("@img/icons/search-close.svg");
+			opacity: 0;
+		}
+		.search-show & {
+			background: #f9f9f9;
+			&::before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -459,6 +550,7 @@ a.header-contacts__link {
 		}
 	}
 }
+
 .serv-actions {
 	@media (max-width: $mobile) {
 		display: none;
@@ -553,14 +645,6 @@ a.header-contacts__link {
 	@media (max-width: $tablet) {
 		padding: rem(25) rem(20);
 		transition: 0.3s;
-	}
-	.menu-open & {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
-		left: 0;
-	}
-	@media (max-width: $tablet) {
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -568,6 +652,12 @@ a.header-contacts__link {
 	}
 	&::-webkit-scrollbar {
 		display: none;
+	}
+	.menu-open & {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		left: 0;
 	}
 	&__list {
 		padding-bottom: rem(30);
@@ -882,5 +972,112 @@ a.sidebar-contacts__link {
 	}
 	&:not(:last-child) {
 		margin-bottom: rem(20);
+	}
+}
+
+//========================================================================================================================================================
+
+.servers-sidebar {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	padding: rem(44) rem(28) rem(44) rem(20);
+	padding-left: inherit;
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+		padding-bottom: rem(20);
+		border-bottom: rem(1) solid #eaeaea;
+
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__back {
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10);
+		font-size: rem(15);
+		color: #000;
+		line-height: math.div(18, 14);
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(12);
+			width: rem(12);
+			height: rem(10);
+			transform: scaleX(-1);
+			background: url("@img/icons/header/btn-arrow.svg") 50% / 100% no-repeat;
+		}
+	}
+	&__close {
+		flex: 0 0 rem(25);
+		width: rem(25);
+		height: rem(25);
+		position: relative;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 70%;
+			height: rem(2);
+			background: #000;
+			transition: background 0.3s;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+	&__list {
+	}
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__link {
+		color: $gray;
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		transition: opacity 0.3s;
+		padding: rem(5) rem(0);
+		line-height: math.div(21, 17);
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		&::after {
+			content: "";
+			margin-left: auto;
+			flex: 0 0 rem(12);
+			width: rem(12);
+			height: rem(10);
+			background: url("@img/icons/header/btn-arrow.svg") 50% / 100% no-repeat;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
 	}
 }

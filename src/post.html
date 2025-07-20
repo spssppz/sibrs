@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Контакты"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<section class="post">
+				<div class="post__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li>
+								<a class="breadcrumbs__link" href="">Блог</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Компании Hygon и Sugon объединяются </span>
+							</li>
+						</ul>
+					</nav>
+					<h1 class="post__title title">Компании Hygon и Sugon объединяются </h1>
+					<div class="post__top">
+						<time class="post__date" datetime="2025-05-27">27.05.2025</time>
+						<span class="post__read">2 минуты чтения</span>
+						<button class="post__copy" aria-label="Поделиться страницей"></button>
+						<a class="post__tag" href="">Новости</a>
+					</div>
+					<div class="post__body">
+						<div class="post__left">
+							<div class="post__image">
+								<img srcset="@img/post/1@2x.jpg 2x" src="@img/post/1.jpg" width="1100" height="615" alt="">
+							</div>
+							<div class="content">
+								<p>Компании Hygon и Sugon официально объявили о стратегическом слиянии, направленном на усиление позиций на рынке серверных решений, суперкомпьютеров и инфраструктур для обработки данных. Объединение открывает новые возможности для разработки собственных высокопроизводительных
+									процессоров, масштабируемых платформ и центров обработки данных нового поколения.</p>
+								<p class="p-cap" id="title-1">Технологический прорыв и совместные компетенции</p>
+								<p>Hygon известна разработками в области серверных CPU архитектуры x86, адаптированных под задачи национального уровня, а Sugon — ведущий игрок в сфере HPC (высокопроизводительных вычислений), активно участвующий в государственных и научных проектах. Объединённая структура позволит
+									значительно ускорить инновации, объединяя передовые наработки обеих компаний.</p>
+								<p class="p-cap" id="title-2">Цели и перспективы</p>
+								<p>В рамках альянса компании планируют:</p>
+								<ul>
+									<li>Разработку нового поколения серверных платформ с повышенной энергоэффективностью и производительностью</li>
+									<li>Расширение экосистемы программного обеспечения под собственные архитектуры</li>
+									<li>Создание безопасной ИТ-инфраструктуры, ориентированной на национальные рынки и стратегические отрасли</li>
+								</ul>
+							</div>
+						</div>
+						<div class="post__right" data-da=".post__left, 991, 1" data-spollers="991,max">
+							<div class="post-content">
+								<div class="post-content__label _spoller-active" data-spoller>Содержание</div>
+								<ul class="post-content__list">
+									<li class="post-content__item"><a href="#title-1">Технологический прорыв и совместные компетенции</a></li>
+									<li class="post-content__item"><a href="#title-2">Цели и перспективы</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="other-posts">
+				<div class="other-posts__container">
+					<h2 class="other-posts__title title">Другие новости</h2>
+					<div class="other-posts__slider swiper">
+						<div class="other-posts__wrapper swiper-wrapper">
+
+							<article class="other-posts__item swiper-slide news-main-item">
+								<a class="news-main-item__image" href="">
+									<img srcset="@img/news/1@2x.jpg 2x" src="@img/news/1.jpg" width="510" height="357" loading="lazy" alt="Компании Hygon и Sugon объединяются">
+									<span class="news-main-item__tag">Новости</span>
+								</a>
+								<div class="news-main-item__bottom">
+									<div class="news-main-item__meta">
+										<time class="news-main-item__date" datetime="2025-05-27">27.05.2025</time>
+										<span class="news-main-item__read">2 минуты чтения</span>
+									</div>
+									<h3 class="news-main-item__label"><a href="">Компании Hygon и Sugon объединяются</a></h3>
+									<div class="news-main-item__descr">Две крупные китайские компании Hygon и Sugon, известные выпуском решений для серверной индустрии...</div>
+									<a class="news-main-item__link" href="">Читать подробнее</a>
+								</div>
+							</article>
+							<article class="other-posts__item swiper-slide news-main-item">
+								<a class="news-main-item__image" href="">
+									<img srcset="@img/news/2@2x.jpg 2x" src="@img/news/2.jpg" width="510" height="357" loading="lazy" alt="Компании Hygon и Sugon объединяются">
+									<span class="news-main-item__tag">Инструкции</span>
+								</a>
+								<div class="news-main-item__bottom">
+									<div class="news-main-item__meta">
+										<time class="news-main-item__date" datetime="2025-05-27">27.05.2025</time>
+										<span class="news-main-item__read">2 минуты чтения</span>
+									</div>
+									<h3 class="news-main-item__label"><a href="">Компании Hygon и Sugon объединяются</a></h3>
+									<div class="news-main-item__descr">Две крупные китайские компании Hygon и Sugon, известные выпуском решений для серверной индустрии...</div>
+									<a class="news-main-item__link" href="">Читать подробнее</a>
+								</div>
+							</article>
+							<article class="other-posts__item swiper-slide news-main-item">
+								<a class="news-main-item__image" href="">
+									<img srcset="@img/news/3@2x.jpg 2x" src="@img/news/3.jpg" width="510" height="357" loading="lazy" alt="Компании Hygon и Sugon объединяются">
+									<span class="news-main-item__tag">Статьи</span>
+								</a>
+								<div class="news-main-item__bottom">
+									<div class="news-main-item__meta">
+										<time class="news-main-item__date" datetime="2025-05-27">27.05.2025</time>
+										<span class="news-main-item__read">2 минуты чтения</span>
+									</div>
+									<h3 class="news-main-item__label"><a href="">Компании Hygon и Sugon объединяются</a></h3>
+									<div class="news-main-item__descr">Две крупные китайские компании Hygon и Sugon, известные выпуском решений для серверной индустрии...</div>
+									<a class="news-main-item__link" href="">Читать подробнее</a>
+								</div>
+							</article>
+							<article class="other-posts__item swiper-slide news-main-item">
+								<a class="news-main-item__image" href="">
+									<img srcset="@img/news/1@2x.jpg 2x" src="@img/news/1.jpg" width="510" height="357" loading="lazy" alt="Компании Hygon и Sugon объединяются">
+									<span class="news-main-item__tag">Новости</span>
+								</a>
+								<div class="news-main-item__bottom">
+									<div class="news-main-item__meta">
+										<time class="news-main-item__date" datetime="2025-05-27">27.05.2025</time>
+										<span class="news-main-item__read">2 минуты чтения</span>
+									</div>
+									<h3 class="news-main-item__label"><a href="">Компании Hygon и Sugon объединяются</a></h3>
+									<div class="news-main-item__descr">Две крупные китайские компании Hygon и Sugon, известные выпуском решений для серверной индустрии...</div>
+									<a class="news-main-item__link" href="">Читать подробнее</a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>

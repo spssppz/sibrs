@@ -14,7 +14,7 @@ flsFunctions.menuInit();
 // flsFunctions.closeMenuWithSwipe();
 
 /* Модуль для плавной прокрутки к якорям */
-// flsFunctions.anchors();
+flsFunctions.anchors();
 
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();

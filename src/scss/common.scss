@@ -87,6 +87,17 @@
 			}
 		}
 	}
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: rem(15);
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
 	h2 {
 		font-family: $second-family;
 		font-size: rem(30);

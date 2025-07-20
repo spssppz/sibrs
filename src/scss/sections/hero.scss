@@ -1,4 +1,5 @@
 .hero {
+	overflow: hidden;
 	padding: rem(52) rem(0) rem(130);
 	@media (max-width: $tablet) {
 		padding: rem(20) rem(0) rem(40);

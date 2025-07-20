@@ -58,7 +58,7 @@ body {
 
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
+	// overflow: hidden;
 	// Прижимаем footer
 	main {
 		flex: 1 1 auto;
@@ -98,3 +98,4 @@ body {
 @import "favs"; // Избранное
 @import "guarantee"; // Гарантия и Доставка
 @import "product"; // Карточка товара
+@import "post"; // Пост

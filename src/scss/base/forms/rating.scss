@@ -13,6 +13,15 @@
 	@media (max-width: $mobile) {
 		font-size: rem(22);
 	}
+	.reviews-form & {
+		font-size: rem(40);
+		@media (max-width: $tablet) {
+			font-size: rem(35);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(30);
+		}
+	}
 	&.rating_sending {
 		opacity: 0.2;
 	}
@@ -25,6 +34,7 @@
 		&::before {
 			content: "★★★★★";
 			display: block;
+			color: #ebebfe;
 		}
 	}
 	&__active {
@@ -41,7 +51,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			color: #ffd300;
+			color: #f1c644;
 		}
 	}
 	&__items {
@@ -69,6 +79,9 @@
 		}
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
+		}
+		.reviews-form & {
+			display: none;
 		}
 	}
 }
