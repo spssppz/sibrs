@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Сравнение товаров"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<section class="comp">
+				<div class="comp__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Сравнение товаров</span>
+							</li>
+						</ul>
+					</nav>
+					<h2 class="comp__title title">Сравнение товаров</h2>
+					<div class="comp__top">
+						<ul class="comp-filter">
+							<li class="comp-filter__item comp-filter__item_active">
+								<span>Серверы 5</span>
+								<button class="comp-filter__delete" aria-label="Удалить"></button>
+							</li>
+						</ul>
+						<button class="comp__clear">Очистить сравнения</button>
+					</div>
+					<div class="comp__slider swiper">
+						<ul class="comp__wrapper swiper-wrapper">
+							<li class="comp__server server swiper-slide">
+								<button class="server__clear" aria-label="Удалить товар"></button>
+								<div class="server__slider">
+									<div class="server__track">
+										<div class="server__image">
+											<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" alt="Сервер Dell PowerEdge R740xd 12LFF">
+										</div>
+									</div>
+									<div class="server__pagination"></div>
+								</div>
+								<div class="server__label-wrapper">
+									<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									<div class="product-rating">3.8</div>
+								</div>
+								<div class="server__price">От 156 900 руб.</div>
+								<span class="server__price-descr">Цена включает НДС 5%</span>
+								<div class="server__btns">
+									<a class="server__btn server__btn_buy" href="">
+										<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+												stroke-width="1.7" />
+										</svg>
+										В корзину</a>
+									<a class="server__btn" href="">Сконфигурировать</a>
+								</div>
+							</li>
+							<li class="comp__server server swiper-slide">
+								<button class="server__clear" aria-label="Удалить товар"></button>
+								<div class="server__slider">
+									<div class="server__track">
+										<div class="server__image">
+											<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" alt="Сервер Dell PowerEdge R740xd 12LFF">
+										</div>
+									</div>
+									<div class="server__pagination"></div>
+								</div>
+								<div class="server__label-wrapper">
+									<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									<div class="product-rating">3.8</div>
+								</div>
+								<div class="server__price">От 156 900 руб.</div>
+								<span class="server__price-descr">Цена включает НДС 5%</span>
+								<div class="server__btns">
+									<a class="server__btn server__btn_buy" href="">
+										<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+												stroke-width="1.7" />
+										</svg>
+										В корзину</a>
+									<a class="server__btn" href="">Сконфигурировать</a>
+								</div>
+							</li>
+							<li class="comp__server server swiper-slide">
+								<button class="server__clear" aria-label="Удалить товар"></button>
+								<div class="server__slider">
+									<div class="server__track">
+										<div class="server__image">
+											<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" alt="Сервер Dell PowerEdge R740xd 12LFF">
+										</div>
+									</div>
+									<div class="server__pagination"></div>
+								</div>
+								<div class="server__label-wrapper">
+									<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									<div class="product-rating">3.8</div>
+								</div>
+								<div class="server__price">От 156 900 руб.</div>
+								<span class="server__price-descr">Цена включает НДС 5%</span>
+								<div class="server__btns">
+									<a class="server__btn server__btn_buy" href="">
+										<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+												stroke-width="1.7" />
+										</svg>
+										В корзину</a>
+									<a class="server__btn" href="">Сконфигурировать</a>
+								</div>
+							</li>
+							<li class="comp__server server swiper-slide">
+								<button class="server__clear" aria-label="Удалить товар"></button>
+								<div class="server__slider">
+									<div class="server__track">
+										<div class="server__image">
+											<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" alt="Сервер Dell PowerEdge R740xd 12LFF">
+										</div>
+									</div>
+									<div class="server__pagination"></div>
+								</div>
+								<div class="server__label-wrapper">
+									<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									<div class="product-rating">3.8</div>
+								</div>
+								<div class="server__price">От 156 900 руб.</div>
+								<span class="server__price-descr">Цена включает НДС 5%</span>
+								<div class="server__btns">
+									<a class="server__btn server__btn_buy" href="">
+										<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+												stroke-width="1.7" />
+										</svg>
+										В корзину</a>
+									<a class="server__btn" href="">Сконфигурировать</a>
+								</div>
+							</li>
+							<li class="comp__server server swiper-slide">
+								<button class="server__clear" aria-label="Удалить товар"></button>
+								<div class="server__slider">
+									<div class="server__track">
+										<div class="server__image">
+											<img srcset="@img/servers/1@2x.png 2x" src="@img/servers/1.png" width="356" height="175" alt="Сервер Dell PowerEdge R740xd 12LFF">
+										</div>
+									</div>
+									<div class="server__pagination"></div>
+								</div>
+								<div class="server__label-wrapper">
+									<div class="server__label"><a href="">Сервер Dell PowerEdge R740xd 12LFF werEdge R222740xd 12L 123 aFF</a></div>
+									<div class="product-rating">3.8</div>
+								</div>
+								<div class="server__price">От 156 900 руб.</div>
+								<span class="server__price-descr">Цена включает НДС 5%</span>
+								<div class="server__btns">
+									<a class="server__btn server__btn_buy" href="">
+										<svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M4.44922 18.2734C4.64968 18.2735 4.83749 18.3509 4.97266 18.4824C5.10711 18.6134 5.17871 18.7867 5.17871 18.9619C5.17861 19.137 5.10701 19.3096 4.97266 19.4404C4.83748 19.572 4.64974 19.6504 4.44922 19.6504C4.24857 19.6504 4.06002 19.5721 3.9248 19.4404C3.79058 19.3096 3.71983 19.1369 3.71973 18.9619C3.71973 18.7867 3.79042 18.6134 3.9248 18.4824C4.06002 18.3507 4.24857 18.2734 4.44922 18.2734ZM17.876 18.2734C18.0765 18.2734 18.2642 18.3509 18.3994 18.4824C18.5339 18.6134 18.6055 18.7867 18.6055 18.9619C18.6054 19.137 18.5338 19.3096 18.3994 19.4404C18.2642 19.572 18.0765 19.6504 17.876 19.6504C17.6754 19.6504 17.4877 19.572 17.3525 19.4404C17.2182 19.3096 17.1466 19.137 17.1465 18.9619C17.1465 18.7867 17.2181 18.6134 17.3525 18.4824C17.4877 18.3509 17.6755 18.2734 17.876 18.2734ZM4.91699 3.66699C10.5468 3.5671 16.1647 4.19987 21.6221 5.54785C20.772 8.00052 19.7634 10.3985 18.6006 12.7266H6.86035L6.64453 11.9375L4.38184 3.67578L4.91699 3.66699Z"
+												stroke-width="1.7" />
+										</svg>
+										В корзину</a>
+									<a class="server__btn" href="">Сконфигурировать</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="comp-char">
+						<div class="comp-char__label">Все характеристики</div>
+						<ul class="comp-char__lines">
+							<li class="char">
+								<div class="char__cap">Тип</div>
+								<ul class="char__cols">
+									<li class="char__col">Б/У</li>
+									<li class="char__col">Б/У</li>
+									<li class="char__col">Б/У</li>
+									<li class="char__col">Б/У</li>
+									<li class="char__col">Б/У</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Производитель</div>
+								<ul class="char__cols">
+									<li class="char__col">DELL</li>
+									<li class="char__col">DELL</li>
+									<li class="char__col">DELL</li>
+									<li class="char__col">DELL</li>
+									<li class="char__col">Hewlett Packard Enterprise</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Форм-фактор (монтаж в стойку)</div>
+								<ul class="char__cols">
+									<li class="char__col">1U</li>
+									<li class="char__col">1U</li>
+									<li class="char__col">1U</li>
+									<li class="char__col">1U</li>
+									<li class="char__col">1U</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Сервер под задачу</div>
+								<ul class="char__cols">
+									<li class="char__col">1C для 5 человек</li>
+									<li class="char__col">1C для 5 человек</li>
+									<li class="char__col">1C для 5 человек</li>
+									<li class="char__col">1C для 5 человек</li>
+									<li class="char__col">1C для 5 человек</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Гнездо процессора</div>
+								<ul class="char__cols">
+									<li class="char__col">LGA 2011</li>
+									<li class="char__col">LGA 2011</li>
+									<li class="char__col">LGA 2011</li>
+									<li class="char__col">LGA 2011</li>
+									<li class="char__col">LGA2011-3</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Семейство процессоров</div>
+								<ul class="char__cols">
+									<li class="char__col">Intel Xeon E5 2643v4 (до 22 ядер)</li>
+									<li class="char__col">Intel Xeon E5 2643v4 (до 22 ядер)</li>
+									<li class="char__col">Intel Xeon E5 2643v4 (до 22 ядер)</li>
+									<li class="char__col">Intel Xeon E5 2643v4 (до 22 ядер)</li>
+									<li class="char__col">Intel Xeon E5 v3/v4(до 22 ядер)</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Количество процессоров</div>
+								<ul class="char__cols">
+									<li class="char__col">1</li>
+									<li class="char__col">1</li>
+									<li class="char__col">1</li>
+									<li class="char__col">1</li>
+									<li class="char__col">1</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Количество ядер</div>
+								<ul class="char__cols">
+									<li class="char__col">6</li>
+									<li class="char__col">6</li>
+									<li class="char__col">6</li>
+									<li class="char__col">6</li>
+									<li class="char__col">4</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Базовая (тактовая) частота процессора</div>
+								<ul class="char__cols">
+									<li class="char__col">3.4</li>
+									<li class="char__col">3.4</li>
+									<li class="char__col">3.4</li>
+									<li class="char__col">3.4</li>
+									<li class="char__col">3.5</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Частота в TurboBoost</div>
+								<ul class="char__cols">
+									<li class="char__col">3.7</li>
+									<li class="char__col">3.7</li>
+									<li class="char__col">3.7</li>
+									<li class="char__col">3.7</li>
+									<li class="char__col">3.7</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Тип памяти</div>
+								<ul class="char__cols">
+									<li class="char__col">DDR4 ECC REG</li>
+									<li class="char__col">DDR4 ECC REG</li>
+									<li class="char__col">DDR4 ECC REG</li>
+									<li class="char__col">DDR4 ECC REG</li>
+									<li class="char__col">DDR4 ECC REG</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Объем оперативной памяти, ГБ</div>
+								<ul class="char__cols">
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Форм-фактор дисковых корзин</div>
+								<ul class="char__cols">
+									<li class="char__col">8SFF</li>
+									<li class="char__col">8SFF</li>
+									<li class="char__col">8SFF</li>
+									<li class="char__col">8SFF</li>
+									<li class="char__col">8SFF</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Поддерживаемые интерфейсы дисков</div>
+								<ul class="char__cols">
+									<li class="char__col">SAS 12GB/S, SATA 6GB/S</li>
+									<li class="char__col">SAS 12GB/S, SATA 6GB/S</li>
+									<li class="char__col">SAS 12GB/S, SATA 6GB/S</li>
+									<li class="char__col">SAS 12GB/S, SATA 6GB/S</li>
+									<li class="char__col">SAS 12GB/S, SATA 6GB/S</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Количество корзин 2,5 дюйма с горячей заменой</div>
+								<ul class="char__cols">
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+									<li class="char__col">8</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">RAID controller</div>
+								<ul class="char__cols">
+									<li class="char__col">Intel C612</li>
+									<li class="char__col">Intel C612</li>
+									<li class="char__col">Intel C612</li>
+									<li class="char__col">Intel C612</li>
+									<li class="char__col">Intel C612</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Сетевая карта</div>
+								<ul class="char__cols">
+									<li class="char__col">HPE Embedded 4x1Gb</li>
+									<li class="char__col">HPE Embedded 4x1Gb</li>
+									<li class="char__col">HPE Embedded 4x1Gb</li>
+									<li class="char__col">HPE Embedded 4x1Gb</li>
+									<li class="char__col">Broadcom BCM5720</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Сетевые интерфейсы</div>
+								<ul class="char__cols">
+									<li class="char__col">Ethernet 1Gbs</li>
+									<li class="char__col">Ethernet 1Gbs</li>
+									<li class="char__col">Ethernet 1Gbs</li>
+									<li class="char__col">Ethernet 1Gbs</li>
+									<li class="char__col">4x 1Gbe RJ45</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Видеовыходы/Видеоразъемы</div>
+								<ul class="char__cols">
+									<li class="char__col">1x VGA</li>
+									<li class="char__col">1x VGA</li>
+									<li class="char__col">1x VGA</li>
+									<li class="char__col">1x VGA</li>
+									<li class="char__col">1x VGA</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Модуль удаленного управления</div>
+								<ul class="char__cols">
+									<li class="char__col">ILO 4</li>
+									<li class="char__col">ILO 4</li>
+									<li class="char__col">ILO 4</li>
+									<li class="char__col">ILO 4</li>
+									<li class="char__col">iDRAC8</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Количество БП(Резервирование)</div>
+								<ul class="char__cols">
+									<li class="char__col">2</li>
+									<li class="char__col">2</li>
+									<li class="char__col">2</li>
+									<li class="char__col">2</li>
+									<li class="char__col">2</li>
+								</ul>
+							</li>
+							<li class="char">
+								<div class="char__cap">Гарантия</div>
+								<ul class="char__cols">
+									<li class="char__col">1 год</li>
+									<li class="char__col">1 год</li>
+									<li class="char__col">1 год</li>
+									<li class="char__col">1 год</li>
+									<li class="char__col">1 год</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>

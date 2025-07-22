@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Авторизация"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<div class="auth">
+				<div class="auth__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Авторизация</span>
+							</li>
+						</ul>
+					</nav>
+					<h2 class="auth__title">Авторизация</h2>
+					<div class="auth__body">
+						<form class="auth-form" action="#">
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>
