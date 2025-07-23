@@ -1,0 +1,723 @@
+.cart {
+	padding: rem(45) rem(0) rem(50);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(40);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(10);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(36);
+		}
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 32.53%;
+		gap: rem(20);
+		@media (max-width: $pc) {
+			gap: rem(15);
+			grid-template-columns: 1fr 35%;
+		}
+		@media (max-width: $tablet) {
+			gap: rem(40);
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__left {
+	}
+	&__products {
+		border-radius: rem(15);
+		background-color: #fff;
+		padding: rem(32);
+		@media (max-width: $tablet) {
+			padding: rem(25) rem(15);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(19) rem(10);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+		}
+	}
+}
+.cart-product {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: rem(90);
+	@media (max-width: $pc) {
+		gap: rem(20);
+	}
+	@media (max-width: $tablet) {
+		gap: rem(13);
+	}
+	&:not(:last-child) {
+		padding-bottom: rem(50);
+		margin-bottom: rem(50);
+		border-bottom: rem(1) solid #e8e8e8;
+		@media (max-width: $tablet) {
+			padding-bottom: rem(35);
+			margin-bottom: rem(35);
+		}
+		@media (max-width: $mobile) {
+			padding-bottom: rem(25);
+			margin-bottom: rem(25);
+		}
+	}
+	&__slider {
+		flex: 0 0 rem(183);
+		width: rem(183);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(167);
+			width: rem(167);
+		}
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(139);
+			width: rem(139);
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 rem(107);
+			width: rem(107);
+		}
+	}
+	&__track {
+	}
+	&__image {
+	}
+	&__pagination {
+	}
+	&__right {
+		flex: auto;
+		display: flex;
+		align-items: flex-start;
+		gap: rem(10);
+		@media (min-width: em(1420)) {
+			justify-content: space-between;
+		}
+
+		@media (max-width: em(1419.98)) {
+			flex-direction: column;
+		}
+		@media (max-width: $tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			justify-content: initial;
+		}
+	}
+	&__main {
+		@media (min-width: em(1420)) {
+			flex: 0 0 46.6%;
+		}
+		@media (max-width: $tablet) {
+			flex: auto;
+		}
+	}
+	&__label {
+		a {
+			font-family: $second-family;
+			font-size: rem(22);
+			color: #000;
+			line-height: math.div(24, 22);
+			transition: opacity 0.3s;
+			@media (max-width: $tablet) {
+				font-size: rem(20);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(18);
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: rem(16);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: rem(5);
+	}
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10);
+		line-height: math.div(21, 17);
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		span {
+			&:first-child {
+				color: #000;
+			}
+			&:last-child {
+				font-size: rem(16);
+				color: #909195;
+				@media (max-width: $tablet) {
+					font-size: rem(15);
+				}
+				@media (max-width: $mobile) {
+					font-size: rem(14);
+				}
+				@media (max-width: $mobileSmall) {
+					font-size: rem(13);
+				}
+			}
+		}
+	}
+	&__quantity {
+	}
+	&__quantity-input {
+		flex: 0 0 rem(46);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(40);
+		}
+		input {
+			border-radius: rem(10);
+			background: $white-gray;
+			height: rem(46);
+			@media (max-width: $tablet) {
+				height: rem(40);
+			}
+		}
+	}
+	&__info {
+		display: flex;
+		gap: rem(16);
+		@media (min-width: em(1420)) {
+			min-width: rem(153);
+			flex-direction: column;
+			align-items: flex-end;
+		}
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			align-items: flex-end;
+			min-width: rem(147);
+		}
+		@media (max-width: $mobile) {
+			min-width: auto;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+	&__price {
+		font-weight: 500;
+		font-size: rem(23);
+		color: #000;
+		white-space: nowrap;
+		line-height: math.div(29, 23);
+		@media (max-width: $tablet) {
+			font-size: rem(22);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(18);
+		}
+	}
+	&__delete {
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+		color: #ec1c24;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(7);
+		transition: opacity 0.3s;
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(20);
+			width: rem(20);
+			height: rem(20);
+			background: url("@img/icons/cart-product-clear.svg") 50% / 100% no-repeat;
+			@media (max-width: $tablet) {
+				flex: 0 0 rem(14);
+				width: rem(14);
+				height: rem(14);
+			}
+		}
+	}
+}
+
+.cart-reasons {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: rem(20);
+
+	@media (max-width: em(1419.98)) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (max-width: $tablet) {
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: rem(10);
+	}
+	@media (max-width: $mobile) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (max-width: $mobileSmall) {
+		grid-template-columns: 1fr;
+	}
+	&:not(:last-child) {
+		margin-bottom: rem(40);
+	}
+	&__item {
+		border-radius: rem(10);
+		background-color: #fff;
+		padding: rem(20);
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: rem(10);
+		overflow: hidden;
+		position: relative;
+		@media (min-width: $mobileSmall) {
+			flex-direction: column;
+		}
+		@media (max-width: $tablet) {
+			padding: rem(15);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(10);
+		}
+		@media (max-width: $mobileSmall) {
+			align-items: flex-end;
+		}
+		&::after {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			top: rem(-14);
+			left: 53%;
+			width: rem(327);
+			height: rem(110);
+			background: url("@img/cart/reasons-bg.svg") 50% / 100% no-repeat;
+			@media (max-width: $tablet) {
+				width: rem(261);
+				height: rem(88);
+			}
+			@media (max-width: $mobileSmall) {
+				width: rem(196);
+				height: rem(66);
+				top: rem(4);
+				left: 40%;
+			}
+		}
+	}
+	&__left {
+	}
+	&__icon {
+		min-height: rem(118);
+		width: rem(144);
+		@media (max-width: $tablet) {
+			width: rem(115);
+			min-height: rem(92);
+		}
+		@media (max-width: $mobile) {
+			width: rem(92);
+			min-height: rem(76);
+		}
+		&_1 {
+			width: rem(96);
+			@media (max-width: $tablet) {
+				width: rem(76);
+			}
+			@media (max-width: $mobile) {
+				width: rem(60);
+			}
+		}
+		&_2 {
+			width: rem(147);
+			@media (max-width: $tablet) {
+				width: rem(117);
+			}
+			@media (max-width: $mobile) {
+				width: rem(93);
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+	}
+	&__descr {
+		line-height: 1.4;
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+	}
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10);
+		line-height: 1.4;
+		color: $blue;
+		transition: opacity 0.3s;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		&::after {
+			content: "";
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(10);
+			background: url("@img/icons/more-link-arrow.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(14);
+				width: rem(14);
+				height: rem(8);
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.cart-order {
+	border-radius: rem(15);
+	background-color: #fff;
+	padding: rem(30) rem(25);
+	@media (max-width: $tablet) {
+		border-radius: rem(10);
+		padding: rem(20) rem(13);
+		margin: rem(0) rem(-13);
+	}
+	&__label {
+		font-family: $second-family;
+		font-size: rem(25);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(22);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(18);
+		}
+		&:not(:last-child) {
+			padding-bottom: rem(30);
+			margin-bottom: rem(30);
+			border-bottom: rem(1) solid #e8e8e8;
+			@media (max-width: $tablet) {
+				padding-bottom: rem(20);
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__cols {
+	}
+	&__col {
+		&:not(:last-child) {
+			padding-bottom: rem(30);
+			margin-bottom: rem(30);
+			border-bottom: rem(1) solid #e8e8e8;
+		}
+	}
+	&__cap {
+		font-size: rem(18);
+		line-height: math.div(23, 18);
+		color: #808080;
+		@media (max-width: $tablet) {
+			font-size: rem(17);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: rem(26);
+		@media (max-width: $tablet) {
+			gap: rem(20);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			gap: rem(15);
+		}
+		&_3 {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: rem(20);
+			@media (max-width: $mobile) {
+				gap: rem(15);
+			}
+			@media (max-width: $mobileSmall) {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+	&__inp-line {
+		&:not(:last-child) {
+			margin-bottom: rem(26);
+		}
+	}
+	&__checkbox {
+		display: flex;
+		flex-direction: column;
+		gap: rem(18);
+		@media (max-width: $mobile) {
+			gap: rem(15);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.info-cart {
+	@media (min-width: $tablet) {
+		position: relative;
+	}
+	&__wrapper {
+		border-radius: rem(15);
+		background: #fff;
+		padding: rem(30) rem(25);
+		@media (min-width: $tablet) {
+			position: sticky;
+			top: rem(20);
+			left: 0;
+		}
+		@media (max-width: $tablet) {
+			border-radius: rem(10);
+			padding: rem(25) rem(14);
+			margin: rem(0) rem(-14);
+			backdrop-filter: blur(15px);
+			box-shadow:
+				0 6px 12px 0 rgba(227, 227, 227, 0.1),
+				0 22px 22px 0 rgba(227, 227, 227, 0.09),
+				0 50px 30px 0 rgba(227, 227, 227, 0.05),
+				0 88px 35px 0 rgba(227, 227, 227, 0.01),
+				0 138px 39px 0 rgba(227, 227, 227, 0);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(20) rem(14);
+		}
+	}
+	&__label {
+		&:not(:last-child) {
+			margin-bottom: rem(28);
+		}
+	}
+	&__lines {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+}
+.info-cart-line {
+	padding-bottom: rem(19);
+	border-bottom: rem(1) solid #e8e8e8;
+	@media (max-width: $tablet) {
+		padding-bottom: rem(15);
+	}
+	@media (max-width: $mobile) {
+		padding-bottom: rem(10);
+	}
+	&:not(:last-child) {
+		margin-bottom: rem(25);
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+	&__cap {
+		line-height: 1.4;
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+	}
+	&__descr {
+		font-size: rem(14);
+		line-height: 1.7;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: #c5c5c5;
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+		}
+	}
+	&__right {
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: math.div(23, 18);
+		color: #000;
+		text-align: right;
+		@media (max-width: $tablet) {
+			font-size: rem(17);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
+		}
+	}
+}
+.cart-price {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: rem(10);
+	&:not(:last-child) {
+		margin-bottom: rem(25);
+	}
+	&__descr {
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+		color: #909195;
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+	}
+	&__price {
+		font-weight: 700;
+		font-size: rem(35);
+		line-height: math.div(44, 35);
+		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(30);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(25);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(20);
+		}
+	}
+	&__cap {
+		font-size: rem(14);
+		line-height: 1.7;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: #c5c5c5;
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+		}
+	}
+}
+.info-cart-form {
+	&__row {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+	&__add {
+		flex: 0 0 rem(91);
+		width: rem(91);
+		height: rem(77);
+		border-radius: rem(10);
+		background: $blue url("@img/icons/white-arrow.svg") 50% no-repeat;
+		transition: opacity 0.3s;
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(75);
+			width: rem(75);
+			height: rem(73);
+		}
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(60);
+			width: rem(60);
+			height: rem(68);
+			border-radius: rem(5);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+	&__checkbox {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+	&__btn {
+		width: 100%;
+		min-height: rem(77);
+		@media (max-width: $tablet) {
+			min-height: rem(75);
+		}
+		@media (max-width: $mobile) {
+			min-height: rem(68);
+		}
+	}
+}

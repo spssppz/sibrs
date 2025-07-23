@@ -28,7 +28,7 @@
 			grid-template-columns: 1fr 35%;
 		}
 		@media (max-width: $tablet) {
-			gap: rem(0); //!!!
+			gap: rem(0);
 			grid-template-columns: 1fr;
 		}
 	}

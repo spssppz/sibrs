@@ -59,6 +59,15 @@ textarea.input {
 	@media (max-width: $mobile) {
 		height: rem(136);
 	}
+	.cart-order & {
+		height: rem(156);
+		@media (max-width: $tablet) {
+			height: rem(151);
+		}
+		@media (max-width: $mobile) {
+			height: rem(151);
+		}
+	}
 }
 
 .inp-line {
@@ -103,6 +112,40 @@ textarea.input {
 		@media (max-width: $mobileSmall) {
 			line-height: 1.5;
 			font-size: rem(12);
+		}
+	}
+	&__pass {
+		position: relative;
+	}
+	&__pass-eye {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		right: rem(28);
+		width: rem(22);
+		height: rem(22);
+		svg path {
+			stroke: #c9c9c9;
+			transition: stroke 0.3s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				svg path {
+					stroke: $gray;
+				}
+			}
+		}
+		.show-pass & {
+			svg path {
+				stroke: #000;
+			}
+		}
+	}
+	&__coupon {
+		display: flex;
+		gap: rem(6);
+		@media (max-width: $mobile) {
+			gap: rem(3);
 		}
 	}
 }

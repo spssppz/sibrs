@@ -2,6 +2,13 @@ import { bodyLockToggle, isMobile, menuClose } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 document.documentElement.addEventListener('click', e => {
+	if (e.target.closest('.inp-line__pass-eye')) {
+		const input = e.target.closest('.inp-line__pass').querySelector('input')
+		e.target.closest('.inp-line__pass').classList.toggle('show-pass')
+
+		const isPassword = input.type === 'password'
+		input.type = isPassword ? 'text' : 'password'
+	}
 	if (e.target.closest('.header-search__btn')) {
 		document.documentElement.classList.toggle('search-show')
 	} if (document.documentElement.classList.contains('search-show') &&

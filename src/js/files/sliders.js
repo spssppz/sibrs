@@ -1,7 +1,7 @@
 /* Документация слайдера: https://swiperjs.com/ */
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs, Scrollbar } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, EffectFade, Lazy, Manipulation
@@ -9,6 +9,29 @@ Navigation, Pagination, Autoplay, EffectFade, Lazy, Manipulation
 
 function initSliders() {
 	if (window.innerWidth < 992) {
+		if (document.querySelector('.cabinet__cols')) {
+			new Swiper('.cabinet__cols', {
+				modules: [Scrollbar],
+				freeMode: true,
+				speed: 800,
+				spaceBetween: 5,
+				scrollbar: {
+					el: '.cabinet__scrollbar',
+					draggable: true,
+				},
+				breakpoints: {
+					375: {
+						slidesPerView: 2.5,
+					},
+					480: {
+						slidesPerView: 3,
+					},
+					768: {
+						slidesPerView: 3.5,
+					},
+				},
+			})
+		}
 		if (document.querySelector('.terms__slider')) {
 			new Swiper('.terms__slider', {
 				modules: [Pagination],
@@ -122,7 +145,7 @@ function initSliders() {
 			modules: [Navigation, Pagination],
 			speed: 800,
 			noSwiping: true,
-			noSwipingClass: 'slider-init',
+			noSwipingClass: 'product-slider-init',
 			pagination: {
 				el: '.other__pagination',
 				clickable: true,
@@ -231,12 +254,12 @@ function initSliders() {
 
 window.addEventListener("load", () => initSliders())
 
-const serverSliders = document.querySelectorAll('.server__slider')
+const serverSliders = document.querySelectorAll('.product-slider')
 if (serverSliders) {
 	serverSliders.forEach(serverSlider => {
-		const track = serverSlider.querySelector('.server__track')
-		const items = serverSlider.querySelectorAll('.server__image')
-		const pag = serverSlider.querySelector('.server__pagination')
+		const track = serverSlider.querySelector('.product-track')
+		const items = serverSlider.querySelectorAll('.product-item')
+		const pag = serverSlider.querySelector('.product-pagination')
 		let current = 0
 
 		const goTo = i => {
@@ -249,7 +272,7 @@ if (serverSliders) {
 
 		// Пагинация
 		if (items.length > 1) {
-			serverSlider.classList.add('slider-init')
+			serverSlider.classList.add('product-slider-init')
 			items.forEach((_, i) => {
 				const dot = document.createElement('button')
 				dot.setAttribute('aria-label', `Перейти к ${i + 1} слайду`)

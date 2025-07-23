@@ -7,6 +7,15 @@
 	&__button {
 		font-size: rem(18);
 		color: #000;
+		@media (max-width: $tablet) {
+			font-size: rem(17);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(15);
+		}
 		&_plus {
 		}
 		&_minus {
@@ -20,6 +29,15 @@
 			font-size: rem(18);
 			width: 100%;
 			text-align: center;
+			@media (max-width: $tablet) {
+				font-size: rem(17);
+			}
+			@media (max-width: $mobile) {
+				font-size: rem(15);
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: rem(14);
+			}
 		}
 	}
 }

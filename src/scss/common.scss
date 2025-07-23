@@ -365,3 +365,50 @@
 // 		}
 // 	}
 // }
+
+.product-slider {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	touch-action: pan-y;
+}
+.product-track {
+	display: flex;
+	transition: transform 0.3s ease;
+	will-change: transform;
+}
+.product-item {
+	flex: 0 0 100%;
+	user-select: none;
+	background: #fbfbfb;
+	img {
+		-webkit-user-drag: none;
+		width: 100%;
+		height: auto;
+	}
+}
+.product-pagination {
+	position: absolute;
+	bottom: rem(7);
+	left: 50%;
+	transform: translate(-50%, 0);
+	display: flex;
+	align-items: center;
+	gap: rem(6);
+	button {
+		border-radius: rem(3);
+		flex: 0 0 rem(26);
+		width: rem(26);
+		height: rem(3);
+		background: #eaeaea;
+		transition: background 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: $blue;
+			}
+		}
+		&.active {
+			background: $blue;
+		}
+	}
+}
