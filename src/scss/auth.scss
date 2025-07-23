@@ -1,0 +1,328 @@
+.auth {
+	padding: rem(45) rem(0) rem(100);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(80);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(50);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+	&__body {
+		display: flex;
+		gap: rem(70);
+		@media (max-width: $pc) {
+			gap: rem(50);
+		}
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+		@media (max-width: $mobile) {
+			gap: rem(30);
+		}
+		.auth_register & {
+			@media (max-width: em(1419.98)) {
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+.left-auth {
+	border-radius: rem(15);
+	background-color: #fff;
+	padding: rem(30) rem(24);
+	flex: 0 0 rem(490);
+	@media (max-width: $tablet) {
+		flex: auto;
+		border-radius: rem(10);
+		padding: rem(20);
+		backdrop-filter: blur(15px);
+		box-shadow:
+			0 6px 12px 0 rgba(227, 227, 227, 0.1),
+			0 22px 22px 0 rgba(227, 227, 227, 0.09),
+			0 50px 30px 0 rgba(227, 227, 227, 0.05),
+			0 88px 35px 0 rgba(227, 227, 227, 0.01),
+			0 138px 39px 0 rgba(227, 227, 227, 0);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(12);
+	}
+	.auth_register & {
+		flex: 0 0 rem(950);
+		@media (max-width: em(1419.98)) {
+			flex: auto;
+		}
+	}
+	&__other {
+	}
+	&__cap {
+		font-size: rem(15);
+		line-height: 1.6;
+		color: #909090;
+		display: flex;
+		align-items: center;
+		gap: rem(19);
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+			gap: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+			gap: rem(10);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+		&::before,
+		&::after {
+			content: "";
+			flex: auto;
+			border-bottom: rem(1) solid #e8e8e8;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__switch {
+		display: flex;
+		justify-content: center;
+		gap: rem(13);
+		@media (max-width: $tablet) {
+			gap: rem(9);
+		}
+	}
+	&__switch-btn {
+		border-radius: rem(10);
+		background: #f9f9f9;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: rem(18);
+		min-height: rem(55);
+		gap: rem(18);
+		font-size: rem(16);
+		color: #000;
+		transition: opacity 0.3s;
+		@media (min-width: $mobile) {
+			flex: 0 0 rem(215);
+		}
+		&_f-a {
+			flex: auto;
+		}
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			flex: auto;
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&::before {
+			content: "";
+			background: url("@img/icons/ya-icon.svg") 50% / 100% no-repeat;
+			flex: 0 0 rem(13);
+			width: rem(13);
+			height: rem(19);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		&_vk {
+			&::before {
+				flex: 0 0 rem(24);
+				width: rem(24);
+				height: rem(13);
+				background-image: url("@img/icons/vk-icon.svg");
+			}
+		}
+	}
+}
+.auth-form {
+	display: flex;
+	flex-direction: column;
+	gap: rem(25);
+	@media (max-width: $tablet) {
+		gap: rem(20);
+	}
+	@media (max-width: $mobile) {
+		gap: rem(15);
+	}
+	&:not(:last-child) {
+		margin-bottom: rem(40);
+		@media (max-width: $tablet) {
+			margin-bottom: rem(30);
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: rem(24) rem(26);
+		@media (max-width: $pc) {
+			gap: rem(20);
+		}
+		@media (max-width: $mobile) {
+			gap: rem(15);
+			grid-template-columns: 1fr;
+		}
+	}
+	&__btn {
+	}
+	&__checkbox {
+		align-self: center;
+		.auth_register & {
+			align-self: flex-start;
+		}
+	}
+}
+a.auth-form__link {
+	align-self: center;
+	line-height: math.div(16, 13);
+	font-size: rem(16);
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	text-align: center;
+	color: $blue;
+	transition: color 0.3s;
+	@media (max-width: $tablet) {
+		font-size: rem(15);
+	}
+	@media (max-width: $mobile) {
+		font-size: rem(14);
+	}
+	@media (max-width: $mobileSmall) {
+		font-size: rem(13);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor;
+		}
+	}
+}
+.right-auth {
+	flex: 0 1 rem(750);
+	@media (max-width: $tablet) {
+		flex: auto;
+	}
+	.auth_register & {
+		@media (max-width: em(1419.98)) {
+			flex: auto;
+		}
+	}
+	&__label {
+		font-family: $second-family;
+		font-size: rem(25);
+		letter-spacing: 0.01em;
+		color: #000;
+		display: inline-flex;
+		gap: rem(10);
+		@media (max-width: $tablet) {
+			font-size: rem(23);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(19);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(32);
+			width: rem(32);
+			height: rem(36);
+			background: url("@img/icons/auth-register-icon.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(28);
+				width: rem(28);
+				height: rem(30);
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__descr {
+		line-height: 1.4;
+		letter-spacing: 0.01em;
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+			line-height: 1.5;
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__list {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		font-size: rem(16);
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(13);
+			width: rem(13);
+			height: rem(8);
+			background: url("@img/icons/list-check.svg") 50% / 100% no-repeat;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+	&__btn {
+		color: $blue;
+		background-color: #fff;
+		border: rem(1) solid $blue;
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+		}
+		&:hover {
+			background: $blue;
+			color: #fff;
+		}
+	}
+}

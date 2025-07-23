@@ -40,6 +40,9 @@ input[type="number"] {
 	@media (max-width: $mobileSmall) {
 		font-size: rem(13);
 	}
+	&_pass {
+		padding: rem(0) rem(60) 0 rem(22);
+	}
 	&::placeholder {
 		opacity: 1; // for Firefox
 		color: #c9c9c9;

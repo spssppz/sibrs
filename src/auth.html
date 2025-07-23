@@ -22,11 +22,54 @@
 							</li>
 						</ul>
 					</nav>
-					<h2 class="auth__title">Авторизация</h2>
+					<h2 class="auth__title title title_auth">Авторизация</h2>
 					<div class="auth__body">
-						<form class="auth-form" action="#">
-
-						</form>
+						<div class="left-auth">
+							<form class="auth-form" action="#">
+								<label class="inp-line">
+									<span class="inp-line__cap inp-line__cap_req">E-mail</span>
+									<input class="input" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
+								</label>
+								<label class="inp-line">
+									<span class="inp-line__cap inp-line__cap_req">Пароль</span>
+									<span class="inp-line__pass">
+										<input class="input input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
+										<button class="inp-line__pass-eye" type="button" aria-label="Показать/скрыть пароль">
+											<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M3.64833 7.53775C2.79074 8.54991 2.15216 9.72877 1.77283 11C2.95716 14.9765 6.64033 17.875 11 17.875C11.9102 17.875 12.7902 17.7485 13.6244 17.5129M5.70899 5.709C7.27892 4.67304 9.11907 4.12214 11 4.125C15.3597 4.125 19.0419 7.0235 20.2262 10.9982C19.5772 13.1701 18.1839 15.044 16.291 16.291M5.70899 5.709L2.74999 2.75M5.70899 5.709L9.05483 9.05483M16.291 16.291L19.25 19.25M16.291 16.291L12.9452 12.9452C13.2005 12.6898 13.4031 12.3866 13.5413 12.0529C13.6795 11.7193 13.7507 11.3616 13.7507 11.0005C13.7507 10.6393 13.6795 10.2817 13.5413 9.94799C13.4031 9.61432 13.2005 9.31113 12.9452 9.05575C12.6898 8.80037 12.3866 8.59779 12.0529 8.45957C11.7192 8.32136 11.3616 8.25023 11.0005 8.25023C10.6393 8.25023 10.2817 8.32136 9.94798 8.45957C9.61431 8.59779 9.31113 8.80037 9.05574 9.05575M12.9442 12.9443L9.05666 9.05667"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</button>
+									</span>
+								</label>
+								<button class="auth-form__btn btn btn_decor">Авторизоваться</button>
+								<a class="auth-form__link" href="">Забыли пароль?</a>
+								<div class="auth-form__checkbox">
+									<label class="filter-checkbox">
+										<input class="filter-checkbox__input" type="checkbox" value="1" name="form[]">
+										<span class="filter-checkbox__text">Запомнить на этом устройстве</span>
+									</label>
+								</div>
+							</form>
+							<div class="left-auth__other">
+								<div class="left-auth__cap"><span>Войти с помощью соц.сетей</span></div>
+								<div class="left-auth__switch">
+									<a class="left-auth__switch-btn left-auth__switch-btn_f-a left-auth__switch-btn_ya" href="">Яндекс</a>
+									<a class="left-auth__switch-btn left-auth__switch-btn_f-a left-auth__switch-btn_vk" href="">VK</a>
+								</div>
+							</div>
+						</div>
+						<div class="right-auth">
+							<div class="right-auth__label">Еще нет аккаунта?</div>
+							<div class="right-auth__descr">Зарегестрируйте аккаунт, чтобы иметь все преимущества:</div>
+							<ul class="right-auth__list">
+								<li class="right-auth__item">Личный кабинет с истомрией ваших покупок.</li>
+								<li class="right-auth__item">Возможность отслеживать, отменять и повторять все ваши заказы</li>
+								<li class="right-auth__item">При следующих покупках вам не потребуется повторно вводить данные — они автоматически загрузятся из вашего личного кабинета.</li>
+							</ul>
+							<a class="right-auth__btn btn" href="">Зарегистрироваться</a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,78 @@
+.pass-forgot {
+	padding: rem(45) rem(0) rem(100);
+	@media (max-width: $tablet) {
+		padding: rem(35) rem(0) rem(80);
+	}
+	@media (max-width: $mobile) {
+		padding: rem(30) rem(0) rem(50);
+	}
+	&__container {
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(25);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+	&__form {
+		max-width: rem(482);
+		margin: 0 auto;
+		background: #fff;
+		border-radius: rem(15);
+		padding: rem(30);
+		@media (max-width: $tablet) {
+			border-radius: rem(10);
+			padding: rem(20);
+			backdrop-filter: blur(15px);
+			box-shadow:
+				0 6px 12px 0 rgba(227, 227, 227, 0.1),
+				0 22px 22px 0 rgba(227, 227, 227, 0.09),
+				0 50px 30px 0 rgba(227, 227, 227, 0.05),
+				0 88px 35px 0 rgba(227, 227, 227, 0.01),
+				0 138px 39px 0 rgba(227, 227, 227, 0);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(12);
+		}
+	}
+	&__descr {
+		line-height: 1.4;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		span {
+			font-weight: 500;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(22);
+			}
+		}
+	}
+	&__inp-line {
+		&:not(:last-child) {
+			margin-bottom: rem(23);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(15);
+			}
+		}
+	}
+	&__btn {
+		width: 100%;
+	}
+}

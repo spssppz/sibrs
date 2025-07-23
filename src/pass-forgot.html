@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Восстановление пароля"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<div class="pass-forgot">
+				<div class="pass-forgot__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Восстановление пароля</span>
+							</li>
+						</ul>
+					</nav>
+					<h2 class="pass-forgot__title title title_auth">Восстановление пароля</h2>
+					<form class="pass-forgot__form" action="#">
+						<div class="pass-forgot__descr">
+							<span>Забыли пароль?</span> Введите свой email - мы вышлем ссылку для сброса пароля на вашу электронную почту.
+						</div>
+
+						<label class="pass-forgot__inp-line inp-line">
+							<span class="inp-line__cap inp-line__cap_req">E-mail</span>
+							<input class="input" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
+						</label>
+						<button class="pass-forgot__btn btn">Сбросить пароль</button>
+					</form>
+				</div>
+			</div>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=51092280-e018-4241-bc97-180570de25d4&lang=ru_RU"></script> -->
+	@@include('html/js.html')
+
+</body>
+
+</html>
