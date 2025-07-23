@@ -1,9 +1,15 @@
+.noUi-target {
+	position: relative;
+}
 .noUi-base {
 	height: rem(3);
 	position: relative;
 	z-index: 1;
 	background: #eaeaea;
 	border-radius: rem(5);
+	.calc & {
+		height: rem(7);
+	}
 }
 
 .noUi-connect,
@@ -36,4 +42,101 @@
 	background-color: $blue;
 	border-radius: 50%;
 	cursor: pointer;
+	transition: box-shadow 0.2s;
+	box-shadow: 0 0 0 0 transparent;
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 0 rem(3) rgba($blue, 0.3);
+	}
+	.calc & {
+		width: rem(15);
+		height: rem(15);
+		right: rem(-5);
+		top: rem(-4);
+	}
+}
+
+.noUi-pips {
+	padding: rem(20) 0;
+	height: 80px;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	.noUi-value {
+		position: absolute;
+		text-align: center;
+		white-space: nowrap;
+		color: $gray;
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+		transform: translate(-50%, 150%);
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+	}
+
+	.noUi-marker {
+		position: absolute;
+		display: block;
+		background: #c6c7d3;
+		width: rem(1);
+		height: rem(13);
+		transform: translate(-50%, 0);
+	}
+	.noUi-marker-sub,
+	.noUi-marker-large {
+		height: rem(26);
+		@media (max-width: $tablet) {
+			height: rem(22);
+		}
+		@media (max-width: $mobile) {
+			height: rem(18);
+		}
+	}
+}
+
+// Тултипы (значения над бегунками)
+.noUi-tooltip {
+	display: block;
+	position: absolute;
+	bottom: calc(100% + rem(12));
+	left: 50%;
+	transform: translateX(-50%);
+	padding: rem(14) rem(12);
+	font-size: rem(16);
+	font-weight: 500;
+	color: #fff;
+	background: $blue;
+	border-radius: rem(10);
+	white-space: nowrap;
+	pointer-events: none;
+	transition: 0.3s;
+	@media (max-width: $tablet) {
+		font-size: rem(15);
+		padding: rem(12) rem(10);
+		border-radius: rem(5);
+	}
+	@media (max-width: $mobile) {
+		font-size: rem(14);
+		padding: rem(10) rem(8);
+		bottom: calc(100% + rem(6));
+	}
+	@media (max-width: $mobileSmall) {
+		font-size: rem(13);
+	}
+	.at-start & {
+		left: 0;
+		transform: translateX(-0);
+	}
+	.at-end & {
+		left: 100%;
+		transform: translateX(-100%);
+	}
 }

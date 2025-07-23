@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/head.html', {
+"title":"Калькулятор RAID"
+})
+
+<body>
+
+	<div class="wrapper">
+		@@include('html/header.html')
+		<main class="page">
+			<section class="calc">
+				<div class="calc__container">
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li>
+								<a class="breadcrumbs__link" href="">Главная</a>
+							</li>
+							<li aria-current="page">
+								<span class="breadcrumbs__item">Калькулятор RAID</span>
+							</li>
+						</ul>
+					</nav>
+					<h2 class="calc__title title">Калькулятор RAID</h2>
+					<div class="calc__body">
+						<div class="left-calc">
+							<ul class="left-calc__cols">
+								<li class="left-calc__col">
+									<div class="left-calc__top">
+										<div class="left-calc__label">Уровень RAID</div>
+									</div>
+									<div class="left-calc__checkbox">
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" type="radio" value="1" name="lvl">
+											<span class="proc-checkbox__text">0</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" checked type="radio" value="2" name="lvl">
+											<span class="proc-checkbox__text">1</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" type="radio" value="3" name="lvl">
+											<span class="proc-checkbox__text">5</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" checked type="radio" value="4" name="lvl">
+											<span class="proc-checkbox__text">6</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" type="radio" value="5" name="lvl">
+											<span class="proc-checkbox__text">10</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" checked type="radio" value="6" name="lvl">
+											<span class="proc-checkbox__text">50</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" type="radio" value="7" name="lvl">
+											<span class="proc-checkbox__text">60</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" checked type="radio" value="8" name="lvl">
+											<span class="proc-checkbox__text">SE</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" type="radio" value="9" name="lvl">
+											<span class="proc-checkbox__text">Z1</span>
+										</label>
+										<label class="proc-checkbox">
+											<input class="proc-checkbox__input" checked type="radio" value="10" name="lvl">
+											<span class="proc-checkbox__text">Z2</span>
+										</label>
+									</div>
+								</li>
+								<li class="left-calc__col">
+									<div class="left-calc__top">
+										<div class="left-calc__label">Объем накопителя</div>
+										<div class="left-calc__quantity quantity">
+											<button class="quantity__button quantity__button_minus">-</button>
+											<div class="quantity__input ">
+												<input class="volume-input" autocomplete="off" type="text" name="volume">
+												<span>GB</span>
+											</div>
+											<button class="quantity__button quantity__button_plus">+</button>
+										</div>
+									</div>
+									<div class="left-calc__range-wrapper">
+										<div class="left-calc__range left-calc__range_volume"></div>
+									</div>
+								</li>
+								<li class="left-calc__col">
+									<div class="left-calc__top">
+										<div class="left-calc__label">Количество дисков</div>
+										<div class="left-calc__quantity quantity">
+											<button class="quantity__button quantity__button_minus">-</button>
+											<div class="quantity__input">
+												<input class="disks-input" autocomplete="off" type="text" name="volume">
+												<span>шт.</span>
+											</div>
+											<button class="quantity__button quantity__button_plus">+</button>
+										</div>
+									</div>
+									<div class="left-calc__range-wrapper">
+										<div class="left-calc__range left-calc__range_disks"></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="right-calc">
+							<div class="right-calc__title">Расчет</div>
+							<ul class="right-calc__cols">
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Общий объем</div>
+									<div class="right-calc__descr">
+										281.3 TB / 255.8 TiB
+									</div>
+								</li>
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Полезный (эффективный) объем</div>
+									<div class="right-calc__descr">
+										281.3 TB / 255.8 TiB
+									</div>
+								</li>
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Эффективность использования дискового пространства</div>
+									<div class="right-calc__descr">100%</div>
+								</li>
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Отказоустойчивость</div>
+									<div class="right-calc__descr"><span class="right-calc__descr-red">Отсутсвует</span></div>
+								</li>
+							</ul>
+							<ul class="right-calc__row">
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Улучшение скорости записи</div>
+									<div class="right-calc__descr">До 12х</div>
+								</li>
+								<li class="right-calc__col">
+									<div class="right-calc__cap">Улучшение скорости чтения</div>
+									<div class="right-calc__descr">До 12х</div>
+								</li>
+							</ul>
+							<!--  -->
+							</svg>
+							<div class="right-calc__bottom">
+								<button class="right-calc__clear">Сбросить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html')
+	</div>
+
+	@@include('html/popup.html')
+
+
+	@@include('html/js.html')
+
+</body>
+
+</html>

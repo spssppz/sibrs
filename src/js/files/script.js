@@ -239,3 +239,55 @@ if (inputsMaxWords.length) {
 		}
 	})
 }
+
+(() => {
+	const stock = document.querySelector('.stock')
+	if (!stock) return
+
+	const deadlineAttr = stock.dataset.deadline
+	if (!deadlineAttr) return
+
+	const deadline = new Date(`${deadlineAttr}T23:59:59`)
+	const daysEl = stock.querySelector('[data-unit="days"]')
+	const hoursEl = stock.querySelector('[data-unit="hours"]')
+	const minutesEl = stock.querySelector('[data-unit="minutes"]')
+	const secondsEl = stock.querySelector('[data-unit="seconds"]')
+
+	const updateCountdown = () => {
+		const now = new Date()
+		const diff = deadline - now
+
+		if (diff <= 0) {
+			clearInterval(timer)
+			const cap = stock.querySelector('.stock__cap')
+			if (cap) cap.textContent = 'Акция завершена!'
+			[daysEl, hoursEl, minutesEl, secondsEl].forEach(el => el.textContent = '00')
+			return
+		}
+
+		const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+		const minutes = Math.floor((diff / (1000 * 60)) % 60)
+		const seconds = Math.floor((diff / 1000) % 60)
+
+		daysEl.textContent = String(days).padStart(2, '0')
+		hoursEl.textContent = String(hours).padStart(2, '0')
+		minutesEl.textContent = String(minutes).padStart(2, '0')
+		secondsEl.textContent = String(seconds).padStart(2, '0')
+	}
+
+	updateCountdown()
+	const timer = setInterval(updateCountdown, 1000)
+})()
+
+
+// function setProgress(percent) {
+// 	const circle = document.getElementById('progress')
+// 	const radius = 118.463
+// 	const circumference = 2 * Math.PI * radius
+
+// 	circle.style.strokeDasharray = `${circumference}`
+// 	circle.style.strokeDashoffset = `${circumference * (1 - percent / 100)}`
+// 	circle.style.stroke = 'green' // можно менять цвет
+// }
+// setProgress(50) // 50% прогресса

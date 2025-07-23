@@ -1,4 +1,4 @@
-<section class="product">
+<section class="product product_gen">
 	<div class="product__container">
 		<nav class="breadcrumbs" aria-label="Хлебные крошки">
 			<ul class="breadcrumbs__list">
@@ -65,9 +65,122 @@
 						</div>
 					</div>
 				</div>
-				<!--  -->
+				<div class="prod-gen">
+					<ul class="prod-gen__cols">
+						<li class="prod-gen__col">
+							<div class="prod-gen__top">
+								<div class="prod-gen__label">Шасси</div>
+							</div>
+							<div class="prod-gen__checkbox prod-gen__checkbox_chassis">
+								<label class="chassis-checkbox">
+									<input class="chassis-checkbox__input" checked type="radio" value="1" name="chassis">
+									<span class="chassis-checkbox__text">HPE Proliant DL380 Gen12 8SFF</span>
+								</label>
+								<label class="chassis-checkbox">
+									<input class="chassis-checkbox__input" type="radio" value="2" name="chassis">
+									<span class="chassis-checkbox__text">HPE Proliant DL3 en10 8SFF</span>
+								</label>
+								<label class="chassis-checkbox">
+									<input class="chassis-checkbox__input" type="radio" value="3" name="chassis">
+									<span class="chassis-checkbox__text">HPE Proli L380 Gen10 8SFF</span>
+								</label>
+								<label class="chassis-checkbox">
+									<input class="chassis-checkbox__input" type="radio" value="4" name="chassis">
+									<span class="chassis-checkbox__text">HPE Proliant DL380 Gen10</span>
+								</label>
+							</div>
+						</li>
+						<li class="prod-gen__col">
+							<div class="prod-gen__top">
+								<div class="prod-gen__label">Колличество процессоров</div>
+							</div>
+							<div class="prod-gen__checkbox prod-gen__checkbox_proc">
+								<label class="proc-checkbox">
+									<input class="proc-checkbox__input" type="radio" value="1" name="proc">
+									<span class="proc-checkbox__text">1</span>
+								</label>
+								<label class="proc-checkbox">
+									<input class="proc-checkbox__input" checked type="radio" value="2" name="proc">
+									<span class="proc-checkbox__text">2</span>
+								</label>
+							</div>
+						</li>
+						<li class="prod-gen__col">
+							<div class="prod-gen__top">
+								<div class="prod-gen__label">Количество ядер от: </div>
+								<ul class="prod-gen__list">
+									<li class="prod-gen__item"><button class="active">Ядрам</button></li>
+									<li class="prod-gen__item"><button>Частоте</button></li>
+									<li class="prod-gen__item"><button>Cache</button></li>
+								</ul>
+							</div>
+							<div class="prod-gen__checkbox prod-gen__checkbox_gen">
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" checked type="radio" value="1" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2698v4 (20c/40t, 2.2GHz-3.6GHz, 135W)</span><span>11 300 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="2" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2699v4 (22c/44t, 2.2GHz-3.6GHz, 145W)</span><span>20 400 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="3" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2697v4 (18c/36t, 2.3GHz-3.6GHz, 145W)</span><span>5 100 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="4" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2690v4 (14с/28t, 2.6GHz-3.5Ghz, 135W)</span><span>5 800 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="5" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2697Av4 (16c/32t, 2.6GHz-3.6GHz, 145W)</span><span>8 600 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="6" name="core">
+									<span class="gen-checkbox__text"><span>Процессор Intel Xeon E5 2687wv4 (12с/24t, 3.0GHz-3.5Ghz, 160W)</span><span>13 700 руб.</span></span>
+								</label>
+							</div>
+						</li>
+						<li class="prod-gen__col">
+							<div class="prod-gen__top">
+								<div class="prod-gen__label">Оперативная память (RAM)</div>
+							</div>
+							<div class="prod-gen__descr">Оперативная память играет ключевую роль в обеспечении стабильной и быстрой работы серверных приложений. Для эффективного кэширования баз данных желательно использовать увеличенный объём RAM — это положительно сказывается на общей производительности.
+								Недостаток памяти может привести к обращению к файлу подкачки, что замедляет работу системы.</div>
+							<div class="prod-gen__checkbox prod-gen__checkbox_gen">
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="1" name="op">
+									<span class="gen-checkbox__text"><span>8GB DDR4 UDIMM 3200MHz Dell</span><span>3 500 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="2" name="op">
+									<span class="gen-checkbox__text"><span>16GB DDR4 UDIMM 3200MHz Dell</span><span>10 773 руб.</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" checked type="radio" value="3" name="op">
+									<span class="gen-checkbox__text"><span>32GB DDR4 UDIMM 3200MHz Dell</span><span>18 440 руб.</span></span>
+								</label>
+							</div>
+						</li>
+						<li class="prod-gen__col">
+							<div class="prod-gen__top">
+								<div class="prod-gen__label">RAID</div>
+							</div>
+							<div class="prod-gen__checkbox prod-gen__checkbox_gen">
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" type="radio" value="1" name="raid">
+									<span class="gen-checkbox__text"><span>RAID Dell S150</span><span class="gen-checkbox__text-green">включено</span></span>
+								</label>
+								<label class="gen-checkbox">
+									<input class="gen-checkbox__input" checked type="radio" value="2" name="raid">
+									<span class="gen-checkbox__text"><span>RAID Dell H345</span><span>35 073 руб.</span></span>
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="right-product" data-da=".product__left, 991.98, 1">
+			<div class="right-product">
 				<div class="right-product-main">
 					<div class="right-product-main__head">
 						<ul class="right-product-main__tags">
@@ -87,6 +200,27 @@
 							</button>
 						</div>
 					</div>
+					<div class="stock" data-deadline="2025-07-25">
+						<div class="stock__cap">Успейте купить! Акция закончится через:</div>
+						<div class="stock__cols">
+							<div class="stock__col">
+								<div class="stock__num" data-unit="days">00</div>
+								<div class="stock__descr">Дней</div>
+							</div>
+							<div class="stock__col">
+								<div class="stock__num" data-unit="hours">00</div>
+								<div class="stock__descr">час</div>
+							</div>
+							<div class="stock__col">
+								<div class="stock__num" data-unit="minutes">00</div>
+								<div class="stock__descr">мин</div>
+							</div>
+							<div class="stock__col">
+								<div class="stock__num" data-unit="seconds">00</div>
+								<div class="stock__descr">сек</div>
+							</div>
+						</div>
+					</div>
 					<div class="product-descrs">
 						<span class="product-descrs__price-descr">Цена включает НДС 5%</span>
 						<div class="product-descrs__row">
@@ -94,11 +228,11 @@
 							<div class="product-descrs__old-price">790 400 руб.</div>
 							<div class="product-descrs__rating product-rating">4,8</div>
 						</div>
-						<div class="product-descrs__stock">В наличии</div>
+						<div class="product-descrs__stock product-stock">В наличии</div>
 					</div>
 					<div class="right-product-main__btns">
-						<a class="right-product-main__btn right-product-main__btn_in-cart btn btn_decor" href="">В корзину</a>
-						<a class="right-product-main__btn right-product-main__btn_gen btn btn_decor" href="">Сконфигурировать</a>
+						<a class="right-product-main__btn right-product-main__btn_in-cart btn btn_decor" href="">Добавить в корзину</a>
+						<a class="right-product-main__btn right-product-main__btn_pdf btn btn_decor" href="">Скачать конфигурацию в PDF</a>
 					</div>
 				</div>
 				<ul class="right-product__reasons">
@@ -106,7 +240,30 @@
 					<li class="right-product__reason right-product__reason_return">Товар можно вернуть в течение 14 дней, если он не технически сложный, сохранён в хорошем состоянии и есть подтверждение покупки.</li>
 					<li class="right-product__reason right-product__reason_gift">К каждому серверу прилагаются винты для установки жёстких дисков, кабели питания, а также сетевой кабель RJ45 для управления и подключения к сети.</li>
 				</ul>
-				<!--  -->
+				<div class="config">
+					<div class="config__label">Ваша конфигурация</div>
+					<div class="config__descr">Сервера Dell PowerEdge R7525 </div>
+					<ul class="config__list">
+						<li class="config__item"><span>Гарантия</span><span>1 год</span></li>
+						<li class="config__item"><span>Оперативная память (RAM)</span><span>8GB DDR4 UDIMM 3200MHz Dell</span></li>
+						<li class="config__item"><span>RAID</span><span>RAID Dell S150</span></li>
+						<li class="config__item"><span>Модуль удаленного управления</span><span>iDRAC 9 Express</span></li>
+						<li class="config__item"><span>Блок питания</span><span>HP G9 [723599-001] (800W)</span></li>
+						<li class="config__item"><span>Сетевая карта</span><span>2 port 1Gb/s (Integrated)</span></li>
+						<li class="config__item"><span>Видеокарта</span><span>NVIDIA Quardro P400 2GB GDDR5</span></li>
+						<li class="config__item"><span>HDD накопители</span><span>Жесткий дис HGST (IBM) 1.2TB </span></li>
+						<li class="config__item"><span>SSD накопители</span><span>SSD 240GB SATA 2,5"</span></li>
+					</ul>
+					<div class="config__price-descr">Цена включает НДС 5%</div>
+					<div class="config__price">741 675 руб.</div>
+					<div class="config__stock product-stock">В наличии</div>
+					<div class="config__btns">
+						<a class="config__btn config__btn_in-cart btn btn_decor" href="">Добавить в корзину</a>
+						<a class="config__btn config__btn_pdf btn btn_decor" href="">Скачать конфигурацию в PDF</a>
+						<a class="config__btn config__btn_share btn btn_decor" href="">Поделиться конфигурацией</a>
+
+					</div>
+				</div>
 				<ul class="product-links">
 					<li class="product-links__item">
 						<a class="product-links__link" href="" download aria-label="Скачать техническое описание"></a>

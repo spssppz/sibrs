@@ -118,3 +118,234 @@
 		}
 	}
 }
+
+.chassis-checkbox {
+	cursor: pointer;
+	position: relative;
+	background: $white-gray;
+	border-radius: rem(10);
+	padding: rem(15);
+	min-height: rem(96);
+	display: flex;
+	align-items: center;
+	@media (max-width: $tablet) {
+		min-height: rem(76);
+	}
+	@media (max-width: $mobile) {
+		min-height: rem(68);
+	}
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus + .chassis-checkbox__text::before {
+			// box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
+		}
+		&:checked + .chassis-checkbox__text {
+			color: $blue;
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	&__text {
+		line-height: math.div(21, 17);
+		display: inline-block;
+		position: relative;
+		padding-left: rem(37);
+		font-size: rem(17);
+		color: $gray;
+		@media (max-width: $tablet) {
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile) {
+			padding-left: rem(33);
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: rem(5);
+			overflow: hidden;
+			width: rem(22);
+			height: rem(22);
+			@media (max-width: $tablet) {
+				width: rem(20);
+				height: rem(20);
+			}
+			@media (max-width: $mobile) {
+				width: rem(18);
+				height: rem(18);
+			}
+		}
+		&::before {
+			border: rem(1) solid #c9c9c9;
+			background: #fff;
+		}
+		&::after {
+			background: url("@img/icons/filter-check.svg") 50% / 100% no-repeat;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+	}
+}
+.proc-checkbox {
+	cursor: pointer;
+	position: relative;
+	flex: 0 0 rem(59);
+	width: rem(59);
+	min-height: rem(53);
+	@media (max-width: $tablet) {
+		flex: 0 0 rem(47);
+		width: rem(47);
+		min-height: rem(42);
+	}
+	@media (max-width: $mobile) {
+		flex: 0 0 rem(43);
+		width: rem(43);
+		min-height: rem(39);
+	}
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:checked + .proc-checkbox__text {
+			color: #fff;
+			background: $blue;
+		}
+	}
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		font-size: rem(20);
+		font-weight: 500;
+		color: $gray;
+		padding: rem(10);
+		height: 100%;
+		border-radius: rem(10);
+		@media (max-width: $tablet) {
+			font-size: rem(18);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
+			border-radius: rem(7);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+	}
+}
+.gen-checkbox {
+	cursor: pointer;
+	position: relative;
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus + .gen-checkbox__text::before {
+			box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
+		}
+		&:checked + .gen-checkbox__text {
+			span {
+				&:first-child {
+					color: $blue;
+				}
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	&__text {
+		line-height: math.div(20, 16);
+		display: flex;
+		align-items: flex-end;
+		gap: rem(10);
+		position: relative;
+		padding-left: rem(37);
+		font-size: rem(17);
+		color: $gray;
+		@media (max-width: $tablet) {
+			padding-left: rem(28);
+			font-size: rem(15);
+			gap: rem(3);
+		}
+		@media (max-width: $mobile) {
+			padding-left: rem(24);
+			font-size: rem(14);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		span {
+			&:first-child {
+				flex: auto;
+				display: flex;
+				gap: rem(8);
+				@media (max-width: $tablet) {
+					gap: rem(3);
+				}
+				&::after {
+					content: "";
+					min-width: rem(40);
+					flex: auto;
+					border-bottom: rem(1) dashed #c5c5c5;
+				}
+			}
+			&:last-child {
+				font-size: rem(18);
+				text-align: right;
+				white-space: nowrap;
+				@media (max-width: $tablet) {
+					font-size: rem(15);
+				}
+				@media (max-width: $mobile) {
+					font-size: rem(14);
+				}
+				@media (max-width: $mobileSmall) {
+					font-size: rem(13);
+				}
+			}
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: rem(5);
+			width: rem(22);
+			height: rem(22);
+			@media (max-width: $tablet) {
+				width: rem(20);
+				height: rem(20);
+			}
+			@media (max-width: $mobile) {
+				width: rem(18);
+				height: rem(18);
+			}
+		}
+		&::before {
+			border: rem(1) solid #ddd;
+		}
+		&::after {
+			background: url("@img/icons/filter-check.svg") 50% / 100% no-repeat;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+	}
+	&__text-green {
+		color: $green;
+	}
+}
