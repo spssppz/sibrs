@@ -232,19 +232,41 @@ export function formSubmit(options = { validate: true }) {
 /* Модуь формы "колличество" */
 export function formQuantity() {
 	document.addEventListener("click", function (e) {
-		let targetElement = e.target;
-		if (targetElement.closest('.quantity__button')) {
-			let value = parseInt(targetElement.closest('.quantity').querySelector('input').value);
-			if (targetElement.classList.contains('quantity__button_plus')) {
-				value++;
-			} else {
-				--value;
-				if (value < 1) value = 1;
-			}
-			targetElement.closest('.quantity').querySelector('input').value = value;
+		const btn = e.target.closest('.quantity__button')
+		if (!btn) return
+
+		const quantity = btn.closest('.quantity')
+		const input = quantity.querySelector('input')
+
+		let value = parseInt(input.value) || 0
+		const min = parseInt(quantity.dataset.min) || 1
+		const max = parseInt(quantity.dataset.max) || Infinity
+
+		if (btn.classList.contains('quantity__button_plus')) {
+			value = Math.min(value + 1, max)
+		} else {
+			value = Math.max(value - 1, min)
 		}
-	});
+
+		input.value = value
+
+	})
+	document.addEventListener("change", function (e) {
+		const input = e.target.closest('.quantity__input input')
+		if (!input) return
+
+		const quantity = input.closest('.quantity')
+		const min = parseInt(quantity.dataset.min) || 1
+		const max = parseInt(quantity.dataset.max) || Infinity
+
+		let value = parseInt(input.value) || 0
+		if (value < min) value = min
+		if (value > max) value = max
+
+		input.value = value
+	})
 }
+
 /* Модуь звездного рейтинга */
 export function formRating() {
 	const ratings = document.querySelectorAll('.rating');

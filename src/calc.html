@@ -28,7 +28,7 @@
 							<ul class="left-calc__cols">
 								<li class="left-calc__col">
 									<div class="left-calc__top">
-										<div class="left-calc__label">Уровень RAID</div>
+										<div class="left-calc__label" data-tooltip="Тултип... Тултип... Тултип... ">Уровень RAID</div>
 									</div>
 									<div class="left-calc__checkbox">
 										<label class="proc-checkbox">
@@ -75,10 +75,10 @@
 								</li>
 								<li class="left-calc__col">
 									<div class="left-calc__top">
-										<div class="left-calc__label">Объем накопителя</div>
-										<div class="left-calc__quantity quantity">
+										<div class="left-calc__label" data-tooltip="Тултип...">Объем накопителя</div>
+										<div class="left-calc__quantity quantity" data-min="128" data-max="24000">
 											<button class="quantity__button quantity__button_minus">-</button>
-											<div class="quantity__input ">
+											<div class="quantity__input">
 												<input class="volume-input" autocomplete="off" type="text" name="volume">
 												<span>GB</span>
 											</div>
@@ -86,13 +86,13 @@
 										</div>
 									</div>
 									<div class="left-calc__range-wrapper">
-										<div class="left-calc__range left-calc__range_volume"></div>
+										<div class="left-calc__range left-calc__range_volume" data-min="128" data-max="24000"></div>
 									</div>
 								</li>
 								<li class="left-calc__col">
 									<div class="left-calc__top">
-										<div class="left-calc__label">Количество дисков</div>
-										<div class="left-calc__quantity quantity">
+										<div class="left-calc__label" data-tooltip="Тултип...">Количество дисков</div>
+										<div class="left-calc__quantity quantity" data-min="4" data-max="26">
 											<button class="quantity__button quantity__button_minus">-</button>
 											<div class="quantity__input">
 												<input class="disks-input" autocomplete="off" type="text" name="volume">
@@ -102,7 +102,7 @@
 										</div>
 									</div>
 									<div class="left-calc__range-wrapper">
-										<div class="left-calc__range left-calc__range_disks"></div>
+										<div class="left-calc__range left-calc__range_disks" data-min="4" data-max="26"></div>
 									</div>
 								</li>
 							</ul>
@@ -141,8 +141,24 @@
 									<div class="right-calc__descr">До 12х</div>
 								</li>
 							</ul>
-							<!--  -->
-							</svg>
+							<div class="calc-circle">
+								<ul class="calc-circle__cols">
+									<li class="calc-circle__col">
+										<div class="calc-circle__cap">Доступный объем</div>
+										<div class="calc-circle__descr">281.3 TB/255.8 TiB</div>
+									</li>
+									<li class="calc-circle__col">
+										<div class="calc-circle__cap calc-circle__cap_useful">Полезный объем</div>
+										<div class="calc-circle__descr">281.3 TB/255.8 TiB</div>
+									</li>
+								</ul>
+								<div class="calc-circle__progress" data-percent="44">
+									<svg id="circular-bars" width="300" height="300" viewBox="0 0 300 300">
+										<g transform="translate(150,150)"></g>
+									</svg>
+								</div>
+							</div>
+							<a class="right-calc__btn btn btn_decor" href="">Поделиться ссылкой</a>
 							<div class="right-calc__bottom">
 								<button class="right-calc__clear">Сбросить</button>
 							</div>

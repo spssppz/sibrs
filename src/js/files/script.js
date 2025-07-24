@@ -2,6 +2,21 @@ import { bodyLockToggle, isMobile, menuClose } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 document.documentElement.addEventListener('click', e => {
+	if (e.target.closest('.server__action')) {
+		e.target.closest('.server__action').classList.toggle('active')
+	}
+	if (e.target.closest('.servers-toggle-btn')) {
+		const sidebar = document.querySelector('.sidebar')
+
+		document.documentElement.classList.toggle('servers-menu-show')
+		sidebar.scrollTo({ top: 0, behavior: 'smooth' })
+	}
+	if (e.target.closest('.servers-close-btn')) {
+		document.documentElement.classList.remove('servers-menu-show')
+	}
+	if (e.target.closest('[data-tooltip]') && isMobile.any()) {
+		e.target.closest('[data-tooltip]').classList.toggle('show-tooltip')
+	}
 	if (e.target.closest('.inp-line__pass-eye')) {
 		const input = e.target.closest('.inp-line__pass').querySelector('input')
 		e.target.closest('.inp-line__pass').classList.toggle('show-pass')
@@ -280,14 +295,32 @@ if (inputsMaxWords.length) {
 	const timer = setInterval(updateCountdown, 1000)
 })()
 
+const calcProgress = document.querySelector('.calc-circle__progress')
 
-// function setProgress(percent) {
-// 	const circle = document.getElementById('progress')
-// 	const radius = 118.463
-// 	const circumference = 2 * Math.PI * radius
+if (calcProgress) {
+	const percent = Number(calcProgress.dataset.percent) || 10
+	const totalBars = 40
+	const g = calcProgress.querySelector('svg g')
 
-// 	circle.style.strokeDasharray = `${circumference}`
-// 	circle.style.strokeDashoffset = `${circumference * (1 - percent / 100)}`
-// 	circle.style.stroke = 'green' // можно менять цвет
-// }
-// setProgress(50) // 50% прогресса
+	if (!g) {
+		console.warn('Внутри .calc-circle__progress нет <svg><g> для отрисовки прогресса')
+	} else {
+		const activeBars = Math.round((percent / 100) * totalBars)
+
+		for (let i = 0; i < totalBars; i++) {
+			const angle = (360 / totalBars) * i
+			const color = i < activeBars ? '#0dd359' : '#e1e1e1'
+
+			const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+			rect.setAttribute('x', -6)
+			rect.setAttribute('y', -140)
+			rect.setAttribute('width', 12)
+			rect.setAttribute('height', 30)
+			rect.setAttribute('rx', 4)
+			rect.setAttribute('ry', 4)
+			rect.setAttribute('fill', color)
+			rect.setAttribute('transform', `rotate(${angle})`)
+			g.appendChild(rect)
+		}
+	}
+}

@@ -412,6 +412,7 @@ export const menuInit = () => {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle()
 				document.documentElement.classList.toggle("menu-open")
+				document.documentElement.classList.remove('servers-menu-show')
 			}
 		})
 	}

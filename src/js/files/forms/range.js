@@ -44,105 +44,98 @@ if (priceSlider) {
 
 const volumeSlider = document.querySelector('.left-calc__range_volume')
 if (volumeSlider) {
-	const valuesForSlider = [128, 2000, 4000, 6000, 8000, 10000, 12000, 16000, 18000, 20000, 22000, 24000, 26000, 28000]
 	const inputVolume = document.querySelector('.volume-input')
 
-	// Формат отображения
+	const min = parseInt(volumeSlider.dataset.min) || 128
+	const max = parseInt(volumeSlider.dataset.max) || 20000
+
 	const format = {
-		to: value => `${valuesForSlider[Math.round(value)]} GB`,
-		from: value => {
-			const numeric = parseInt(value.toString().replace(' GB', ''), 10)
-			return valuesForSlider.indexOf(numeric)
-		}
+		to: value => `${Math.round(value)} GB`,
+		from: value => parseInt(value.toString().replace(/[^\d]/g, ''), 10)
 	}
 
-	// Определяем пипсы в зависимости от ширины экрана
-	const isMobile = window.innerWidth <= 1420
-	const pipsValues = isMobile
-		? valuesForSlider
-			.map((v, i) => i)       // индексы
-			.filter(i => i % 2 === 0) // каждое второе
-		: valuesForSlider.map((_, i) => i) // все индексы
+	const isMobile = window.innerWidth < 1420
+
+	// Все значения от min до max
+	const allValues = Array.from({ length: max - min + 1 }, (_, i) => i + min)
+
+	// Пипсы: на мобиле — каждые 1000 GB, на десктопе — каждые 500 GB (например)
+	const pipsStep = isMobile ? 4400 : 2000
+
+	const pipsValues = allValues.filter(v => (v - min) % pipsStep === 0)
 
 	noUiSlider.create(volumeSlider, {
-		start: 0,
-		range: { min: 0, max: valuesForSlider.length - 1 },
-		step: 1,
+		start: min,
+		range: { min, max },
+		step: 32,
 		tooltips: true,
 		format,
 		pips: {
 			mode: 'values',
 			values: pipsValues,
 			format: {
-				to: value => valuesForSlider[Math.round(value)],
-				from: value => {
-					const numeric = parseInt(value.toString(), 10)
-					return valuesForSlider.indexOf(numeric)
-				}
+				to: value => `${value}`, // без "GB"
+				from: value => parseInt(value)
 			},
-			density: window.innerWidth <= 1420 ? 10 : 5
+			density: window.innerWidth < 1420 ? 7 : 4
 		}
 	})
 
-
 	// Обновляем input при движении слайдера
 	volumeSlider.noUiSlider.on('update', (values, handle) => {
-
-		const numericValue = parseInt(values[handle].toString().replace(' GB', ''), 10)
+		const numericValue = parseInt(values[handle].toString().replace(/[^\d]/g, ''), 10)
 		inputVolume.value = numericValue
-
-
-		const index = parseInt(values[handle].replace(' GB', ''), 10)
-		const realIndex = valuesForSlider.indexOf(index)
 
 		const handleEl = volumeSlider.querySelectorAll('.noUi-handle')[handle]
 
-		// Убираем все классы с хэндлов
 		volumeSlider.querySelectorAll('.noUi-handle').forEach(h => {
 			h.classList.remove('at-start', 'at-end')
 		})
 
-		if (realIndex === 0) {
-			handleEl.classList.add('at-start')
-		} else if (realIndex === valuesForSlider.length - 1) {
-			handleEl.classList.add('at-end')
-		}
+		if (numericValue === min) handleEl.classList.add('at-start')
+		else if (numericValue === max) handleEl.classList.add('at-end')
 	})
 
 	// Обновляем слайдер при ручном вводе
 	inputVolume.addEventListener('change', () => {
 		const val = parseInt(inputVolume.value, 10)
-		const index = valuesForSlider.indexOf(val)
-		if (index !== -1) {
-			volumeSlider.noUiSlider.set([index])
+		if (!isNaN(val) && val >= min && val <= max) {
+			volumeSlider.noUiSlider.set(val)
 		}
 	})
 }
+
+
 const disksSlider = document.querySelector('.left-calc__range_disks')
 if (disksSlider) {
-	const valuesForSlider = [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]
 	const inputDisks = document.querySelector('.disks-input')
 
-	// Формат отображения
+	const min = parseInt(disksSlider.dataset.min) || 4
+	const max = parseInt(disksSlider.dataset.max) || 26
+
 	const format = {
-		to: value => `${valuesForSlider[Math.round(value)]} дисков`,
-		from: value => {
-			const numeric = parseInt(value.toString().replace(' дисков', ''), 10)
-			return valuesForSlider.indexOf(numeric)
-		}
+		to: value => {
+			const num = Math.round(value)
+			const suffix = pluralize(num, 'диск', 'диска', 'дисков')
+			return `${num} ${suffix}`
+		},
+		from: value => parseInt(value.toString().replace(/[^\d]/g, ''), 10)
 	}
 
-	// Определяем пипсы в зависимости от ширины экрана
-	const isMobile = window.innerWidth <= 1420
-	const pipsValues = isMobile
-		? valuesForSlider
-			.map((v, i) => i)       // индексы
-			.filter(i => i % 2 === 0) // каждое второе
-		: valuesForSlider.map((_, i) => i) // все индексы
+
+	const isMobile = window.innerWidth < 1420
+
+	// Все значения от min до max
+	const allValues = Array.from({ length: max - min + 1 }, (_, i) => i + min)
+
+	// Пипсы: каждые 4 или 2 шага
+	const pipsValues = allValues.filter(v =>
+		isMobile ? (v - min) % 4 === 0 : (v - min) % 2 === 0
+	)
 
 	noUiSlider.create(disksSlider, {
-		start: 0,
-		range: { min: 0, max: valuesForSlider.length - 1 },
+		start: min,
+		range: { min, max },
 		step: 1,
 		tooltips: true,
 		format,
@@ -150,45 +143,42 @@ if (disksSlider) {
 			mode: 'values',
 			values: pipsValues,
 			format: {
-				to: value => valuesForSlider[Math.round(value)],
-				from: value => {
-					const numeric = parseInt(value.toString(), 10)
-					return valuesForSlider.indexOf(numeric)
-				}
+				to: value => `${value}`,
+				from: value => parseInt(value)
 			},
-			density: window.innerWidth <= 1420 ? 10 : 5
+			density: isMobile ? 6 : 4
 		}
 	})
 
 	// Обновляем input при движении слайдера
 	disksSlider.noUiSlider.on('update', (values, handle) => {
-		const numericValue = parseInt(values[handle].toString().replace(' дисков', ''), 10)
+		const numericValue = parseInt(values[handle].toString().replace(/[^\d]/g, ''), 10)
 		inputDisks.value = numericValue
-
-
-		const index = parseInt(values[handle].replace(' дисков', ''), 10)
-		const realIndex = valuesForSlider.indexOf(index)
 
 		const handleEl = disksSlider.querySelectorAll('.noUi-handle')[handle]
 
-		// Убираем все классы с хэндлов
 		disksSlider.querySelectorAll('.noUi-handle').forEach(h => {
 			h.classList.remove('at-start', 'at-end')
 		})
 
-		if (realIndex === 0) {
-			handleEl.classList.add('at-start')
-		} else if (realIndex === valuesForSlider.length - 1) {
-			handleEl.classList.add('at-end')
-		}
+		if (numericValue === min) handleEl.classList.add('at-start')
+		else if (numericValue === max) handleEl.classList.add('at-end')
 	})
 
 	// Обновляем слайдер при ручном вводе
 	inputDisks.addEventListener('change', () => {
 		const val = parseInt(inputDisks.value, 10)
-		const index = valuesForSlider.indexOf(val)
-		if (index !== -1) {
-			disksSlider.noUiSlider.set([index])
+		if (!isNaN(val) && val >= min && val <= max) {
+			disksSlider.noUiSlider.set(val)
 		}
 	})
+}
+
+function pluralize(number, one, few, many) {
+	const mod10 = number % 10
+	const mod100 = number % 100
+
+	if (mod10 === 1 && mod100 !== 11) return one
+	if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return few
+	return many
 }

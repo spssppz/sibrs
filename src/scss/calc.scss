@@ -126,6 +126,7 @@
 .right-calc {
 	background: #fff;
 	border-radius: rem(15);
+	// overflow: hidden;
 	padding: rem(30);
 	@media (max-width: $tablet) {
 		padding: rem(20) rem(13);
@@ -234,6 +235,37 @@
 			}
 		}
 	}
+	&__btn {
+		min-height: rem(77);
+		width: 100%;
+		background: rgba(93, 145, 254, 0.1);
+		color: $blue;
+		&::before {
+			content: "";
+			flex: 0 0 rem(26);
+			width: rem(26);
+			height: rem(26);
+			background: url("@img/icons/share-icon.svg") 50% / 100% no-repeat;
+		}
+		&::after {
+			content: none;
+		}
+		@media (max-width: $tablet) {
+			min-height: rem(75);
+		}
+		@media (max-width: $mobile) {
+			min-height: rem(68);
+		}
+		&:hover {
+			background: rgba(93, 145, 254, 0.4);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(17);
+			@media (max-width: $tablet) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
 	&__bottom {
 		text-align: center;
 	}
@@ -244,7 +276,7 @@
 		text-decoration-skip-ink: none;
 		text-align: center;
 		color: $gray;
-		transition: color 0.3s;
+		transition: opacity 0.3s;
 		@media (max-width: $tablet) {
 			font-size: rem(15);
 		}
@@ -253,8 +285,91 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: $mainColor;
+				opacity: 0.7;
 			}
+		}
+	}
+}
+
+.calc-circle {
+	position: relative;
+	&:not(:last-child) {
+		margin-bottom: rem(20);
+	}
+	&__cols {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: rem(20);
+		aspect-ratio: 1;
+		@media (max-width: $mobile) {
+			gap: rem(15);
+		}
+	}
+	&__col {
+	}
+	&__cap {
+		font-size: rem(15);
+		color: $gray;
+		line-height: math.div(19, 15);
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10);
+		@media (max-width: $tablet) {
+			font-size: rem(14);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(14);
+			width: rem(14);
+			height: rem(14);
+			border-radius: 50%;
+			background: #e1e1e1;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(11);
+				width: rem(11);
+				height: rem(11);
+			}
+		}
+		&_useful {
+			&::before {
+				background: #0dd359;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+	&__descr {
+		font-family: $second-family;
+		font-size: rem(16);
+		line-height: 1.5;
+		color: $blue;
+		@media (max-width: $mobile) {
+			font-size: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+	}
+	&__progress {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		svg {
+			width: 100%;
+			height: auto;
 		}
 	}
 }
