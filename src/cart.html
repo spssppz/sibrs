@@ -169,11 +169,11 @@
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Номер телефона</span>
-												<input class="input" autocomplete="off" type="text" name="order_phone" placeholder="+7(___) ___-__-__">
+												<input class="input phone" autocomplete="off" type="text" name="order_phone" placeholder="+7(___) ___-__-__">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Дополнительный номер телефона</span>
-												<input class="input" autocomplete="off" type="text" name="order_phone_2" placeholder="+7(___) ___-__-__">
+												<input class="input phone" autocomplete="off" type="text" name="order_phone_2" placeholder="+7(___) ___-__-__">
 											</label>
 										</div>
 									</li>
@@ -270,10 +270,10 @@
 									<div class="cart-price__price">1 041 625 руб.</div>
 									<span class="cart-price__cap">ИТОГО</span>
 								</div>
-								<form class="info-cart-form" action="#">
+								<form class="info-cart-form form-validate" action="#">
 									<div class="info-cart-form__row">
 										<label class="inp-line">
-											<span class="inp-line__cap inp-line__cap_req">Купон</span>
+											<span class="inp-line__cap">Купон</span>
 											<span class="inp-line__coupon">
 												<input class="info-cart-form__input input" autocomplete="off" type="text" name="coupon">
 												<button class="info-cart-form__add" aria-label="Применить купон"></button>
@@ -282,13 +282,13 @@
 									</div>
 									<div class="info-cart-form__checkbox">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<input class="checkbox__input req-checkbox" type="checkbox" value="1" name="form[]">
 											<span class="checkbox__text">
 												Я даю <a href="">Согласию на обработку моих персональных данных</a> в соотвествии с <a href="">Политикой в отношении обработки персональных данных</a>
 											</span>
 										</label>
 									</div>
-									<button class="info-cart-form__btn btn">Оформить заказ</button>
+									<button class="info-cart-form__btn btn" type="submit">Оформить заказ</button>
 								</form>
 							</div>
 						</div>

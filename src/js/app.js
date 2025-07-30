@@ -58,7 +58,7 @@ flsForms.formRating();
 // import './libs/select.js'
 
 /* (В работе) Модуль работы с масками.*/
-// import "./files/forms/inputmask.js";
+import "./files/forms/inputmask.js";
 
 /* Модуль работы с ползунком */
 /* Документация плагина: https://refreshless.com/nouislider/ */

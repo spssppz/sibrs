@@ -43,6 +43,15 @@ input[type="number"] {
 	&_pass {
 		padding: rem(0) rem(60) 0 rem(22);
 	}
+	&.error,
+	&.error-phone,
+	&.error-email {
+		border-color: red;
+		color: red;
+		&::placeholder {
+			color: red;
+		}
+	}
 	&::placeholder {
 		opacity: 1; // for Firefox
 		color: #c9c9c9;
@@ -80,6 +89,7 @@ textarea.input {
 	font-size: rem(15);
 	line-height: math.div(19, 15);
 	color: #000;
+	position: relative;
 	@media (max-width: $tablet) {
 		font-size: rem(14);
 	}
@@ -149,6 +159,16 @@ textarea.input {
 		gap: rem(6);
 		@media (max-width: $mobile) {
 			gap: rem(3);
+		}
+	}
+	.error-message {
+		position: absolute;
+		top: calc(100% + rem(1));
+		left: 0;
+		color: red;
+		font-size: rem(11);
+		@media (max-width: $mobileSmall) {
+			font-size: rem(10);
 		}
 	}
 }

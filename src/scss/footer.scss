@@ -380,11 +380,12 @@ a.footer-contacts__link {
 	}
 
 	&__dev {
-		color: #a7a7a7;
+		color: #000;
+		opacity: 0.35;
 		display: inline-flex;
 		align-items: center;
 		gap: rem(15);
-		transition: color 0.3s;
+		transition: opacity 0.3s;
 		@media (min-width: $tablet) {
 			font-size: rem(15);
 		}
@@ -393,7 +394,7 @@ a.footer-contacts__link {
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: $mainColor;
+				opacity: 1;
 			}
 		}
 		img {

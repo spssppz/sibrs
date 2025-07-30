@@ -13,6 +13,7 @@
 	"author": "spsspp",
 	"license": "ISC",
 	"dependencies": {
+		"imask": "^7.6.1",
 		"nouislider": "^15.8.1",
 		"swiper": "latest"
 	},

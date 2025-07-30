@@ -25,15 +25,15 @@
 					<h2 class="auth__title title title_auth">Регистрация</h2>
 					<div class="auth__body">
 						<div class="left-auth">
-							<form class="auth-form" action="#">
+							<form class="auth-form form-validate" action="#">
 								<div class="auth-form__row">
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Ваше имя</span>
-										<input class="input" autocomplete="off" type="text" name="quest_name" placeholder="Введите свое имя">
+										<input class="input req" autocomplete="off" type="text" name="quest_name" placeholder="Введите свое имя">
 									</label>
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">E-mail</span>
-										<input class="input" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
+										<input class="input req-email" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
 									</label>
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Пароль</span>
@@ -64,11 +64,11 @@
 								</div>
 								<div class="auth-form__checkbox">
 									<label class="filter-checkbox">
-										<input class="filter-checkbox__input" type="checkbox" value="1" name="form[]">
+										<input class="filter-checkbox__input req-checkbox" type="checkbox" value="1" name="form[]">
 										<span class="filter-checkbox__text">Согласен с политикой конфиденциальности и обработкой персональных данных</span>
 									</label>
 								</div>
-								<button class="auth-form__btn btn btn_decor">Зарегистрироваться</button>
+								<button class="auth-form__btn btn btn_decor" type="submit">Зарегистрироваться</button>
 
 							</form>
 							<div class="left-auth__other">

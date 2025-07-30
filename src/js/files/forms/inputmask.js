@@ -1,13 +1,5 @@
-/* Маски для полей (в работе) */
+import IMask from 'imask'
 
-// Подключение функционала "Чертогов Фрилансера"
-// Подключение списка активных модулей
-import { flsModules } from "../modules.js";
-
-// Подключение модуля
-import "inputmask/dist/inputmask.min.js";
-
-const inputMasks = document.querySelectorAll('input');
-if (inputMasks.length) {
-	flsModules.inputmask = Inputmask().mask(inputMasks);
-}
+document.querySelectorAll('.phone').forEach(phoneInput => {
+	IMask(phoneInput, { mask: '+{7}(000) 000-00-00' })
+})

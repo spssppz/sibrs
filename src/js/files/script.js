@@ -5,14 +5,11 @@ document.documentElement.addEventListener('click', e => {
 	if (e.target.closest('.server__action')) {
 		e.target.closest('.server__action').classList.toggle('active')
 	}
-	if (e.target.closest('.servers-toggle-btn')) {
-		const sidebar = document.querySelector('.sidebar')
-
-		document.documentElement.classList.toggle('servers-menu-show')
-		sidebar.scrollTo({ top: 0, behavior: 'smooth' })
+	if (e.target.closest('.sidebar__link')) {
+		e.target.closest('.sidebar__item_has-sub')?.classList.toggle('sub-menu-show')
 	}
-	if (e.target.closest('.servers-close-btn')) {
-		document.documentElement.classList.remove('servers-menu-show')
+	if (e.target.closest('.sub-sidebar__back')) {
+		e.target.closest('.sub-menu-show')?.classList.remove('sub-menu-show')
 	}
 	if (e.target.closest('[data-tooltip]') && isMobile.any()) {
 		e.target.closest('[data-tooltip]').classList.toggle('show-tooltip')
@@ -25,12 +22,25 @@ document.documentElement.addEventListener('click', e => {
 		input.type = isPassword ? 'text' : 'password'
 	}
 	if (e.target.closest('.header-search__btn')) {
-		document.documentElement.classList.toggle('search-show')
-	} if (document.documentElement.classList.contains('search-show') &&
-		!e.target.closest('.header-search')) {
-		document.documentElement.classList.remove('search-show')
+		const searchInput = document.querySelector('.header-search__input')
+		const isOpening = !document.documentElement.classList.contains('search-show')
 
+		if (isOpening) {
+			document.documentElement.classList.add('search-show')
+			searchInput.focus()
+		} else {
+			document.documentElement.classList.remove('sub-search-show')
+			document.documentElement.classList.remove('search-show')
+			searchInput.value = ''
+		}
+	} else if (
+		document.documentElement.classList.contains('search-show') &&
+		!e.target.closest('.header-search')
+	) {
+		document.documentElement.classList.remove('sub-search-show', 'search-show')
 	}
+
+
 	if (e.target.closest('.filter-btn') && window.innerWidth <= 992) {
 		bodyLockToggle()
 		document.documentElement.classList.toggle('filter-show')
@@ -178,7 +188,7 @@ if (inputFileContainers.length) {
 		function showError(message) {
 			fileLabel.textContent = 'Ошибка загрузки'
 			fileDescr.textContent = message
-			fileDescr.style.color = '#eb7223'
+			fileDescr.style.color = 'red'
 		}
 
 		function resetInput() {
@@ -263,11 +273,16 @@ if (inputsMaxWords.length) {
 	if (!deadlineAttr) return
 
 	const deadline = new Date(`${deadlineAttr}T23:59:59`)
+	const now = new Date()
+
+	// 🔒 Если дата уже в прошлом — выходим
+	if (deadline <= now) return
+
 	const daysEl = stock.querySelector('[data-unit="days"]')
 	const hoursEl = stock.querySelector('[data-unit="hours"]')
 	const minutesEl = stock.querySelector('[data-unit="minutes"]')
 	const secondsEl = stock.querySelector('[data-unit="seconds"]')
-
+	let timer
 	const updateCountdown = () => {
 		const now = new Date()
 		const diff = deadline - now
@@ -292,7 +307,7 @@ if (inputsMaxWords.length) {
 	}
 
 	updateCountdown()
-	const timer = setInterval(updateCountdown, 1000)
+	timer = setInterval(updateCountdown, 1000)
 })()
 
 const calcProgress = document.querySelector('.calc-circle__progress')
@@ -323,4 +338,100 @@ if (calcProgress) {
 			g.appendChild(rect)
 		}
 	}
+}
+
+
+
+if (document.querySelector('.form-validate')) {
+	const validateForms = document.querySelectorAll('.form-validate')
+
+	validateForms.forEach(validateForm => {
+		const btnForm = validateForm.querySelector('button[type="submit"]')
+		if (!btnForm) return
+		const reqInputs = validateForm.querySelectorAll('.req, .req-email, .req-checkbox, .req-phone')
+
+		reqInputs.forEach(reqInput => {
+			reqInput.addEventListener('focus', () => {
+				if (reqInput.classList.contains('error') || reqInput.classList.contains('error-email') || reqInput.classList.contains('error-phone')) {
+					reqInput.classList.remove('error', 'error-email', 'error-phone')
+					reqInput.removeAttribute('aria-invalid')
+					const prev = reqInput.previousElementSibling
+					if (prev?.classList.contains('error-message')) prev.remove()
+				}
+			})
+			reqInput.addEventListener('change', () => {
+				if (reqInput.classList.contains('error-checkbox')) {
+					reqInput.classList.remove('error-checkbox')
+					reqInput.removeAttribute('aria-invalid')
+				}
+			})
+		})
+
+		btnForm.addEventListener('click', e => {
+			let errors = 0
+			// Очищаем старые ошибки
+			validateForm.querySelectorAll('.error-message').forEach(el => el.remove())
+
+			reqInputs.forEach(reqInput => {
+				const isEmpty = !reqInput.value
+				const isEmail = reqInput.classList.contains('req-email')
+				const isCheckbox = reqInput.classList.contains('req-checkbox')
+				const isPhone = reqInput.classList.contains('req-phone')
+
+				if (!isEmail && !isCheckbox && !isPhone && isEmpty) {
+					errors++
+					reqInput.classList.add('error')
+					reqInput.setAttribute('aria-invalid', 'true')
+					const errorMessage = document.createElement('span')
+					errorMessage.classList.add('error-message')
+					errorMessage.textContent = 'Это поле обязательно для заполнения'
+					reqInput.before(errorMessage)
+				}
+
+				if (isEmail) {
+					const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+					if (!reqInput.value || !emailPattern.test(reqInput.value)) {
+						errors++
+						reqInput.classList.add('error-email')
+						reqInput.setAttribute('aria-invalid', 'true')
+						const errorMessage = document.createElement('span')
+						errorMessage.classList.add('error-message')
+						errorMessage.textContent = 'Это поле заполнено неправильно'
+						reqInput.before(errorMessage)
+					}
+				}
+
+				if (isPhone) {
+					// Маска +7(999) 999-99-99, регулярка для проверки заполнения цифр
+					const phonePattern = /^\+7\(\d{3}\) \d{3}-\d{2}-\d{2}$/
+					if (!reqInput.value || !phonePattern.test(reqInput.value)) {
+						errors++
+						reqInput.classList.add('error-phone')
+						reqInput.setAttribute('aria-invalid', 'true')
+						const errorMessage = document.createElement('span')
+						errorMessage.classList.add('error-message')
+						errorMessage.textContent = 'Это поле заполнено неправильно'
+						reqInput.before(errorMessage)
+					}
+				}
+
+				if (isCheckbox && !reqInput.checked) {
+					errors++
+					reqInput.classList.add('error-checkbox')
+					reqInput.setAttribute('aria-invalid', 'true')
+				}
+			})
+
+			if (errors) e.preventDefault()
+		})
+	})
+
+}
+
+const headerSearchInput = document.querySelector('.header-search__input')
+
+if (headerSearchInput) {
+	headerSearchInput.addEventListener('input', () => {
+		document.documentElement.classList.toggle('sub-search-show', headerSearchInput.value.trim())
+	})
 }

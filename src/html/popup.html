@@ -4,22 +4,22 @@
 			<button class="popup__close" data-close type="button" aria-label="Закрыть форму"></button>
 			<div class="consult">
 				<div class="consult__label">Консультация IT-специалиста</div>
-				<form class="consult-form" action="#">
+				<form class="consult-form form-validate" action="#">
 					<label class="consult-form__line inp-line">
 						<span class="inp-line__cap inp-line__cap_req">Имя</span>
-						<input class="input" autocomplete="off" type="text" name="consult_name" placeholder="Представьтесь">
+						<input class="input req" autocomplete="off" type="text" name="consult_name" placeholder="Представьтесь">
 					</label>
 					<label class="consult-form__line inp-line">
 						<span class="inp-line__cap inp-line__cap_req">Номер телефона</span>
-						<input class="input" autocomplete="off" type="text" name="consult_phone">
+						<input class="input req-phone phone" autocomplete="off" type="text" name="consult_phone" placeholder="+7(___) ___-__-__">
 					</label>
 					<div class="consult-form__checkbox">
 						<label class="checkbox">
-							<input class="checkbox__input" type="checkbox" value="1" name="consult_policy">
+							<input class="checkbox__input req-checkbox" type="checkbox" value="1" name="consult_policy">
 							<span class="checkbox__text">Нажимая на кнопку Подписаться я соглашаюсь с <a href="">Политикой в отношении обработки персональных данных</a></span>
 						</label>
 					</div>
-					<button class="consult-form__btn btn btn_decor">Отправить</button>
+					<button class="consult-form__btn btn btn_decor" type="submit">Отправить</button>
 				</form>
 			</div>
 		</div>

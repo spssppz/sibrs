@@ -133,7 +133,7 @@
 								<div class="reviews__top reviews__top_add">
 									<div class="reviews__title">Написать отзыв</div>
 								</div>
-								<form class="reviews-form" action="#">
+								<form class="reviews-form form-validate" action="#">
 									<div class="reviews-form__rating rating rating_set">
 										<div class="rating__body">
 											<div class="rating__active"></div>
@@ -150,20 +150,20 @@
 									<div class="reviews-form__row">
 										<label class="inp-line">
 											<span class="inp-line__cap inp-line__cap_req">Ваше имя</span>
-											<input class="input" autocomplete="off" type="text" name="reviews_name" placeholder="Представьтесь">
+											<input class="input req" autocomplete="off" type="text" name="reviews_name" placeholder="Представьтесь">
 										</label>
 										<label class="inp-line">
 											<span class="inp-line__cap inp-line__cap_req">Номер телефона</span>
-											<input class="inp-line__input input" autocomplete="off" type="text" name="reviews_phone" placeholder="+7(___) ___-__-__">
+											<input class="inp-line__input input req-phone phone" autocomplete="off" type="text" name="reviews_phone" placeholder="+7(___) ___-__-__">
 										</label>
 										<label class="inp-line">
 											<span class="inp-line__cap inp-line__cap_req">E-mail</span>
-											<input class="inp-line__input input" autocomplete="off" type="text" name="reviews_email" placeholder="Как с вами связаться">
+											<input class="inp-line__input input req-email" autocomplete="off" type="text" name="reviews_email" placeholder="Как с вами связаться">
 										</label>
 									</div>
 									<label class="reviews-form__inp-line inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Ваш отзыв о товаре</span>
-										<textarea class="input" data-max-words="1000" autocomplete="off" name="reviews_text"></textarea>
+										<textarea class="input req" data-max-words="1000" autocomplete="off" name="reviews_text"></textarea>
 										<span class="inp-line__descr">Осталось <span>1000</span> символов</span>
 									</label>
 									<div class="input-file-wrapper">
@@ -175,13 +175,13 @@
 									</div>
 									<div class="reviews-form__checkbox">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="1" name="reviews_policy">
+											<input class="checkbox__input req-checkbox" type="checkbox" value="1" name="reviews_policy">
 											<span class="checkbox__text">
 												Я даю <a href="" target="_blank">Согласию на обработку моих персональных данных</a> в соотвествии с <a href="" target="_blank">Политикой в отношении обработки персональных данных</a>
 											</span>
 										</label>
 									</div>
-									<a class="reviews-form__send btn" href="">Отправить</a>
+									<button class="reviews-form__send btn" type="submit" href="">Отправить</button>
 								</form>
 							</div>
 						</div>
@@ -217,27 +217,6 @@
 							<button class="product-actions__btn product-actions__btn_copy" aria-label="Скопировать ссылку в буфер обмена">
 								<span>Скопировать ссылку <br> в буфер обмена</span>
 							</button>
-						</div>
-					</div>
-					<div class="stock" data-deadline="2025-07-25">
-						<div class="stock__cap">Успейте купить! Акция закончится через:</div>
-						<div class="stock__cols">
-							<div class="stock__col">
-								<div class="stock__num" data-unit="days">00</div>
-								<div class="stock__descr">Дней</div>
-							</div>
-							<div class="stock__col">
-								<div class="stock__num" data-unit="hours">00</div>
-								<div class="stock__descr">час</div>
-							</div>
-							<div class="stock__col">
-								<div class="stock__num" data-unit="minutes">00</div>
-								<div class="stock__descr">мин</div>
-							</div>
-							<div class="stock__col">
-								<div class="stock__num" data-unit="seconds">00</div>
-								<div class="stock__descr">сек</div>
-							</div>
 						</div>
 					</div>
 					<div class="product-descrs">

@@ -34,28 +34,28 @@
 					<img srcset="@img/main/questions/decor@2x.png 2x" src="@img/main/questions/decor.png" width="321" height="226" loading="lazy" alt="">
 				</div>
 			</div>
-			<form class="quest-form" action="#">
+			<form class="quest-form form-validate" action="#">
 				<div class="quest-form__inputs">
 					<div class="quest-form__row">
 						<label class="inp-line">
 							<span class="inp-line__cap inp-line__cap_req">Имя</span>
-							<input class="input" autocomplete="off" type="text" name="quest_name" placeholder="Представьтесь">
+							<input class="input req" autocomplete="off" type="text" name="quest_name" placeholder="Представьтесь">
 						</label>
 						<label class="inp-line">
 							<span class="inp-line__cap inp-line__cap_req">Ваш E-mail</span>
-							<input class="inp-line__input input" autocomplete="off" type="text" name="quest_email" placeholder="Как с вами связаться">
+							<input class="inp-line__input input req-email"  autocomplete="off" type="text" name="quest_email" placeholder="Как с вами связаться">
 						</label>
 					</div>
 					<label class="inp-line">
 						<span class="inp-line__cap inp-line__cap_req">Текст сообщения</span>
-						<textarea class="input" autocomplete="off" name="quest_text" placeholder="Ваше сообщение"></textarea>
+						<textarea class="input req" autocomplete="off" name="quest_text" placeholder="Ваше сообщение"></textarea>
 					</label>
 				</div>
 				<div class="quest-form__actions">
-					<button class="quest-form__btn btn btn_decor">Отправить</button>
+					<button class="quest-form__btn btn btn_decor" type="submit">Отправить</button>
 					<div class="quest-form__checkbox">
 						<label class="checkbox">
-							<input class="checkbox__input" type="checkbox" value="1" name="quest_policy">
+							<input class="checkbox__input req-checkbox" type="checkbox" value="1" name="quest_policy">
 							<span class="checkbox__text">Нажимая на кнопку Подписаться я соглашаюсь с
 								<a href="">Политикой в отношении обработки персональных данных</a>
 							</span>
