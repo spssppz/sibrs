@@ -38,7 +38,7 @@
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Пароль</span>
 										<span class="inp-line__pass">
-											<input class="input input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
+											<input class="input input_pass req-pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
 											<button class="inp-line__pass-eye" type="button" aria-label="Показать/скрыть пароль">
 												<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path
@@ -47,11 +47,17 @@
 												</svg>
 											</button>
 										</span>
+										<span class="pass-strength">
+											<span class="pass-strength__bar">
+												<span class="pass-strength__bar-active"></span>
+											</span>
+											<span class="pass-strength__descr"></span>
+										</span>
 									</label>
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Повторите пароль</span>
 										<span class="inp-line__pass">
-											<input class="input input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите пароль">
+											<input class="input input_pass req-pass-repeat" autocomplete="off" type="password" name="quest_name" placeholder="Введите пароль">
 											<button class="inp-line__pass-eye" type="button" aria-label="Показать/скрыть пароль">
 												<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path
@@ -68,7 +74,12 @@
 										<span class="filter-checkbox__text">Согласен с политикой конфиденциальности и обработкой персональных данных</span>
 									</label>
 								</div>
-								<button class="auth-form__btn btn btn_decor" type="submit">Зарегистрироваться</button>
+								<button class="auth-form__btn btn" type="submit">
+									Зарегистрироваться
+									<svg class="btn__icon">
+										<use xlink:href="@img/sprite.svg#btn-arrow"></use>
+									</svg>
+								</button>
 
 							</form>
 							<div class="left-auth__other">

@@ -61,34 +61,33 @@
 		@media (max-width: $mobileSmall) {
 			font-size: rem(12);
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(21);
-			background: url("@img/icons/time-g.svg") 50% / 100% no-repeat;
-			@media (max-width: $tablet) {
-				flex: 0 0 rem(18);
-				width: rem(18);
-				gap: rem(16);
-			}
+	}
+	&__read-icon {
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(21);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(16);
 		}
 	}
 	&__copy {
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+	&__copy-icon {
 		flex: 0 0 rem(21);
 		width: rem(21);
 		height: rem(21);
-		background: url("@img/icons/share.svg") 50% / 100% no-repeat;
-		transition: opacity 0.3s;
 		@media (max-width: $mobile) {
 			flex: 0 0 rem(16);
 			width: rem(16);
 			height: rem(16);
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				opacity: 0.7;
-			}
 		}
 	}
 	&__body {

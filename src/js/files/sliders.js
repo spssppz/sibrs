@@ -6,11 +6,17 @@ import { Navigation, Pagination, Thumbs, Scrollbar } from 'swiper/modules';
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, EffectFade, Lazy, Manipulation
 */
+let cabinetSlider = null
+let termsSlider = null
+let newsSlider = null
+let currentMode = window.innerWidth < 992 ? 'mobile' : 'desktop'
 
-function initSliders() {
-	if (window.innerWidth < 992) {
-		if (document.querySelector('.cabinet__cols')) {
-			new Swiper('.cabinet__cols', {
+function initSlidersResize() {
+	const isMobile = window.innerWidth < 992
+
+	if (isMobile) {
+		if (!cabinetSlider && document.querySelector('.cabinet__cols')) {
+			cabinetSlider = new Swiper('.cabinet__cols', {
 				modules: [Scrollbar],
 				freeMode: true,
 				speed: 800,
@@ -20,20 +26,15 @@ function initSliders() {
 					draggable: true,
 				},
 				breakpoints: {
-					375: {
-						slidesPerView: 2.5,
-					},
-					480: {
-						slidesPerView: 3,
-					},
-					768: {
-						slidesPerView: 3.5,
-					},
+					375: { slidesPerView: 2.5, },
+					480: { slidesPerView: 3, },
+					768: { slidesPerView: 3.5, },
 				},
 			})
 		}
-		if (document.querySelector('.terms__slider')) {
-			new Swiper('.terms__slider', {
+
+		if (!termsSlider && document.querySelector('.terms__slider')) {
+			termsSlider = new Swiper('.terms__slider', {
 				modules: [Pagination],
 				speed: 800,
 				spaceBetween: 10,
@@ -42,16 +43,41 @@ function initSliders() {
 					clickable: true,
 				},
 				breakpoints: {
-					375: {
-						slidesPerView: 1,
-					},
-					768: {
-						slidesPerView: 2,
-					},
+					375: { slidesPerView: 1, },
+					768: { slidesPerView: 2, },
 				},
 			})
 		}
+
+		if (newsSlider) {
+			newsSlider.destroy(true, true)
+			newsSlider = null
+		}
+	} else {
+		if (!newsSlider && document.querySelector('.news-main__slider')) {
+			newsSlider = new Swiper('.news-main__slider', {
+				spaceBetween: 20,
+				speed: 800,
+				breakpoints: {
+					992: { slidesPerView: 2 },
+					1300: { slidesPerView: 3 },
+				},
+			})
+		}
+
+		// Уничтожаем мобильные слайдеры, если они есть
+		if (cabinetSlider) {
+			cabinetSlider.destroy(true, true)
+			cabinetSlider = null
+		}
+		if (termsSlider) {
+			termsSlider.destroy(true, true)
+			termsSlider = null
+		}
 	}
+}
+
+function initSliders() {
 	if (document.querySelector('.reasons__slider')) {
 		new Swiper('.reasons__slider', {
 			modules: [Navigation, Pagination],
@@ -94,12 +120,8 @@ function initSliders() {
 				nextEl: '.right-tests__slider-btn_next',
 			},
 			breakpoints: {
-				375: {
-					spaceBetween: 10,
-				},
-				1300: {
-					spaceBetween: 20,
-				},
+				375: { spaceBetween: 10, },
+				1300: { spaceBetween: 20, },
 			},
 		})
 	}
@@ -139,7 +161,6 @@ function initSliders() {
 			},
 		})
 	}
-
 	if (document.querySelector('.other__slider')) {
 		new Swiper('.other__slider', {
 			modules: [Navigation, Pagination],
@@ -178,7 +199,6 @@ function initSliders() {
 			},
 		})
 	}
-
 	if (document.querySelector('.other-posts__slider')) {
 		new Swiper('.other-posts__slider', {
 			speed: 800,
@@ -208,18 +228,10 @@ function initSliders() {
 			spaceBetween: 10,
 
 			breakpoints: {
-				375: {
-					slidesPerView: 1,
-				},
-				768: {
-					slidesPerView: 2,
-				},
-				1300: {
-					slidesPerView: 3,
-				},
-				1700: {
-					slidesPerView: 4,
-				},
+				375: { slidesPerView: 1, },
+				768: { slidesPerView: 2, },
+				1300: { slidesPerView: 3, },
+				1700: { slidesPerView: 4, },
 			},
 			on: {
 				setTranslate() {
@@ -233,26 +245,20 @@ function initSliders() {
 			}
 		})
 	}
-	if (window.innerWidth >= 992) {
-		if (document.querySelector('.news-main__slider')) {
-			new Swiper('.news-main__slider', {
-				spaceBetween: 20,
-				speed: 800,
-
-				breakpoints: {
-					992: {
-						slidesPerView: 2,
-					},
-					1300: {
-						slidesPerView: 3,
-					},
-				},
-			})
-		}
-	}
 }
 
-window.addEventListener("load", () => initSliders())
+window.addEventListener("load", () => {
+	initSliders()
+	initSlidersResize()
+})
+
+window.addEventListener('resize', () => {
+	const newMode = window.innerWidth < 992 ? 'mobile' : 'desktop'
+	if (newMode !== currentMode) {
+		currentMode = newMode
+		initSlidersResize()
+	}
+})
 
 const serverSliders = document.querySelectorAll('.product-slider')
 if (serverSliders) {

@@ -343,17 +343,77 @@ if (calcProgress) {
 
 
 if (document.querySelector('.form-validate')) {
+	function showError(input, message, className = 'error') {
+		input.classList.add(className)
+		input.setAttribute('aria-invalid', 'true')
+		const errorMessage = document.createElement('span')
+		errorMessage.classList.add('error-message')
+		errorMessage.textContent = message
+		input.before(errorMessage)
+	}
+
+	function getPasswordStrength(password) {
+		let score = 0
+		if (password.length >= 6) score++
+		if (/[a-z]/.test(password)) score++
+		if (/[A-Z]/.test(password)) score++
+		if (/[0-9]/.test(password)) score++
+		if (/[^a-zA-Z0-9]/.test(password)) score++
+		return score
+	}
+	function passwordValidate(password, bar, label) {
+		const strength = getPasswordStrength(password)
+
+		let width = '0%'
+		let color = '#e0e0e0'
+		let text = ''
+
+		if (strength >= 4) {
+			width = '100%'
+			color = '#2ECC71'
+			text = 'Надёжный'
+		} else if (strength === 3) {
+			width = '75%'
+			color = '#9ACD32'
+			text = 'Хороший'
+		} else if (strength === 2) {
+			width = '50%'
+			color = '#FF9900'
+			text = 'Средний'
+		} else if (strength === 1) {
+			width = '25%'
+			color = '#FF4C4C'
+			text = 'очень слабый'
+		}
+
+		if (bar) {
+			bar.style.width = width
+			bar.style.backgroundColor = color
+		}
+		if (label) {
+			label.textContent = text
+			label.style.color = color
+		}
+		return strength
+	}
 	const validateForms = document.querySelectorAll('.form-validate')
 
 	validateForms.forEach(validateForm => {
 		const btnForm = validateForm.querySelector('button[type="submit"]')
+
+		const passInput = validateForm.querySelector('.req-pass')
+		const bar = validateForm.querySelector('.pass-strength__bar-active')
+		const label = validateForm.querySelector('.pass-strength__descr')
 		if (!btnForm) return
-		const reqInputs = validateForm.querySelectorAll('.req, .req-email, .req-checkbox, .req-phone')
+		const reqInputs = validateForm.querySelectorAll('.req, .req-pass-repeat, .req-pass, .req-email, .req-checkbox, .req-phone')
 
 		reqInputs.forEach(reqInput => {
 			reqInput.addEventListener('focus', () => {
-				if (reqInput.classList.contains('error') || reqInput.classList.contains('error-email') || reqInput.classList.contains('error-phone')) {
-					reqInput.classList.remove('error', 'error-email', 'error-phone')
+				if (reqInput.classList.contains('error') ||
+					reqInput.classList.contains('error-email') ||
+					reqInput.classList.contains('error-phone') ||
+					reqInput.classList.contains('error-pass')) {
+					reqInput.classList.remove('error', 'error-email', 'error-phone', 'error-pass')
 					reqInput.removeAttribute('aria-invalid')
 					const prev = reqInput.previousElementSibling
 					if (prev?.classList.contains('error-message')) prev.remove()
@@ -369,7 +429,7 @@ if (document.querySelector('.form-validate')) {
 
 		btnForm.addEventListener('click', e => {
 			let errors = 0
-			// Очищаем старые ошибки
+
 			validateForm.querySelectorAll('.error-message').forEach(el => el.remove())
 
 			reqInputs.forEach(reqInput => {
@@ -377,27 +437,38 @@ if (document.querySelector('.form-validate')) {
 				const isEmail = reqInput.classList.contains('req-email')
 				const isCheckbox = reqInput.classList.contains('req-checkbox')
 				const isPhone = reqInput.classList.contains('req-phone')
+				const isPass = reqInput.classList.contains('req-pass')
+				const isPassRepeat = reqInput.classList.contains('req-pass-repeat')
 
-				if (!isEmail && !isCheckbox && !isPhone && isEmpty) {
+				if (isPassRepeat) {
+					const passValue = passInput.value
+					const repeatPassValue = reqInput.value
+
+					if (!isEmpty && passValue != repeatPassValue) {
+						errors++
+						showError(reqInput, 'Пароли не совпадают. Повторите попытку')
+					}
+				}
+				if (isPass) {
+					const strength = passwordValidate(reqInput.value, bar, label)
+
+					if (strength < 2) {
+						errors++
+						reqInput.classList.add('error-pass')
+						reqInput.setAttribute('aria-invalid', 'true')
+					}
+				}
+
+				if (!isEmail && !isPass && !isCheckbox && !isPhone && isEmpty) {
 					errors++
-					reqInput.classList.add('error')
-					reqInput.setAttribute('aria-invalid', 'true')
-					const errorMessage = document.createElement('span')
-					errorMessage.classList.add('error-message')
-					errorMessage.textContent = 'Это поле обязательно для заполнения'
-					reqInput.before(errorMessage)
+					showError(reqInput, 'Это поле обязательно для заполнения')
 				}
 
 				if (isEmail) {
 					const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 					if (!reqInput.value || !emailPattern.test(reqInput.value)) {
 						errors++
-						reqInput.classList.add('error-email')
-						reqInput.setAttribute('aria-invalid', 'true')
-						const errorMessage = document.createElement('span')
-						errorMessage.classList.add('error-message')
-						errorMessage.textContent = 'Это поле заполнено неправильно'
-						reqInput.before(errorMessage)
+						showError(reqInput, 'Это поле заполнено неправильно', 'error-email')
 					}
 				}
 
@@ -406,12 +477,7 @@ if (document.querySelector('.form-validate')) {
 					const phonePattern = /^\+7\(\d{3}\) \d{3}-\d{2}-\d{2}$/
 					if (!reqInput.value || !phonePattern.test(reqInput.value)) {
 						errors++
-						reqInput.classList.add('error-phone')
-						reqInput.setAttribute('aria-invalid', 'true')
-						const errorMessage = document.createElement('span')
-						errorMessage.classList.add('error-message')
-						errorMessage.textContent = 'Это поле заполнено неправильно'
-						reqInput.before(errorMessage)
+						showError(reqInput, 'Это поле заполнено неправильно', 'error-phone')
 					}
 				}
 
@@ -421,9 +487,17 @@ if (document.querySelector('.form-validate')) {
 					reqInput.setAttribute('aria-invalid', 'true')
 				}
 			})
+			console.log(`errs: ${errors}`);
 
 			if (errors) e.preventDefault()
 		})
+
+		if (passInput) {
+			passInput.addEventListener('input', () => {
+				passwordValidate(passInput.value, bar, label)
+			})
+		}
+
 	})
 
 }

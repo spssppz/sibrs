@@ -181,16 +181,6 @@ body::after {
 		@media (max-width: $mobile) {
 			min-height: rem(68);
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(22);
-			width: rem(22);
-			height: rem(20);
-			background: url("@img/icons/cart-icon-w.svg") 50% / 100% no-repeat;
-		}
-		&::after {
-			content: none;
-		}
 	}
 }
 

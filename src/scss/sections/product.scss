@@ -370,16 +370,6 @@
 			padding: rem(20);
 			width: 100%;
 		}
-		&::after {
-			content: "";
-			flex: 0 0 rem(18);
-			width: rem(18);
-			background: url("@img/icons/product/gen-btn-arrow.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobileSmall) {
-				flex: 0 0 rem(14);
-				width: rem(14);
-			}
-		}
 	}
 	&__descr {
 		line-height: 1.4;
@@ -424,16 +414,6 @@
 		&:hover {
 			opacity: 0.7;
 			background-color: #fff;
-		}
-		&::after {
-			content: "";
-			flex: 0 0 rem(18);
-			width: rem(18);
-			background: url("@img/icons/product/add-reviews-btn-arrow.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobileSmall) {
-				flex: 0 0 rem(14);
-				width: rem(14);
-			}
 		}
 	}
 	&__list {
@@ -622,34 +602,30 @@
 		@media (max-width: $mobileSmall) {
 			font-size: rem(13);
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/product/like.svg") 50% / 100% no-repeat;
-			@media (max-width: $tablet) {
-				flex: 0 0 rem(20);
-				width: rem(20);
-				height: rem(20);
-			}
-			@media (max-width: $mobileSmall) {
-				flex: 0 0 rem(18);
-				width: rem(18);
-				height: rem(18);
-			}
-		}
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.7;
 			}
 		}
-		&_like {
-		}
 		&_dislike {
-			&::before {
+			.review__btn-icon {
 				transform: rotate(180deg);
 			}
+		}
+	}
+	&__btn-icon {
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(20);
+			width: rem(20);
+			height: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(18);
 		}
 	}
 }
@@ -876,16 +852,6 @@
 		@media (max-width: $mobileSmall) {
 			padding: rem(20);
 		}
-		&::after {
-			content: "";
-			flex: 0 0 rem(18);
-			width: rem(18);
-			background: url("@img/icons/product/gen-btn-arrow.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobileSmall) {
-				flex: 0 0 rem(14);
-				width: rem(14);
-			}
-		}
 	}
 	&__image {
 		position: relative;
@@ -947,35 +913,23 @@
 		@media (max-width: $mobileSmall) {
 			font-size: rem(13);
 		}
-		&::before {
-			flex: 0 0 rem(19);
-			width: rem(19);
-			height: rem(19);
-			background: url("@img/icons/product/reasons/delivery.svg") 50% / 100% no-repeat;
-			@media (min-width: em(1220)) {
-				content: "";
-			}
-			@media (max-width: $tablet) {
-				content: "";
-			}
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(15);
 			@media (max-width: $tablet) {
 				margin-bottom: rem(10);
 			}
 		}
-		&_delivery {
+	}
+	&__reason-icon {
+		flex: 0 0 rem(19);
+		width: rem(19);
+		height: rem(19);
+		color: $gray;
+		@media (max-width: em(1219.98)) {
+			display: none;
 		}
-		&_return {
-			&::before {
-				background-image: url("@img/icons/product/reasons/return.svg");
-			}
-		}
-		&_gift {
-			&::before {
-				background-image: url("@img/icons/product/reasons/gift.svg");
-			}
+		@media (max-width: $tablet) {
+			display: block;
 		}
 	}
 }
@@ -1032,43 +986,19 @@
 	}
 	&__btn {
 		min-height: rem(77);
-		&::before {
-			content: "";
-			flex: 0 0 rem(22);
-			width: rem(22);
-			height: rem(20);
-			background: url("@img/icons/cart-icon-w.svg") 50% / 100% no-repeat;
-		}
-		&::after {
-			content: none;
-		}
 		@media (max-width: $tablet) {
 			min-height: rem(75);
 		}
 		@media (max-width: $mobile) {
 			min-height: rem(68);
 		}
-		&_in-cart {
-		}
 		&_pdf {
 			background: #ff4a4a;
 			color: #fff;
-			&::before {
-				background-image: url("@img/icons/product/pdf-btn-decor.svg");
-				flex: 0 0 rem(26);
-				width: rem(26);
-				height: rem(26);
-			}
 		}
 		&_gen {
 			background: $white-gray;
 			color: $gray;
-			&::before {
-				background-image: url("@img/icons/product/gen-btn-decor.svg");
-				flex: 0 0 rem(26);
-				width: rem(26);
-				height: rem(26);
-			}
 			&:hover {
 				background: $white-gray;
 				opacity: 0.8;
@@ -1203,13 +1133,18 @@
 		flex: 0 0 rem(22);
 		width: rem(22);
 		height: rem(22);
-		background: url("@img/icons/product/fav.svg") 50% / 90% no-repeat;
 		transition: opacity 0.3s;
 		position: relative;
-
+		color: #b8b8b8;
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(18);
+		}
 		span {
 			text-align: left;
 			position: absolute;
+			background-color: #fff;
 			right: rem(-10);
 			padding: rem(15) rem(10);
 			font-size: rem(15);
@@ -1217,12 +1152,12 @@
 			line-height: math.div(19, 15);
 			min-width: rem(177);
 			border-radius: rem(3);
+
 			box-shadow:
-				0 1px 3px 0 rgba(217, 217, 217, 0.25),
-				0 6px 6px 0 rgba(217, 217, 217, 0.21),
-				0 13px 8px 0 rgba(217, 217, 217, 0.13),
-				0 23px 9px 0 rgba(217, 217, 217, 0.04),
-				0 36px 10px 0 rgba(217, 217, 217, 0);
+				0px 23px 9px rgba(217, 217, 217, 0.04),
+				0px 13px 8px rgba(217, 217, 217, 0.13),
+				0px 6px 6px rgba(217, 217, 217, 0.21),
+				0px 1px 3px rgba(217, 217, 217, 0.25);
 			transition: 0.3s;
 			opacity: 0;
 			visibility: hidden;
@@ -1242,7 +1177,6 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 0.7;
 				span {
 					bottom: calc(100% + rem(15));
 					opacity: 1;
@@ -1251,19 +1185,10 @@
 				}
 			}
 		}
-		@media (max-width: $mobile) {
-			flex: 0 0 rem(18);
-			width: rem(18);
-			height: rem(18);
-		}
-		&_fav {
-		}
-		&_comp {
-			background-image: url("@img/icons/product/comp.svg");
-		}
-		&_copy {
-			background-image: url("@img/icons/product/copy.svg");
-		}
+	}
+	&__btn-icon {
+		width: 100%;
+		height: 100%;
 	}
 }
 .product-descrs {
@@ -1804,22 +1729,6 @@
 	&__btn {
 		min-height: rem(77);
 		width: 100%;
-		&:not(:last-child) {
-			margin-bottom: rem(10);
-			@media (max-width: $mobile) {
-				margin-bottom: rem(5);
-			}
-		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(22);
-			width: rem(22);
-			height: rem(20);
-			background: url("@img/icons/cart-icon-w.svg") 50% / 100% no-repeat;
-		}
-		&::after {
-			content: none;
-		}
 		@media (max-width: $tablet) {
 			min-height: rem(75);
 		}
@@ -1831,24 +1740,18 @@
 		&_pdf {
 			background: #ff4a4a;
 			color: #fff;
-			&::before {
-				background-image: url("@img/icons/product/pdf-btn-decor.svg");
-				flex: 0 0 rem(26);
-				width: rem(26);
-				height: rem(26);
-			}
 		}
 		&_share {
 			background: rgba(93, 145, 254, 0.1);
 			color: $blue;
-			&::before {
-				background-image: url("@img/icons/product/copy-blue.svg");
-				flex: 0 0 rem(26);
-				width: rem(26);
-				height: rem(26);
-			}
 			&:hover {
 				background: rgba(93, 145, 254, 0.4);
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(5);
 			}
 		}
 	}

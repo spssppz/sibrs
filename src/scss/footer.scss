@@ -212,16 +212,6 @@
 		@media (max-width: $tablet) {
 			gap: rem(9);
 		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/tel.svg") 50% / 100% no-repeat;
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(25);
 			@media (max-width: $mobile) {
@@ -234,16 +224,14 @@
 				align-items: flex-end;
 			}
 		}
-		&_mail {
-			&::before {
-				background-image: url("@img/icons/mail.svg");
-			}
-		}
-		&_address {
-			&::before {
-				background-image: url("@img/icons/address.svg");
-			}
-		}
+	}
+	&__line-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
 	}
 	&__address,
 	&__mail,

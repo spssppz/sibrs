@@ -7,6 +7,7 @@
 	&__button {
 		font-size: rem(18);
 		color: #000;
+		transition: color 0.3s;
 		@media (max-width: $tablet) {
 			font-size: rem(17);
 		}
@@ -19,6 +20,11 @@
 		&_plus {
 		}
 		&_minus {
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blue;
+			}
 		}
 	}
 	&__input {

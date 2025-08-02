@@ -1,5 +1,5 @@
 <section class="questions">
-	<div class="questions__wrapper">
+	<div class="questions__wrapper" id="questions">
 		<div class="questions__container">
 			<div class="left-quest">
 				<h2 class="left-quest__title title">У вас есть вопросы?</h2>
@@ -43,7 +43,7 @@
 						</label>
 						<label class="inp-line">
 							<span class="inp-line__cap inp-line__cap_req">Ваш E-mail</span>
-							<input class="inp-line__input input req-email"  autocomplete="off" type="text" name="quest_email" placeholder="Как с вами связаться">
+							<input class="inp-line__input input req-email" autocomplete="off" type="text" name="quest_email" placeholder="Как с вами связаться">
 						</label>
 					</div>
 					<label class="inp-line">
@@ -52,7 +52,12 @@
 					</label>
 				</div>
 				<div class="quest-form__actions">
-					<button class="quest-form__btn btn btn_decor" type="submit">Отправить</button>
+					<button class="quest-form__btn btn" type="submit">
+						Отправить
+						<svg class="btn__icon">
+							<use xlink:href="@img/sprite.svg#btn-arrow"></use>
+						</svg>
+					</button>
 					<div class="quest-form__checkbox">
 						<label class="checkbox">
 							<input class="checkbox__input req-checkbox" type="checkbox" value="1" name="quest_policy">

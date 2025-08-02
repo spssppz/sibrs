@@ -8,11 +8,14 @@
 		"dev": "gulp",
 		"build": "gulp build --build",
 		"zip": "gulp deployZIP --build",
-		"ftp": "gulp deployFTP --build"
+		"ftp": "gulp deployFTP --build",
+		"svg": "gulp svg"
 	},
 	"author": "spsspp",
 	"license": "ISC",
 	"dependencies": {
+		"gulp-cheerio": "^1.0.0",
+		"gulp-svgmin": "^4.1.0",
 		"imask": "^7.6.1",
 		"nouislider": "^15.8.1",
 		"swiper": "latest"
@@ -37,6 +40,7 @@
 		"gulp-rename": "latest",
 		"gulp-replace": "latest",
 		"gulp-sass": "latest",
+		"gulp-svg-sprite": "^2.0.3",
 		"gulp-ttf2woff2": "latest",
 		"gulp-typograf": "latest",
 		"gulp-util": "latest",

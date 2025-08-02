@@ -33,7 +33,7 @@
 								<label class="inp-line">
 									<span class="inp-line__cap inp-line__cap_req">Пароль</span>
 									<span class="inp-line__pass">
-										<input class="input input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
+										<input class="input req input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
 										<button class="inp-line__pass-eye" type="button" aria-label="Показать/скрыть пароль">
 											<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
@@ -43,7 +43,12 @@
 										</button>
 									</span>
 								</label>
-								<button class="auth-form__btn btn btn_decor" type="submit">Авторизоваться</button>
+								<button class="auth-form__btn btn" type="submit">
+									Авторизоваться
+									<svg class="btn__icon">
+										<use xlink:href="@img/sprite.svg#btn-arrow"></use>
+									</svg>
+								</button>
 								<a class="auth-form__link" href="">Забыли пароль?</a>
 								<div class="auth-form__checkbox">
 									<label class="filter-checkbox">

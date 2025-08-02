@@ -245,7 +245,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: rem(7);
-		transition: opacity 0.3s;
+		transition: color 0.3s;
 		@media (max-width: $tablet) {
 			font-size: rem(14);
 		}
@@ -254,20 +254,19 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 0.7;
+				color: $mainColor;
 			}
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(20);
-			width: rem(20);
-			height: rem(20);
-			background: url("@img/icons/cart-product-clear.svg") 50% / 100% no-repeat;
-			@media (max-width: $tablet) {
-				flex: 0 0 rem(14);
-				width: rem(14);
-				height: rem(14);
-			}
+	}
+	&__delete-icon {
+		flex: 0 0 rem(20);
+		width: rem(20);
+		height: rem(20);
+
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(14);
+			width: rem(14);
+			height: rem(14);
 		}
 	}
 }
@@ -394,7 +393,7 @@
 		gap: rem(10);
 		line-height: 1.4;
 		color: $blue;
-		transition: opacity 0.3s;
+		transition: color 0.3s;
 		@media (max-width: $tablet) {
 			font-size: rem(15);
 		}
@@ -406,20 +405,18 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 0.7;
+				color: $mainColor;
 			}
 		}
-		&::after {
-			content: "";
-			flex: 0 0 rem(18);
-			width: rem(18);
-			height: rem(10);
-			background: url("@img/icons/more-link-arrow.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobile) {
-				flex: 0 0 rem(14);
-				width: rem(14);
-				height: rem(8);
-			}
+	}
+	&__link-icon {
+		flex: 0 0 rem(18);
+		width: rem(18);
+		height: rem(10);
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(14);
+			width: rem(14);
+			height: rem(8);
 		}
 	}
 }

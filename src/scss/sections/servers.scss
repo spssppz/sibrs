@@ -329,6 +329,7 @@
 				flex: 0 0 rem(68);
 				width: rem(68);
 				background: $blue;
+				color: #fff;
 			}
 			@media (max-width: $mobile) {
 				font-size: 0;
@@ -336,14 +337,11 @@
 			@media (max-width: $mobileSmall) {
 				font-size: 0;
 			}
-			svg {
-				path {
-					stroke: currentColor;
-					@media (max-width: $tablet) {
-						stroke: #fff;
-					}
-				}
-			}
 		}
+	}
+	&__btn-icon {
+		flex: 0 0 rem(22);
+		width: rem(22);
+		height: rem(20);
 	}
 }

@@ -44,6 +44,7 @@ input[type="number"] {
 		padding: rem(0) rem(60) 0 rem(22);
 	}
 	&.error,
+	&.error-pass,
 	&.error-phone,
 	&.error-email {
 		border-color: red;
@@ -172,6 +173,26 @@ textarea.input {
 		}
 	}
 }
+.pass-strength {
+	display: flex;
+	flex-direction: column;
+	gap: rem(8);
+	&__bar {
+		height: rem(3);
+		background: #eaeaea;
+		display: flex;
+	}
+	&__bar-active {
+		width: 0;
+		transition: width 0.3s;
+		height: 100%;
+	}
+	&__descr {
+		align-self: flex-end;
+		font-size: rem(15);
+		line-height: math.div(19, 15);
+	}
+}
 
 //========================================================================================================================================================
 
@@ -247,18 +268,16 @@ textarea.input {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(12);
 		}
-		&::before {
-			content: "";
-			width: rem(32);
-			height: rem(25);
-			background: url("@img/icons/input-file-decor.svg") 50% / 100% no-repeat;
-			@media (min-width: $tablet) {
-				flex: 0 0 rem(32);
-			}
-			@media (max-width: $mobile) {
-				width: rem(24);
-				height: rem(19);
-			}
+	}
+	&__icon {
+		width: rem(32);
+		height: rem(25);
+		@media (min-width: $tablet) {
+			flex: 0 0 rem(32);
+		}
+		@media (max-width: $mobile) {
+			width: rem(24);
+			height: rem(19);
 		}
 	}
 	&__input {

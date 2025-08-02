@@ -71,6 +71,9 @@
 		width: 0;
 		height: 0;
 		opacity: 0;
+		&.error-checkbox + .filter-checkbox__text {
+			color: red;
+		}
 		&:focus + .filter-checkbox__text::before {
 			box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
 		}

@@ -247,9 +247,6 @@
 			height: rem(26);
 			background: url("@img/icons/share-icon.svg") 50% / 100% no-repeat;
 		}
-		&::after {
-			content: none;
-		}
 		@media (max-width: $tablet) {
 			min-height: rem(75);
 		}

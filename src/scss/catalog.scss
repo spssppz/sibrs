@@ -473,16 +473,14 @@
 		@media (max-width: $mobileSmall) {
 			width: 100%;
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(18);
-			width: rem(18);
-			height: rem(18);
-			background: url("@img/icons/btn-filter-decor.svg") 50% / 100% no-repeat;
-		}
 		@media (min-width: $tablet) {
 			display: none;
 		}
+	}
+	&__icon {
+		flex: 0 0 rem(18);
+		width: rem(18);
+		height: rem(18);
 	}
 }
 .catalog-tags {

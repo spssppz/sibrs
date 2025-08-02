@@ -8,6 +8,13 @@
 	background: #fff;
 	border-radius: 0 0 rem(20) rem(20);
 	position: relative;
+	@media (max-width: $mobile) {
+		position: sticky;
+		top: rem(-30);
+		left: 0;
+		width: 100%;
+		z-index: 3;
+	}
 }
 .top-header {
 	padding: rem(9) rem(0);
@@ -135,39 +142,27 @@
 		@media (max-width: em(1099.98)) {
 			padding-left: 0;
 		}
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/tel.svg") 50% / 100% no-repeat;
-
-			@media (min-width: em(1520)) {
-				content: "";
-			}
-			@media (max-width: em(1339.98)) {
-				content: "";
-			}
-			@media (max-width: em(1099.98)) {
-				content: none;
-			}
-		}
-		&_phone {
-		}
-		&_mail {
-			&::before {
-				background-image: url("@img/icons/mail.svg");
-			}
-		}
 		&_address {
 			@media (max-width: em(1339.98)) {
 				display: none;
 			}
-			&::before {
-				background-image: url("@img/icons/address.svg");
-			}
+		}
+	}
+	&__col-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
+		@media (max-width: em(1519.98)) {
+			display: none;
+		}
+		@media (max-width: em(1339.98)) {
+			display: block;
+		}
+		@media (max-width: em(1099.98)) {
+			display: none;
 		}
 	}
 	&__address,
@@ -232,12 +227,7 @@ a.header-contacts__link {
 		flex: 0 0 rem(24);
 		width: rem(24);
 		height: rem(24);
-		background: url("@img/icons/sign-in.svg") 50% no-repeat;
-		&_sign-in {
-		}
-		&_sign-up {
-			background-image: url("@img/icons/sign-up.svg");
-		}
+		color: #000;
 	}
 	&__descr {
 		font-size: rem(15);
@@ -251,6 +241,11 @@ a.header-contacts__link {
 	}
 	@media (max-width: $mobile) {
 		padding: rem(50) rem(0) rem(20);
+	}
+	.header-scroll & {
+		@media (max-width: $mobile) {
+			padding: rem(20) rem(0);
+		}
 	}
 	&__container {
 		display: flex;
@@ -763,18 +758,15 @@ a.header-contacts__link {
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		transition: opacity 0.3s;
+		transition: color 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
+				color: $blue;
 				.serv-actions__descr {
 					opacity: 1;
 					top: 100%;
+					color: $mainColor;
 				}
-			}
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				opacity: 0.7;
 			}
 		}
 	}
@@ -792,15 +784,12 @@ a.header-contacts__link {
 		flex: 0 0 rem(24);
 		width: rem(24);
 		height: rem(24);
-		background: url("@img/icons/cart-icon.svg") 50% no-repeat;
-		&_cart {
-		}
-		&_fav {
-			background-image: url("@img/icons/fav-icon.svg");
-		}
-		&_comp {
-			background-image: url("@img/icons/comp-icon.svg");
-		}
+		// &_fav {
+		// 	background-image: url("@img/icons/fav-icon.svg");
+		// }
+		// &_comp {
+		// 	background-image: url("@img/icons/comp-icon.svg");
+		// }
 	}
 	&__count {
 		font-size: rem(13);
@@ -1092,16 +1081,6 @@ a.header-contacts__link {
 		gap: rem(7);
 		position: relative;
 		padding-left: rem(39);
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/header/tel.svg") 50% / 100% no-repeat;
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(30);
 			@media (max-width: $tablet) {
@@ -1114,18 +1093,14 @@ a.header-contacts__link {
 				margin-bottom: rem(15);
 			}
 		}
-		&_phone {
-		}
-		&_mail {
-			&::before {
-				background-image: url("@img/icons/header/mail.svg");
-			}
-		}
-		&_address {
-			&::before {
-				background-image: url("@img/icons/header/address.svg");
-			}
-		}
+	}
+	&__line-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
 	}
 	&__address,
 	&__mail,

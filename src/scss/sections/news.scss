@@ -191,17 +191,15 @@
 		display: inline-flex;
 		gap: rem(5);
 		align-items: center;
-		&::before {
-			content: "";
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(21);
-			background: url("@img/icons/time.svg") 50% / 100% no-repeat;
-			@media (max-width: $tablet) {
-				flex: 0 0 rem(18);
-				width: rem(18);
-				gap: rem(16);
-			}
+	}
+	&__read-icon {
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(21);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(16);
 		}
 	}
 	&__label {

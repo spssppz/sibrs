@@ -5,6 +5,7 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+	gap: rem(14);
 	font-weight: 500;
 	color: #fff;
 	line-height: math.div(21, 17);
@@ -30,27 +31,76 @@
 	&:hover {
 		background: rgba($blue, 0.8);
 	}
-	&_decor {
-		gap: rem(14);
-		&::after {
-			content: "";
-			flex: 0 0 rem(10);
-			width: rem(10);
-			height: rem(10);
-			background: url("@img/icons/btn-send-arrow.svg") 50% / 100% no-repeat;
+	&__icon {
+		flex: 0 0 rem(10);
+		width: rem(10);
+		height: rem(10);
+		stroke: currentColor;
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 rem(8);
+			width: rem(8);
+			height: rem(8);
+		}
+		&_arrow-right {
+			flex: 0 0 rem(18);
+			width: rem(18);
 			@media (max-width: $mobileSmall) {
-				flex: 0 0 rem(8);
-				width: rem(8);
-				height: rem(8);
+				flex: 0 0 rem(14);
+				width: rem(14);
 			}
 		}
-	}
-	&_generate {
-		&::after {
+		&_copy,
+		&_pdf {
+			flex: 0 0 rem(26);
+			width: rem(26);
+			height: rem(26);
+			@media (max-width: $mobileSmall) {
+				flex: 0 0 rem(26);
+				width: rem(26);
+				height: rem(26);
+			}
+		}
+		&_cart {
+			flex: 0 0 rem(22);
+			width: rem(22);
+			height: rem(20);
+			@media (max-width: $mobileSmall) {
+				flex: 0 0 rem(22);
+				width: rem(22);
+				height: rem(20);
+			}
+		}
+		&_gen {
 			flex: 0 0 rem(25);
 			width: rem(25);
 			height: rem(25);
-			background-image: url("@img/icons/btn-generate-decor.svg");
+			@media (max-width: $mobileSmall) {
+				flex: 0 0 rem(25);
+				width: rem(25);
+				height: rem(25);
+			}
 		}
 	}
+	// &_decor {
+	// 	&::after {
+	// 		content: "";
+	// 		flex: 0 0 rem(10);
+	// 		width: rem(10);
+	// 		height: rem(10);
+	// 		background: url("@img/icons/btn-send-arrow.svg") 50% / 100% no-repeat;
+	// 		@media (max-width: $mobileSmall) {
+	// 			flex: 0 0 rem(8);
+	// 			width: rem(8);
+	// 			height: rem(8);
+	// 		}
+	// 	}
+	// }
+	// &_generate {
+	// 	&::after {
+	// 		flex: 0 0 rem(25);
+	// 		width: rem(25);
+	// 		height: rem(25);
+	// 		background-image: url("@img/icons/btn-generate-decor.svg");
+	// 	}
+	// }
 }
