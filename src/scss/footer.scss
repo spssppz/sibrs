@@ -285,18 +285,11 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			transition: border-color 0.3s;
-			svg {
-				path {
-					fill: #717171;
-					transition: fill 0.3s;
-				}
-			}
+			transition: 0.3s;
+			color: #717171;
 			&:hover {
 				border-color: #000;
-				svg path {
-					fill: #000;
-				}
+				color: #000;
 			}
 			.contacts & {
 				border: none;
@@ -306,13 +299,9 @@
 			.questions & {
 				background: #f8f8f8;
 				border: none;
-				svg path {
-					fill: #000;
-				}
+				color: #000;
 				&:hover {
-					svg path {
-						fill: #717171;
-					}
+					color: #717171;
 				}
 			}
 		}
