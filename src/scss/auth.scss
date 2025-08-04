@@ -240,23 +240,22 @@ a.auth-form__link {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(16);
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(32);
-			width: rem(32);
-			height: rem(36);
-			background: url("@img/icons/auth-register-icon.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobile) {
-				flex: 0 0 rem(28);
-				width: rem(28);
-				height: rem(30);
-			}
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 			@media (max-width: $tablet) {
 				margin-bottom: rem(15);
 			}
+		}
+	}
+	&__icon {
+		flex: 0 0 rem(32);
+		width: rem(32);
+		height: rem(36);
+		color: $blue;
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(28);
+			width: rem(28);
+			height: rem(30);
 		}
 	}
 	&__descr {

@@ -683,7 +683,10 @@
 		width: rem(91);
 		height: rem(77);
 		border-radius: rem(10);
-		background: $blue url("@img/icons/white-arrow.svg") 50% no-repeat;
+		background: $blue;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		transition: opacity 0.3s;
 		@media (max-width: $tablet) {
 			flex: 0 0 rem(75);
@@ -701,6 +704,12 @@
 				opacity: 0.8;
 			}
 		}
+	}
+	&__add-icon {
+		color: #fff;
+		flex: 0 0 rem(22);
+		width: rem(22);
+		height: rem(12);
 	}
 	&__checkbox {
 		&:not(:last-child) {

@@ -62,19 +62,29 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			transition: border-color 0.3s;
-			svg {
-				path {
-					fill: $gray;
-					transition: fill 0.3s;
+			transition: color 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $blue;
 				}
 			}
-			&:hover {
-				border-color: #000;
-				svg path {
-					fill: #000;
-				}
-			}
+		}
+	}
+	&__social-icon {
+		&_tg {
+			flex: 0 0 rem(21);
+			width: rem(21);
+			height: rem(18);
+		}
+		&_vk {
+			flex: 0 0 rem(22);
+			width: rem(22);
+			height: rem(14);
+		}
+		&_inst {
+			flex: 0 0 rem(19);
+			width: rem(19);
+			height: rem(20);
 		}
 	}
 }
@@ -366,13 +376,7 @@ a.header-contacts__link {
 		}
 	}
 	&__item {
-		&_comp {
-		}
-		&_generate {
-		}
-		&_servers {
-		}
-		&_network {
+		&:last-child {
 			@media (max-width: em(1219.98)) {
 				display: none;
 			}
@@ -427,30 +431,6 @@ a.header-contacts__link {
 		}
 		.search-show & {
 			gap: 0;
-		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(26);
-			width: rem(26);
-			height: rem(26);
-			background: url("@img/icons/header/comp-icon.svg") 50% / 100% no-repeat;
-		}
-		&_comp {
-		}
-		&_generate {
-			&::before {
-				background-image: url("@img/icons/header/gen-icon.svg");
-			}
-		}
-		&_servers {
-			&::before {
-				background-image: url("@img/icons/header/serv-icon.svg");
-			}
-		}
-		&_network {
-			&::before {
-				background-image: url("@img/icons/header/netw-icon.svg");
-			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -913,45 +893,17 @@ a.header-contacts__link {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
-		&::before,
-		&::after {
-			content: "";
-		}
-		&::before {
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/header/comp-icon-b.svg") 50% / 100% no-repeat;
-		}
-		&::after {
-			margin-left: auto;
-			flex: 0 0 rem(12);
-			width: rem(12);
-			height: rem(10);
-			background: url("@img/icons/header/btn-arrow.svg") 50% / 100% no-repeat;
-		}
-		&_comp {
-		}
-		&_generate {
-			&::before {
-				background-image: url("@img/icons/header/gen-icon-b.svg");
-			}
-		}
-		&_servers {
-			&::before {
-				background-image: url("@img/icons/header/serv-icon-b.svg");
-			}
-		}
-		&_network {
-			&::before {
-				background-image: url("@img/icons/header/netw-icon-b.svg");
-			}
-		}
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.8;
 			}
 		}
+	}
+	&__link-icon {
+		margin-left: auto;
+		flex: 0 0 rem(12);
+		width: rem(12);
+		height: rem(10);
 	}
 }
 
@@ -1190,7 +1142,7 @@ a.sidebar-contacts__link {
 	width: 100%;
 	height: 100%;
 	background-color: #fafafa;
-	padding: rem(35) rem(35) rem(35) rem(31);
+	padding: rem(44) rem(35) rem(35) rem(31);
 	@media (min-width: $tablet) {
 		max-width: rem(310);
 	}
@@ -1231,14 +1183,12 @@ a.sidebar-contacts__link {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
-		&::before {
-			content: "";
-			flex: 0 0 rem(12);
-			width: rem(12);
-			height: rem(10);
-			transform: scaleX(-1);
-			background: url("@img/icons/header/btn-arrow.svg") 50% / 100% no-repeat;
-		}
+	}
+	&__back-icon {
+		flex: 0 0 rem(12);
+		width: rem(12);
+		height: rem(10);
+		transform: scaleX(-1);
 	}
 	&__close {
 		flex: 0 0 rem(25);
@@ -1277,9 +1227,9 @@ a.sidebar-contacts__link {
 		align-items: center;
 		gap: rem(10);
 		transition: opacity 0.3s;
-		padding: rem(5) rem(0);
 		line-height: math.div(21, 17);
 		@media (max-width: $tablet) {
+			padding: rem(5) rem(0);
 			font-size: rem(16);
 		}
 		@media (max-width: $mobile) {
@@ -1288,18 +1238,16 @@ a.sidebar-contacts__link {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
-		&::after {
-			content: "";
-			margin-left: auto;
-			flex: 0 0 rem(12);
-			width: rem(12);
-			height: rem(10);
-			background: url("@img/icons/header/btn-arrow.svg") 50% / 100% no-repeat;
-		}
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.8;
 			}
 		}
+	}
+	&__link-icon {
+		flex: 0 0 rem(12);
+		width: rem(12);
+		height: rem(10);
+		margin-left: auto;
 	}
 }

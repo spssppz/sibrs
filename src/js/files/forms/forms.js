@@ -233,7 +233,7 @@ export function formSubmit(options = { validate: true }) {
 export function formQuantity() {
 	document.addEventListener("click", function (e) {
 		const btn = e.target.closest('.quantity__button')
-		if (!btn) return
+		if (!btn || btn.closest('.left-calc__col')) return
 
 		const quantity = btn.closest('.quantity')
 		const input = quantity.querySelector('input')

@@ -46,8 +46,12 @@ const volumeSlider = document.querySelector('.left-calc__range_volume')
 if (volumeSlider) {
 	const inputVolume = document.querySelector('.volume-input')
 
+	const btnVolumeMinus = document.querySelector('.volume-minus')
+	const btnVolumePlus = document.querySelector('.volume-plus')
+
 	const min = parseInt(volumeSlider.dataset.min) || 128
 	const max = parseInt(volumeSlider.dataset.max) || 20000
+	const step = parseInt(volumeSlider.dataset.step) || 2
 
 	const format = {
 		to: value => `${Math.round(value)} GB`,
@@ -67,7 +71,7 @@ if (volumeSlider) {
 	noUiSlider.create(volumeSlider, {
 		start: min,
 		range: { min, max },
-		step: 32,
+		step: step,
 		tooltips: true,
 		format,
 		pips: {
@@ -103,6 +107,19 @@ if (volumeSlider) {
 			volumeSlider.noUiSlider.set(val)
 		}
 	})
+
+	btnVolumeMinus.addEventListener('click', () => {
+		const current = parseInt(volumeSlider.noUiSlider.get(true))
+		const next = Math.max(current - step, min)
+		volumeSlider.noUiSlider.set(next)
+	})
+
+	btnVolumePlus.addEventListener('click', () => {
+		const current = parseInt(volumeSlider.noUiSlider.get(true))
+		const next = Math.min(current + step, max)
+		volumeSlider.noUiSlider.set(next)
+	})
+
 }
 
 
@@ -110,8 +127,11 @@ const disksSlider = document.querySelector('.left-calc__range_disks')
 if (disksSlider) {
 	const inputDisks = document.querySelector('.disks-input')
 
+	const btnDisksMinus = document.querySelector('.disks-minus')
+	const btnDisksPlus = document.querySelector('.disks-plus')
 	const min = parseInt(disksSlider.dataset.min) || 4
 	const max = parseInt(disksSlider.dataset.max) || 26
+	const step = parseInt(disksSlider.dataset.step) || 2
 
 	const format = {
 		to: value => {
@@ -171,6 +191,18 @@ if (disksSlider) {
 		if (!isNaN(val) && val >= min && val <= max) {
 			disksSlider.noUiSlider.set(val)
 		}
+	})
+
+	btnDisksMinus.addEventListener('click', () => {
+		const current = parseInt(disksSlider.noUiSlider.get(true))
+		const next = Math.max(current - step, min)
+		disksSlider.noUiSlider.set(next)
+	})
+
+	btnDisksPlus.addEventListener('click', () => {
+		const current = parseInt(disksSlider.noUiSlider.get(true))
+		const next = Math.min(current + step, max)
+		disksSlider.noUiSlider.set(next)
 	})
 }
 

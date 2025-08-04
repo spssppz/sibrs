@@ -35,9 +35,9 @@
 .main-cat {
 	border-radius: rem(15);
 	overflow: hidden;
+	position: relative;
 	padding: rem(25);
 	min-height: rem(511);
-	background: $blue url("@img/main/cats/serv-bg.png") 50% / cover no-repeat;
 	@media (max-width: $tablet) {
 		border-radius: rem(10);
 		padding: rem(25) rem(17);
@@ -51,6 +51,7 @@
 	}
 	&_serv {
 		position: relative;
+		background: $blue;
 		&::before,
 		&::after {
 			content: "";
@@ -86,11 +87,13 @@
 			}
 		}
 	}
-	&_serv-for-task {
-		background: #fff url("@img/main/cats/serv-for-task-bg.png") 50% / cover no-repeat;
-	}
-	&_comp {
-		background: #fff url("@img/main/cats/comp-bg.png") 50% / cover no-repeat;
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		width: 100%;
+		object-fit: cover;
 	}
 	&__label {
 		font-family: $second-family;
@@ -99,6 +102,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: rem(15);
+		position: relative;
 		@media (max-width: $tablet) {
 			font-size: rem(22);
 			gap: rem(10);
@@ -142,6 +146,7 @@
 		}
 	}
 	&__list {
+		position: relative;
 	}
 	&__item {
 		a {

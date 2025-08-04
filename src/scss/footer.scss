@@ -267,6 +267,7 @@
 .footer-socials {
 	display: flex;
 	gap: rem(4);
+	color: $gray;
 	&__social {
 		flex: 0 0 rem(45);
 		width: rem(45);
@@ -314,6 +315,23 @@
 					}
 				}
 			}
+		}
+	}
+	&__social-icon {
+		&_tg {
+			flex: 0 0 rem(21);
+			width: rem(21);
+			height: rem(18);
+		}
+		&_vk {
+			flex: 0 0 rem(22);
+			width: rem(22);
+			height: rem(14);
+		}
+		&_inst {
+			flex: 0 0 rem(19);
+			width: rem(19);
+			height: rem(20);
 		}
 	}
 }

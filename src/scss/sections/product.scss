@@ -799,6 +799,18 @@
 			padding: rem(15) rem(10) rem(0);
 		}
 	}
+	&__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(40);
+		height: rem(40);
+		color: $blue;
+		@media (max-width: $mobile) {
+			width: rem(31);
+			height: rem(31);
+		}
+	}
 	&__text {
 		position: relative;
 		@media (min-width: $pc) {
@@ -809,20 +821,6 @@
 		}
 		@media (max-width: $mobile) {
 			padding-top: rem(36);
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: rem(40);
-			height: rem(40);
-			background: url("@img/icons/gen-icon.svg") 50% / 100% no-repeat;
-			@media (max-width: $mobile) {
-				flex: 0 0 rem(31);
-				width: rem(31);
-				height: rem(31);
-			}
 		}
 	}
 	&__label {

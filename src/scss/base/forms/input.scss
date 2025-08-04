@@ -132,28 +132,30 @@ textarea.input {
 		position: relative;
 	}
 	&__pass-eye {
+		cursor: pointer;
 		position: absolute;
 		top: 50%;
 		transform: translate(0, -50%);
-		right: rem(28);
-		width: rem(22);
-		height: rem(22);
-		svg path {
-			stroke: #c9c9c9;
-			transition: stroke 0.3s;
+		right: rem(25);
+		width: rem(30);
+		height: rem(30);
+		color: #c9c9c9;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: color 0.3s;
+		.show-pass & {
+			color: $gray;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				svg path {
-					stroke: $gray;
-				}
+				color: $gray;
 			}
 		}
-		.show-pass & {
-			svg path {
-				stroke: #000;
-			}
-		}
+	}
+	&__pass-eye-icon {
+		width: rem(22);
+		height: rem(22);
 	}
 	&__coupon {
 		display: flex;
