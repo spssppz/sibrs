@@ -25,7 +25,7 @@ export const svgSpriter = () => {
 			mode: {
 				symbol: {
 					sprite: '../sprite.svg',
-					example: true
+					example: !app.isBuild
 				}
 			}
 		}))

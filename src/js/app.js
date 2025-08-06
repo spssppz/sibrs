@@ -101,7 +101,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 // flsScroll.stickyBlock();
 
 /* Документация плагина: https://www.lightgalleryjs.com/docs/ */
-// import "./files/gallery.js";
+import "./files/gallery.js";
 
 
 /* Динамический адаптив */

@@ -16,21 +16,21 @@
 				<li class="header-socials__social">
 					<a href="" aria-label="Перейти в инстаграм">
 						<svg class="header-socials__social-icon header-socials__social-icon_inst">
-							<use xlink:href="/img/sprite.svg#inst"></use>
+							<use xlink:href="img/sprite.svg#inst"></use>
 						</svg>
 					</a>
 				</li>
 				<li class="header-socials__social">
 					<a href="" aria-label="Перейти в телеграм">
 						<svg class="header-socials__social-icon header-socials__social-icon_tg">
-							<use xlink:href="/img/sprite.svg#tg"></use>
+							<use xlink:href="img/sprite.svg#tg"></use>
 						</svg>
 					</a>
 				</li>
 				<li class="header-socials__social">
 					<a href="" aria-label="Перейти в вконтакте">
 						<svg class="header-socials__social-icon header-socials__social-icon_vk">
-							<use xlink:href="/img/sprite.svg#vk"></use>
+							<use xlink:href="img/sprite.svg#vk"></use>
 						</svg>
 					</a>
 				</li>
@@ -44,23 +44,23 @@
 			</a>
 			<div class="header-contacts">
 				<ul class="header-contacts__cols">
-					<li class="header-contacts__col header-contacts__col_phone">
+					<li class="header-contacts__col">
 						<svg class="header-contacts__col-icon">
-							<use xlink:href="/img/sprite.svg#tel"></use>
+							<use xlink:href="img/sprite.svg#tel"></use>
 						</svg>
 						<a class="header-contacts__phone" href="tel:88003509078">8 (800) 350-90-78</a>
 						<span class="header-contacts__worktime">Пн-Пт 9:00 - 17:00</span>
 					</li>
-					<li class="header-contacts__col header-contacts__col_mail">
+					<li class="header-contacts__col">
 						<svg class="header-contacts__col-icon">
-							<use xlink:href="/img/sprite.svg#mail"></use>
+							<use xlink:href="img/sprite.svg#mail"></use>
 						</svg>
 						<a class="header-contacts__mail" href="mailto:info@sibrs.ru">info@sibrs.ru</a>
 						<a class="header-contacts__link" href="#questions">Написать нам</a>
 					</li>
-					<li class="header-contacts__col header-contacts__col_address">
+					<li class="header-contacts__col">
 						<svg class="header-contacts__col-icon">
-							<use xlink:href="/img/sprite.svg#address"></use>
+							<use xlink:href="img/sprite.svg#address"></use>
 						</svg>
 						<address class="header-contacts__address">г. Омск, ул. Орджоникидзе 120, офис 4</address>
 						<a class="header-contacts__link" href="">Показать на карте</a>
@@ -72,7 +72,7 @@
 				<li class="auth-actions__item">
 					<a class="auth-actions__button" href="">
 						<svg class="auth-actions__icon">
-							<use xlink:href="/img/sprite.svg#sign-in"></use>
+							<use xlink:href="img/sprite.svg#sign-in"></use>
 						</svg>
 						<span class="auth-actions__descr">Войти</span>
 					</a>
@@ -80,7 +80,7 @@
 				<li class="auth-actions__item">
 					<a class="auth-actions__button" href="">
 						<svg class="auth-actions__icon">
-							<use xlink:href="/img/sprite.svg#sign-up"></use>
+							<use xlink:href="img/sprite.svg#sign-up"></use>
 						</svg>
 						<span class="auth-actions__descr">Регистрация</span>
 					</a>
@@ -127,7 +127,7 @@
 			</ul>
 			<div class="header-search">
 				<div class="header-search__sub-wrapper">
-					<input class="header-search__input" autocomplete="off" type="text" name="header_search" placeholder="Поиск по каталогу товаров...">
+					<input class="header-search__input" autocomplete="off" type="search" name="header_search" placeholder="Поиск по каталогу товаров...">
 					<div class="header-search-sub">
 						<ul class="header-search-sub__list">
 							<li class="header-search-sub__item">
@@ -163,7 +163,7 @@
 						<button class="serv-actions__btn" data-popup="#cart">
 							<span class="serv-actions__descr">Корзина</span>
 							<svg class="serv-actions__icon">
-								<use xlink:href="/img/sprite.svg#cart"></use>
+								<use xlink:href="img/sprite.svg#cart"></use>
 							</svg>
 							<span class="serv-actions__count">12</span>
 						</button>
@@ -172,7 +172,7 @@
 						<a class="serv-actions__btn" href="">
 							<span class="serv-actions__descr">Избранное</span>
 							<svg class="serv-actions__icon">
-								<use xlink:href="/img/sprite.svg#fav"></use>
+								<use xlink:href="img/sprite.svg#fav"></use>
 							</svg>
 							<span class="serv-actions__count">3</span>
 						</a>
@@ -181,7 +181,7 @@
 						<a class="serv-actions__btn" href="">
 							<span class="serv-actions__descr">Сравнение</span>
 							<svg class="serv-actions__icon">
-								<use xlink:href="/img/sprite.svg#comp"></use>
+								<use xlink:href="img/sprite.svg#comp"></use>
 							</svg>
 							<span class="serv-actions__count">0</span>
 						</a>
@@ -190,162 +190,5 @@
 			</div>
 		</div>
 	</div>
-	<aside class="sidebar">
-		<div class="sidebar__wrapper">
-			<div class="sidebar-head">
-				<a class="sidebar-head__logo" href="">
-					<img srcset="@img/logo@2x.png 2x" src="@img/logo.png" width="111" height="32" loading="lazy" alt="SibRS логотип">
-				</a>
-				<div class="sidebar-head__descr">
-					Distribution of <br>
-					Server Components
-				</div>
-				<button class="sidebar-head__close icon-menu" aria-label="Закрыть меню"></button>
-			</div>
-			<ul class="sidebar__list">
-				<li class="sidebar__item sidebar__item_has-sub">
-					<span class="sidebar__link">
-						<img src="@img/icons/header/comp-icon-b.svg" width="24" height="24" loading="lazy" alt="">
-						Комплектующие
-						<svg class="sidebar__link-icon">
-							<use xlink:href="/img/sprite.svg#arrow-right"></use>
-						</svg>
-					</span>
-					<div class="sub-sidebar">
-						<div class="sub-sidebar__top">
-							<button class="sub-sidebar__back">
-								<svg class="sub-sidebar__back-icon">
-									<use xlink:href="/img/sprite.svg#arrow-right"></use>
-								</svg>
-								Назад
-							</button>
-							<button class="sub-sidebar__close icon-menu" aria-label="Закрыть меню"></button>
-						</div>
-						<ul class="sub-sidebar__list">
-							<li class="sub-sidebar__item">
-								<a class="sub-sidebar__link" href="">
-									Серверы Dell
-									<svg class="sub-sidebar__link-icon">
-										<use xlink:href="/img/sprite.svg#arrow-right"></use>
-									</svg>
-								</a>
-							</li>
-							<li class="sub-sidebar__item">
-								<a class="sub-sidebar__link" href="">
-									Серверы HP
-									<svg class="sub-sidebar__link-icon">
-										<use xlink:href="/img/sprite.svg#arrow-right"></use>
-									</svg>
-								</a>
-							</li>
-							<li class="sub-sidebar__item">
-								<a class="sub-sidebar__link" href="">
-									Серверы SuperMicro
-									<svg class="sub-sidebar__link-icon">
-										<use xlink:href="/img/sprite.svg#arrow-right"></use>
-									</svg>
-								</a>
-							</li>
-							<li class="sub-sidebar__item">
-								<a class="sub-sidebar__link" href="">
-									Серверы AMD EPYC
-									<svg class="sub-sidebar__link-icon">
-										<use xlink:href="/img/sprite.svg#arrow-right"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="sidebar__item">
-					<a class="sidebar__link" href="">
-						<img src="@img/icons/header/gen-icon-b.svg" width="24" height="24" loading="lazy" alt="">
-						Конфигуратор серверов
-						<svg class="sidebar__link-icon">
-							<use xlink:href="/img/sprite.svg#arrow-right"></use>
-						</svg>
-					</a>
-				</li>
-				<li class="sidebar__item">
-					<a class="sidebar__link" href="">
-						<img src="@img/icons/header/serv-icon-b.svg" width="24" height="24" loading="lazy" alt="">
-						Серверы
-						<svg class="sidebar__link-icon">
-							<use xlink:href="/img/sprite.svg#arrow-right"></use>
-						</svg>
-					</a>
-				</li>
-				<li class="sidebar__item">
-					<a class="sidebar__link" href="">
-						<img src="@img/icons/header/netw-icon-b.svg" width="24" height="24" loading="lazy" alt="">
-						Сетевое оборудование
-						<svg class="sidebar__link-icon">
-							<use xlink:href="/img/sprite.svg#arrow-right"></use>
-						</svg>
-					</a>
-				</li>
-			</ul>
-			<div class="pages-sidebar">
-				<div class="pages-sidebar__cap sidebar-label">Страницы</div>
-				<ul class="pages-sidebar__list">
-					<li class="pages-sidebar__item"><a href="">Главная</a></li>
-					<li class="pages-sidebar__item"><a href="">Каталог</a></li>
-					<li class="pages-sidebar__item"><a href="">Доставка и оплата</a></li>
-					<li class="pages-sidebar__item"><a href="">Гарантия</a></li>
-					<li class="pages-sidebar__item"><a href="">Акции!</a></li>
-					<li class="pages-sidebar__item"><a href="">Блог</a></li>
-					<li class="pages-sidebar__item"><a href="">Контакты</a></li>
-				</ul>
-			</div>
-			<div class="sidebar-contacts">
-				<div class="sidebar-contacts__label sidebar-label">Контакты</div>
-				<ul class="sidebar-contacts__lines">
-					<li class="sidebar-contacts__line sidebar-contacts__line_phone">
-						<svg class="sidebar-contacts__line-icon">
-							<use xlink:href="/img/sprite.svg#tel"></use>
-						</svg>
-						<a class="sidebar-contacts__phone" href="tel:88003509078">8 (800) 350-90-78</a>
-						<span class="sidebar-contacts__worktime">Пн-Пт 9:00 - 17:00</span>
-					</li>
-					<li class="sidebar-contacts__line sidebar-contacts__line_mail">
-						<svg class="sidebar-contacts__line-icon">
-							<use xlink:href="/img/sprite.svg#mail"></use>
-						</svg>
-						<a class="sidebar-contacts__mail" href="mailto:info@sibrs.ru">info@sibrs.ru</a>
-						<a class="sidebar-contacts__link" href="#questions">Написать нам</a>
-					</li>
-					<li class="sidebar-contacts__line sidebar-contacts__line_address">
-						<svg class="sidebar-contacts__line-icon">
-							<use xlink:href="/img/sprite.svg#address"></use>
-						</svg>
-						<address class="sidebar-contacts__address">г. Омск, ул. Орджоникидзе 120, офис 4</address>
-						<a class="sidebar-contacts__link" href="">Показать на карте</a>
-					</li>
-				</ul>
-				<ul class="footer-socials">
-					<li class="footer-socials__social">
-						<a href="" aria-label="Перейти в инстаграм">
-							<svg class="footer-socials__social-icon footer-socials__social-icon_inst">
-								<use xlink:href="/img/sprite.svg#inst"></use>
-							</svg>
-						</a>
-					</li>
-					<li class="footer-socials__social">
-						<a href="" aria-label="Перейти в телеграм">
-							<svg class="footer-socials__social-icon footer-socials__social-icon_tg">
-								<use xlink:href="/img/sprite.svg#tg"></use>
-							</svg>
-						</a>
-					</li>
-					<li class="footer-socials__social">
-						<a href="" aria-label="Перейти в вконтакте">
-							<svg class="footer-socials__social-icon footer-socials__social-icon_vk">
-								<use xlink:href="/img/sprite.svg#vk"></use>
-							</svg>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</aside>
+	@@include('UI/sidebar.html')
 </header>

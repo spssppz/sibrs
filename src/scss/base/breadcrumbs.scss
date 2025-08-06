@@ -2,6 +2,7 @@
 // Сниппет (HTML): breadcrumbs
 
 .breadcrumbs {
+	color: #808080;
 	&:not(:last-child) {
 		margin-bottom: rem(30);
 		@media (max-width: $tablet) {
@@ -21,29 +22,12 @@
 		li {
 			display: flex;
 			align-items: center;
-			&:not(:last-child) {
-				&::after {
-					content: "";
-					margin: 0 rem(12);
-					flex: 0 0 rem(4);
-					width: rem(4);
-					height: rem(8);
-					background: url("@img/icons/breadcrumbs-arrow.svg") 50% / 100% no-repeat;
-					@media (max-width: $tablet) {
-						margin: rem(0) rem(10);
-					}
-					@media (max-width: $mobile) {
-						margin: rem(0) rem(8);
-					}
-				}
-			}
 		}
 	}
 	&__link,
 	&__item {
 		font-size: rem(16);
 		line-height: math.div(20, 16);
-		color: #808080;
 		@media (max-width: $tablet) {
 			font-size: rem(15);
 		}
@@ -52,6 +36,19 @@
 		}
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
+		}
+	}
+	&__arrow {
+		transform: rotate(-90deg);
+		margin: 0 rem(12);
+		flex: 0 0 rem(8);
+		width: rem(8);
+		height: rem(4);
+		@media (max-width: $tablet) {
+			margin: rem(0) rem(10);
+		}
+		@media (max-width: $mobile) {
+			margin: rem(0) rem(8);
 		}
 	}
 	&__link {

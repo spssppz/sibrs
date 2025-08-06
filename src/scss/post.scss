@@ -185,22 +185,19 @@ a.post__tag {
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
-		&::after {
-			@media (max-width: $tablet) {
-				content: "";
-				transition: transform 0.3s;
-				flex: 0 0 rem(10);
-				width: rem(10);
-				height: rem(5);
-				background: url("@img/icons/content-spoller-arrow.svg") 50% / 100% no-repeat;
+		&._spoller-active {
+			.post-content__arrow {
+				transform: rotate(180deg);
 			}
 		}
-		&._spoller-active {
-			&::after {
-				@media (max-width: $tablet) {
-					transform: rotate(180deg);
-				}
-			}
+	}
+	&__arrow {
+		transition: transform 0.3s;
+		flex: 0 0 rem(12);
+		width: rem(12);
+		height: rem(6);
+		@media (min-width: $tablet) {
+			display: none;
 		}
 	}
 	&__list {

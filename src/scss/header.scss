@@ -152,7 +152,7 @@
 		@media (max-width: em(1099.98)) {
 			padding-left: 0;
 		}
-		&_address {
+		&:last-child {
 			@media (max-width: em(1339.98)) {
 				display: none;
 			}
@@ -434,7 +434,7 @@ a.header-contacts__link {
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 0.8;
+				color: $blue;
 			}
 		}
 	}
@@ -857,16 +857,20 @@ a.header-contacts__link {
 		}
 	}
 	&__item {
-		// @media (any-hover: hover) {
-		// 	&:hover {
-		// 		.sub-sidebar {
-		// 			opacity: 1;
-		// 			visibility: visible;
-		// 			pointer-events: auto;
-		// 			left: 100%;
-		// 		}
-		// 	}
-		// }
+		padding-right: rem(28);
+		margin-right: rem(-28);
+		&_has-sub {
+			@media (any-hover: hover) {
+				&:hover {
+					.sub-sidebar {
+						opacity: 1;
+						visibility: visible;
+						pointer-events: auto;
+						left: 100%;
+					}
+				}
+			}
+		}
 		&:not(:last-child) {
 			margin-bottom: rem(15);
 			@media (max-width: $mobile) {

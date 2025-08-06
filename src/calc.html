@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<section class="calc">
 				<div class="calc__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Калькулятор RAID</span>

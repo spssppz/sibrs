@@ -17,6 +17,7 @@
 		"gulp-cheerio": "^1.0.0",
 		"gulp-svgmin": "^4.1.0",
 		"imask": "^7.6.1",
+		"lightgallery": "^2.9.0-beta.1",
 		"nouislider": "^15.8.1",
 		"swiper": "latest"
 	},

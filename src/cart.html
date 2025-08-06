@@ -9,7 +9,7 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<section class="cart">
 				<div class="cart__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
@@ -23,7 +23,7 @@
 						</ul>
 					</nav>
 					<h2 class="cart__title title">Оформление заказа</h2>
-					<div class="cart__body">
+					<div class="cart__body form-validate">
 						<div class="cart__left">
 							<ul class="cart__products">
 								<li class="cart-product">
@@ -57,7 +57,7 @@
 											<div class="cart-product__price">721 725 руб.</div>
 											<button class="cart-product__delete">
 												<svg class="cart-product__delete-icon">
-													<use xlink:href="/img/sprite.svg#btn-clear"></use>
+													<use xlink:href="img/sprite.svg#btn-clear"></use>
 												</svg>
 												Удалить
 											</button>
@@ -91,7 +91,7 @@
 											<div class="cart-product__price">44 225 руб.</div>
 											<button class="cart-product__delete">
 												<svg class="cart-product__delete-icon">
-													<use xlink:href="/img/sprite.svg#btn-clear"></use>
+													<use xlink:href="img/sprite.svg#btn-clear"></use>
 												</svg>
 												Удалить
 											</button>
@@ -131,7 +131,7 @@
 											<div class="cart-product__price">2 421 руб.</div>
 											<button class="cart-product__delete">
 												<svg class="cart-product__delete-icon">
-													<use xlink:href="/img/sprite.svg#btn-clear"></use>
+													<use xlink:href="img/sprite.svg#btn-clear"></use>
 												</svg>
 												Удалить
 											</button>
@@ -150,7 +150,7 @@
 									<a class="cart-reasons__link" href="">
 										Подробнее
 										<svg class="cart-reasons__link-icon">
-											<use xlink:href="/img/sprite.svg#btn-arrow-right"></use>
+											<use xlink:href="img/sprite.svg#btn-arrow-right"></use>
 										</svg>
 									</a>
 								</li>
@@ -164,7 +164,7 @@
 									<a class="cart-reasons__link" href="">
 										Подробнее
 										<svg class="cart-reasons__link-icon">
-											<use xlink:href="/img/sprite.svg#btn-arrow-right"></use>
+											<use xlink:href="img/sprite.svg#btn-arrow-right"></use>
 										</svg>
 									</a>
 								</li>
@@ -178,7 +178,7 @@
 									<a class="cart-reasons__link" href="">
 										Подробнее
 										<svg class="cart-reasons__link-icon">
-											<use xlink:href="/img/sprite.svg#btn-arrow-right"></use>
+											<use xlink:href="img/sprite.svg#btn-arrow-right"></use>
 										</svg>
 									</a>
 								</li>
@@ -191,19 +191,19 @@
 										<div class="cart-order__row">
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">ФИО</span>
-												<input class="input" autocomplete="off" type="text" name="order_name" placeholder="Представьтесь">
+												<input class="input req" autocomplete="off" type="text" name="order_name" placeholder="Представьтесь">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Ваш E-mail</span>
-												<input class="input" autocomplete="off" type="text" name="order_mail" placeholder="Как с вами связаться">
+												<input class="input req-email" autocomplete="off" type="email" name="order_mail" placeholder="Как с вами связаться">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Номер телефона</span>
-												<input class="input phone" autocomplete="off" type="text" name="order_phone" placeholder="+7(___) ___-__-__">
+												<input class="input phone req-phone" autocomplete="off" type="tel" name="order_phone" placeholder="+7(___) ___-__-__">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Дополнительный номер телефона</span>
-												<input class="input phone" autocomplete="off" type="text" name="order_phone_2" placeholder="+7(___) ___-__-__">
+												<input class="input phone req-phone" autocomplete="off" type="tel" name="order_phone_2" placeholder="+7(___) ___-__-__">
 											</label>
 										</div>
 									</li>
@@ -237,20 +237,20 @@
 										</div>
 										<label class="cart-order__inp-line inp-line">
 											<span class="inp-line__cap inp-line__cap_req">Адрес</span>
-											<input class="input" autocomplete="off" type="text" name="order_address">
+											<input class="input req" autocomplete="off" type="text" name="order_address">
 										</label>
 										<div class="cart-order__row cart-order__row_3">
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Подъезд</span>
-												<input class="input" autocomplete="off" type="text" name="order_address_1">
+												<input class="input req" autocomplete="off" type="number" name="order_address_1">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Этаж</span>
-												<input class="input" autocomplete="off" type="text" name="order_address_2">
+												<input class="input req" autocomplete="off" type="number" name="order_address_2">
 											</label>
 											<label class="inp-line">
 												<span class="inp-line__cap inp-line__cap_req">Кв/офис</span>
-												<input class="input" autocomplete="off" type="text" name="order_address_3">
+												<input class="input req" autocomplete="off" type="number" name="order_address_3">
 											</label>
 										</div>
 									</li>
@@ -300,7 +300,7 @@
 									<div class="cart-price__price">1 041 625 руб.</div>
 									<span class="cart-price__cap">ИТОГО</span>
 								</div>
-								<form class="info-cart-form form-validate" action="#">
+								<form class="info-cart-form" action="#">
 									<div class="info-cart-form__row">
 										<label class="inp-line">
 											<span class="inp-line__cap">Купон</span>
@@ -308,7 +308,7 @@
 												<input class="info-cart-form__input input" autocomplete="off" type="text" name="coupon">
 												<button class="info-cart-form__add" aria-label="Применить купон">
 													<svg class="info-cart-form__add-icon">
-														<use xlink:href="/img/sprite.svg#btn-arrow-right"></use>
+														<use xlink:href="img/sprite.svg#btn-arrow-right"></use>
 													</svg>
 												</button>
 											</span>

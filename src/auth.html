@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<div class="auth">
 				<div class="auth__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Авторизация</span>
@@ -28,7 +31,7 @@
 							<form class="auth-form form-validate" action="#">
 								<label class="inp-line">
 									<span class="inp-line__cap inp-line__cap_req">E-mail</span>
-									<input class="input req-email" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
+									<input class="input req-email" autocomplete="off" type="email" name="quest_name" placeholder="Введите свой E-mail">
 								</label>
 								<label class="inp-line">
 									<span class="inp-line__cap inp-line__cap_req">Пароль</span>
@@ -36,7 +39,7 @@
 										<input class="input req input_pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
 										<span class="inp-line__pass-eye" role="button" tabindex="0" aria-label="Показать/скрыть пароль">
 											<svg class="inp-line__pass-eye-icon">
-												<use xlink:href="/img/sprite.svg#pass-view"></use>
+												<use xlink:href="img/sprite.svg#pass-view"></use>
 											</svg>
 										</span>
 									</span>
@@ -44,7 +47,7 @@
 								<button class="auth-form__btn btn" type="submit">
 									Авторизоваться
 									<svg class="btn__icon">
-										<use xlink:href="/img/sprite.svg#btn-arrow"></use>
+										<use xlink:href="img/sprite.svg#btn-arrow"></use>
 									</svg>
 								</button>
 								<a class="auth-form__link" href="">Забыли пароль?</a>
@@ -58,15 +61,25 @@
 							<div class="left-auth__other">
 								<div class="left-auth__cap"><span>Войти с помощью соц.сетей</span></div>
 								<div class="left-auth__switch">
-									<a class="left-auth__switch-btn left-auth__switch-btn_f-a left-auth__switch-btn_ya" href="">Яндекс</a>
-									<a class="left-auth__switch-btn left-auth__switch-btn_f-a left-auth__switch-btn_vk" href="">VK</a>
+									<a class="left-auth__switch-btn left-auth__switch-btn_f-a" href="">
+										<svg class="left-auth__switch-btn-icon left-auth__switch-btn-icon_ya">
+											<use xlink:href="/img/sprite.svg#yandex"></use>
+										</svg>
+										Яндекс
+									</a>
+									<a class="left-auth__switch-btn left-auth__switch-btn_f-a left-auth__switch-btn_vk" href="">
+										<svg class="left-auth__switch-btn-icon">
+											<use xlink:href="/img/sprite.svg#vk"></use>
+										</svg>
+										VK
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="right-auth">
 							<div class="right-auth__label">
 								<svg class="right-auth__icon">
-									<use xlink:href="/img/sprite.svg#auth"></use>
+									<use xlink:href="img/sprite.svg#auth"></use>
 								</svg>
 								Еще нет аккаунта?
 							</div>

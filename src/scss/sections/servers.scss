@@ -337,6 +337,10 @@
 			@media (max-width: $mobileSmall) {
 				font-size: 0;
 			}
+			&.active {
+				color: #fff;
+				background: $green;
+			}
 		}
 	}
 	&__btn-icon {

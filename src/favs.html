@@ -9,16 +9,22 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<section class="favs">
 				<div class="favs__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li>
 								<a class="breadcrumbs__link" href="">Серверы</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Избранное</span>
@@ -32,7 +38,12 @@
 							<div class="server__top">
 								<ul class="server__tags">
 									<li class="tag tag_stock">В наличии</li>
-									<li class="tag tag_avail">Выгодно!</li>
+									<li class="tag tag_avail">
+										<svg class="tag__icon">
+											<use xlink:href="/img/sprite.svg#flame"></use>
+										</svg>
+										Выгодно!
+									</li>
 									<li class="tag">Б/У</li>
 								</ul>
 								<div class="server__actions">
@@ -80,13 +91,12 @@
 							<div class="server__price">От 156 900 руб.</div>
 							<span class="server__price-descr">Цена включает НДС 5%</span>
 							<div class="server__btns">
-								<a class="server__btn server__btn_buy" href="">
-
+								<button class="server__btn server__btn_buy">
 									<svg class="server__btn-icon">
-										<use xlink:href="/img/sprite.svg#cart"></use>
+										<use xlink:href="img/sprite.svg#cart"></use>
 									</svg>
-									В корзину
-								</a>
+									<span>В корзину</span>
+								</button>
 								<a class="server__btn" href="">Сконфигурировать</a>
 							</div>
 						</li>
@@ -143,12 +153,12 @@
 							<div class="server__price">От 12 900 руб.</div>
 							<span class="server__price-descr">Цена включает НДС 5%</span>
 							<div class="server__btns">
-								<a class="server__btn server__btn_buy" href="">
+								<button class="server__btn server__btn_buy">
 									<svg class="server__btn-icon">
-										<use xlink:href="/img/sprite.svg#cart"></use>
+										<use xlink:href="img/sprite.svg#cart"></use>
 									</svg>
-									В корзину
-								</a>
+									<span>В корзину</span>
+								</button>
 								<a class="server__btn" href="">Сконфигурировать</a>
 							</div>
 						</li>
@@ -199,13 +209,12 @@
 							<div class="server__price">От 156 900 руб.</div>
 							<span class="server__price-descr">Цена включает НДС 5%</span>
 							<div class="server__btns">
-								<a class="server__btn server__btn_buy" href="">
-
+								<button class="server__btn server__btn_buy">
 									<svg class="server__btn-icon">
-										<use xlink:href="/img/sprite.svg#cart"></use>
+										<use xlink:href="img/sprite.svg#cart"></use>
 									</svg>
-									В корзину
-								</a>
+									<span>В корзину</span>
+								</button>
 								<a class="server__btn" href="">Сконфигурировать</a>
 							</div>
 						</li>
@@ -213,7 +222,12 @@
 							<div class="server__top">
 								<ul class="server__tags">
 									<li class="tag tag_stock">В наличии</li>
-									<li class="tag tag_avail">Выгодно!</li>
+									<li class="tag tag_avail">
+										<svg class="tag__icon">
+											<use xlink:href="/img/sprite.svg#flame"></use>
+										</svg>
+										Выгодно!
+									</li>
 									<li class="tag">Б/У</li>
 								</ul>
 								<div class="server__actions">
@@ -264,12 +278,12 @@
 							<div class="server__price">От 12 900 руб.</div>
 							<span class="server__price-descr">Цена включает НДС 5%</span>
 							<div class="server__btns">
-								<a class="server__btn server__btn_buy" href="">
+								<button class="server__btn server__btn_buy">
 									<svg class="server__btn-icon">
-										<use xlink:href="/img/sprite.svg#cart"></use>
+										<use xlink:href="img/sprite.svg#cart"></use>
 									</svg>
-									В корзину
-								</a>
+									<span>В корзину</span>
+								</button>
 								<a class="server__btn" href="">Сконфигурировать</a>
 							</div>
 						</li>
@@ -277,7 +291,12 @@
 							<div class="server__top">
 								<ul class="server__tags">
 									<li class="tag tag_stock">В наличии</li>
-									<li class="tag tag_avail">Выгодно!</li>
+									<li class="tag tag_avail">
+										<svg class="tag__icon">
+											<use xlink:href="/img/sprite.svg#flame"></use>
+										</svg>
+										Выгодно!
+									</li>
 									<li class="tag">Б/У</li>
 								</ul>
 								<div class="server__actions">
@@ -322,13 +341,12 @@
 							<div class="server__price">От 156 900 руб.</div>
 							<span class="server__price-descr">Цена включает НДС 5%</span>
 							<div class="server__btns">
-								<a class="server__btn server__btn_buy" href="">
-
+								<button class="server__btn server__btn_buy">
 									<svg class="server__btn-icon">
-										<use xlink:href="/img/sprite.svg#cart"></use>
+										<use xlink:href="img/sprite.svg#cart"></use>
 									</svg>
-									В корзину
-								</a>
+									<span>В корзину</span>
+								</button>
 								<a class="server__btn" href="">Сконфигурировать</a>
 							</div>
 						</li>

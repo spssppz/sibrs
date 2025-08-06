@@ -142,12 +142,19 @@
 		}
 	}
 	&__thumbs-btn {
-		width: rem(21);
-		height: rem(10);
-		background: url("@img/icons/thumbs-slider-btn.svg") 50% / 60% no-repeat;
+		width: rem(25);
+		height: rem(14);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		transition: opacity 0.3s;
+		color: $gray;
 		@media (max-width: $mobile) {
 			display: none;
+		}
+		svg {
+			width: rem(17);
+			height: rem(8);
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -1134,6 +1141,7 @@
 		transition: opacity 0.3s;
 		position: relative;
 		color: #b8b8b8;
+		transition: color 0.3s;
 		@media (max-width: $mobile) {
 			flex: 0 0 rem(18);
 			width: rem(18);
@@ -1343,7 +1351,7 @@
 	&__icon {
 		width: rem(29);
 		height: rem(37);
-		background: url("@img/icons/product/docs/doc.png") 50% / 100% no-repeat;
+		background: url("@img/icons/product/docs/doc.svg") 50% / 100% no-repeat;
 		@media (max-width: $mobile) {
 			width: rem(23);
 			height: rem(30);
@@ -1352,12 +1360,12 @@
 			margin-bottom: rem(5);
 		}
 		&_xls {
-			background-image: url("@img/icons/product/docs/xls.png");
+			background-image: url("@img/icons/product/docs/xls.svg");
 		}
 		&_doc {
 		}
 		&_pdf {
-			background-image: url("@img/icons/product/docs/pdf.png");
+			background-image: url("@img/icons/product/docs/pdf.svg");
 		}
 	}
 	&__cap {

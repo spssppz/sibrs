@@ -14,27 +14,26 @@
 	@media (max-width: $tablet) {
 		margin-top: rem(25);
 	}
-	&::after {
-		content: "";
-		flex: 0 0 rem(10);
-		width: rem(10);
-		height: rem(5);
-		background: url("@img/icons/showmore-arrow.svg") 50% / 100% no-repeat;
-		transform: rotate(180deg);
+	svg {
+		flex: 0 0 rem(12);
+		width: rem(12);
+		height: rem(6);
 		transition: transform 0.3s;
 	}
-	._showmore-active & {
-		&::after {
-			transform: rotate(0deg);
+	span {
+		&:nth-child(2) {
+			display: none;
 		}
 	}
-	span {
-		&:last-child {
-			display: none;
+	._showmore-active & {
+		svg {
+			transform: rotate(180deg);
 		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
+		span {
+			&:first-child {
+				display: none;
+			}
+			&:nth-child(2) {
 				display: block;
 			}
 		}

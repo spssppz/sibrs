@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<section class="quar">
 				<div class="quar__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Гарантия</span>
@@ -33,7 +36,7 @@
 							<img srcset="@img/quarantee/1@2x.png 2x" src="@img/quarantee/1.png" width="325" height="305" alt="">
 						</div>
 					</div>
-					<div class="quar-banner__content content">
+					<div class="content">
 						<p>Мы предлагаем широкий ассортимент серверов и серверного оборудования бывшего в употреблении от ведущих мировых брендов, таких как HP, Dell, Supermicro, Asus. Все оборудование проходит тщательную проверку перед продажей, чтобы гарантировать его безупречную работу. Каждый сервер и
 							комплектующая подвергаются многочасовым нагрузочным тестам, что позволяет нам выявить любые потенциальные проблемы на раннем этапе. Это помогает нам предлагать только те устройства, которые соответствуют самым высоким стандартам качества и надёжности.</p>
 						<p>Для обеспечения спокойствия наших клиентов мы предоставляем стандартную гарантию сроком на 3 года на всё серверное оборудование. Дополнительно вы можете выбрать расширенную гарантию на срок до 5 лет, что обеспечит ещё большую уверенность в надёжности вашей покупки.На жёсткие диски и

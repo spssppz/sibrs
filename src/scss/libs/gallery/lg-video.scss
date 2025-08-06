@@ -1,5 +1,6 @@
-@import 'lg-variables';
-@import 'lg-mixins';
+@use "lg-variables" as *;
+@use "lg-mixins" as *;
+
 .lg-outer {
     .lg-video-cont {
         text-align: center;
@@ -86,10 +87,7 @@
     cursor: pointer;
     transform: translate(-50%, -50%) scale(1);
     will-change: opacity, transform;
-    @include transitionCustom(
-        transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28),
-        opacity 0.1s
-    );
+    @include transitionCustom(transform 0.25s cubic-bezier(0.17, 0.88, 0.32, 1.28), opacity 0.1s);
     &:hover {
         .lg-video-play-icon-bg,
         .lg-video-play-icon {
@@ -137,7 +135,8 @@
 
 .lg-video-loading {
     .lg-video-play-icon-circle {
-        animation: lg-play-rotate 2s linear 0.25s infinite,
+        animation:
+            lg-play-rotate 2s linear 0.25s infinite,
             lg-play-stroke 1.5s ease-in-out 0.25s infinite;
     }
 }

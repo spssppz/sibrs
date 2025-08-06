@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<div class="pass-forgot">
 				<div class="pass-forgot__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Введите новый пароль</span>
@@ -31,7 +34,7 @@
 								<input class="input input_pass req-pass" autocomplete="off" type="password" name="quest_name">
 								<span class="inp-line__pass-eye" role="button" tabindex="0" aria-label="Показать/скрыть пароль">
 									<svg class="inp-line__pass-eye-icon">
-										<use xlink:href="/img/sprite.svg#pass-view"></use>
+										<use xlink:href="img/sprite.svg#pass-view"></use>
 									</svg>
 								</span>
 							</span>
@@ -48,7 +51,7 @@
 								<input class="input input_pass req-pass-repeat" autocomplete="off" type="password" name="quest_name">
 								<span class="inp-line__pass-eye" role="button" tabindex="0" aria-label="Показать/скрыть пароль">
 									<svg class="inp-line__pass-eye-icon">
-										<use xlink:href="/img/sprite.svg#pass-view"></use>
+										<use xlink:href="img/sprite.svg#pass-view"></use>
 									</svg>
 								</span>
 							</span>

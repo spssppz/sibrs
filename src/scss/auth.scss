@@ -112,11 +112,11 @@
 		font-size: rem(16);
 		color: #000;
 		transition: opacity 0.3s;
-		@media (min-width: $mobile) {
-			flex: 0 0 rem(215);
-		}
 		&_f-a {
 			flex: auto;
+		}
+		@media (min-width: $mobile) {
+			flex: 0 0 rem(215);
 		}
 		@media (max-width: $tablet) {
 			font-size: rem(15);
@@ -128,25 +128,22 @@
 		@media (max-width: $mobileSmall) {
 			font-size: rem(13);
 		}
-		&::before {
-			content: "";
-			background: url("@img/icons/ya-icon.svg") 50% / 100% no-repeat;
-			flex: 0 0 rem(13);
-			width: rem(13);
-			height: rem(19);
-		}
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.7;
 			}
 		}
-		&_vk {
-			&::before {
-				flex: 0 0 rem(24);
-				width: rem(24);
-				height: rem(13);
-				background-image: url("@img/icons/vk-icon.svg");
-			}
+	}
+	&__switch-btn-icon {
+		flex: 0 0 rem(29);
+		width: rem(29);
+		height: rem(16);
+		color: #2787f5;
+		&_ya {
+			flex: 0 0 rem(13);
+			width: rem(13);
+			height: rem(19);
+			color: #e63f0c;
 		}
 	}
 }

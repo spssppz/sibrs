@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<div class="catalog">
 				<div class="catalog__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Серверы</span>
@@ -39,13 +42,19 @@
 						</ul>
 						<button class="top-catalog__filter-show filter-btn">
 							<svg class="top-catalog__icon">
-								<use xlink:href="/img/sprite.svg#btn-filter"></use>
+								<use xlink:href="img/sprite.svg#btn-filter"></use>
 							</svg>
-							Фильтры</button>
+							Фильтры
+						</button>
 						<div class="catalog-sort">
 							<div class="catalog-sort__descr">Сортировать по</div>
 							<div class="catalog-sort__wrapper">
-								<button class="catalog-sort__title">Умолчанию</button>
+								<button class="catalog-sort__title">
+									<span>Умолчанию</span>
+									<svg class="catalog-sort__arrow">
+										<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+									</svg>
+								</button>
 								<div class="catalog-sort__sub">
 									<button class="is-active">Умолчанию</button>
 									<button>Популярности</button>
@@ -65,7 +74,7 @@
 								<ul class="aside-cats__spollers" data-spollers>
 									<li class="aside-cats__spoller">
 										<button class="aside-cats__title" data-spoller>Серверы</button>
-										<div class="aside-cats__body">
+										<div class="aside-cats__body" hidden>
 											<ul class="aside-cats__list">
 												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
 												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
@@ -78,7 +87,7 @@
 									</li>
 									<li class="aside-cats__spoller">
 										<button class="aside-cats__title" data-spoller>Серверы под задачи</button>
-										<div class="aside-cats__body">
+										<div class="aside-cats__body" hidden>
 											<ul class="aside-cats__list">
 												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
 												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
@@ -92,7 +101,7 @@
 									</li>
 									<li class="aside-cats__spoller">
 										<button class="aside-cats__title" data-spoller>Комплектующие</button>
-										<div class="aside-cats__body">
+										<div class="aside-cats__body" hidden>
 											<ul class="aside-cats__list">
 												<li class="aside-cats__item"><a href="">Серверы DELL</a></li>
 												<li class="aside-cats__item"><a href="">Серверы HP</a></li>
@@ -138,8 +147,13 @@
 								</div>
 								<ul class="aside-filter__spollers" data-spollers>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Производитель</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Производитель
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
@@ -173,8 +187,13 @@
 										</div>
 									</li>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Наличие</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Наличие
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
@@ -196,8 +215,13 @@
 										</div>
 									</li>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Форм-фактор</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Форм-фактор
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="6" name="filter_prod">
@@ -211,8 +235,13 @@
 										</div>
 									</li>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Корзина</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Корзина
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
@@ -230,8 +259,13 @@
 										</div>
 									</li>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Поколение процессоров</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Поколение процессоров
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="1" name="filter_prod">
@@ -265,8 +299,13 @@
 										</div>
 									</li>
 									<li class="aside-filter__spoller">
-										<button class="aside-filter__title" data-spoller>Тип памяти</button>
-										<div class="aside-filter__body">
+										<button class="aside-filter__title" data-spoller>
+											Тип памяти
+											<svg class="aside-filter__arrow">
+												<use xlink:href="/img/sprite.svg#arrow-bottom"></use>
+											</svg>
+										</button>
+										<div class="aside-filter__body" hidden>
 											<div class="aside-filter__checkbox">
 												<label class="filter-checkbox">
 													<input class="filter-checkbox__input" type="checkbox" value="7" name="filter_prod">
@@ -284,7 +323,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -332,12 +376,12 @@
 									<div class="server__price">От 156 900 руб.</div>
 									<span class="server__price-descr">Цена включает НДС 5%</span>
 									<div class="server__btns">
-										<a class="server__btn server__btn_buy" href="">
+										<button class="server__btn server__btn_buy">
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
-										</a>
+											<span>В корзину</span>
+										</button>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
 								</li>
@@ -345,7 +389,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -396,12 +445,12 @@
 									<div class="server__price">От 12 900 руб.</div>
 									<span class="server__price-descr">Цена включает НДС 5%</span>
 									<div class="server__btns">
-										<a class="server__btn server__btn_buy" href="">
+										<button class="server__btn server__btn_buy">
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
-										</a>
+											<span>В корзину</span>
+										</button>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
 								</li>
@@ -409,7 +458,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -457,9 +511,9 @@
 										<a class="server__btn server__btn_buy" href="">
 
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
+											<span>В корзину</span>
 										</a>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
@@ -468,7 +522,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -534,12 +593,12 @@
 									<div class="server__price">От 156 900 руб.</div>
 									<span class="server__price-descr">Цена включает НДС 5%</span>
 									<div class="server__btns">
-										<a class="server__btn server__btn_buy" href="">
+										<button class="server__btn server__btn_buy">
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
-										</a>
+											<span>В корзину</span>
+										</button>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
 								</li>
@@ -547,7 +606,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -598,9 +662,9 @@
 										<a class="server__btn server__btn_buy" href="">
 
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
+											<span>В корзину</span>
 										</a>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
@@ -609,7 +673,12 @@
 									<div class="server__top">
 										<ul class="server__tags">
 											<li class="tag tag_stock">В наличии</li>
-											<li class="tag tag_avail">Выгодно!</li>
+											<li class="tag tag_avail">
+												<svg class="tag__icon">
+													<use xlink:href="/img/sprite.svg#flame"></use>
+												</svg>
+												Выгодно!
+											</li>
 											<li class="tag">Б/У</li>
 										</ul>
 										<div class="server__actions">
@@ -659,12 +728,12 @@
 									<div class="server__price">От 2 221 900 руб.</div>
 									<span class="server__price-descr">Цена включает НДС 5%</span>
 									<div class="server__btns">
-										<a class="server__btn server__btn_buy" href="">
+										<button class="server__btn server__btn_buy">
 											<svg class="server__btn-icon">
-												<use xlink:href="/img/sprite.svg#cart"></use>
+												<use xlink:href="img/sprite.svg#cart"></use>
 											</svg>
-											В корзину
-										</a>
+											<span>В корзину</span>
+										</button>
 										<a class="server__btn" href="">Сконфигурировать</a>
 									</div>
 								</li>
@@ -697,7 +766,13 @@
 										<p>Отправляем оборудование по всей России. Доставка серверов бесплатна для каждого заказа.</p>
 									</div>
 								</div>
-								<button class="catalog__more" hidden data-showmore-button><span>Развернуть</span><span>Свернуть</span></button>
+								<button hidden data-showmore-button>
+									<span>Развернуть</span>
+									<span>Свернуть</span>
+									<svg>
+										<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+									</svg>
+								</button>
 							</div>
 						</div>
 					</div>

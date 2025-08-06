@@ -5,7 +5,7 @@ document.documentElement.addEventListener('click', e => {
 	if (e.target.closest('.server__action')) {
 		e.target.closest('.server__action').classList.toggle('active')
 	}
-	if (e.target.closest('.sidebar__link')) {
+	if (e.target.closest('.sidebar__link') && isMobile.any()) {
 		e.target.closest('.sidebar__item_has-sub')?.classList.toggle('sub-menu-show')
 	}
 	if (e.target.closest('.sub-sidebar__back')) {
@@ -63,7 +63,7 @@ document.querySelectorAll('.catalog-sort').forEach(sortBlock => {
 		btn.addEventListener('click', () => {
 			options.forEach(opt => opt.classList.remove('is-active'))
 			btn.classList.add('is-active')
-			title.textContent = btn.textContent
+			title.querySelector('span').textContent = btn.textContent
 			sortBlock.classList.remove('is-open')
 		})
 	})

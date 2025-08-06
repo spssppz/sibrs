@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<section class="contacts">
 				<div class="contacts__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Контакты</span>
@@ -48,21 +51,21 @@
 								<li class="footer-socials__social">
 									<a href="" aria-label="Перейти в инстаграм">
 										<svg class="footer-socials__social-icon footer-socials__social-icon_inst">
-											<use xlink:href="/img/sprite.svg#inst"></use>
+											<use xlink:href="img/sprite.svg#inst"></use>
 										</svg>
 									</a>
 								</li>
 								<li class="footer-socials__social">
 									<a href="" aria-label="Перейти в телеграм">
 										<svg class="footer-socials__social-icon footer-socials__social-icon_tg">
-											<use xlink:href="/img/sprite.svg#tg"></use>
+											<use xlink:href="img/sprite.svg#tg"></use>
 										</svg>
 									</a>
 								</li>
 								<li class="footer-socials__social">
 									<a href="" aria-label="Перейти в вконтакте">
 										<svg class="footer-socials__social-icon footer-socials__social-icon_vk">
-											<use xlink:href="/img/sprite.svg#vk"></use>
+											<use xlink:href="img/sprite.svg#vk"></use>
 										</svg>
 									</a>
 								</li>

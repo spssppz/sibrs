@@ -9,13 +9,16 @@
 
 	<div class="wrapper">
 		@@include('html/header.html')
-		<main class="page">
+		<main>
 			<div class="auth auth_register">
 				<div class="auth__container">
 					<nav class="breadcrumbs" aria-label="Хлебные крошки">
 						<ul class="breadcrumbs__list">
 							<li>
 								<a class="breadcrumbs__link" href="">Главная</a>
+								<svg class="breadcrumbs__arrow">
+									<use xlink:href="/img/sprite.svg#arrow-bottom-bold"></use>
+								</svg>
 							</li>
 							<li aria-current="page">
 								<span class="breadcrumbs__item">Регистрация</span>
@@ -33,7 +36,7 @@
 									</label>
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">E-mail</span>
-										<input class="input req-email" autocomplete="off" type="text" name="quest_name" placeholder="Введите свой E-mail">
+										<input class="input req-email" autocomplete="off" type="email" name="quest_name" placeholder="Введите свой E-mail">
 									</label>
 									<label class="inp-line">
 										<span class="inp-line__cap inp-line__cap_req">Пароль</span>
@@ -41,7 +44,7 @@
 											<input class="input input_pass req-pass" autocomplete="off" type="password" name="quest_name" placeholder="Введите свой пароль">
 											<span class="inp-line__pass-eye" role="button" tabindex="0" aria-label="Показать/скрыть пароль">
 												<svg class="inp-line__pass-eye-icon">
-													<use xlink:href="/img/sprite.svg#pass-view"></use>
+													<use xlink:href="img/sprite.svg#pass-view"></use>
 												</svg>
 											</span>
 										</span>
@@ -58,7 +61,7 @@
 											<input class="input input_pass req-pass-repeat" autocomplete="off" type="password" name="quest_name" placeholder="Введите пароль">
 											<span class="inp-line__pass-eye" role="button" tabindex="0" aria-label="Показать/скрыть пароль">
 												<svg class="inp-line__pass-eye-icon">
-													<use xlink:href="/img/sprite.svg#pass-view"></use>
+													<use xlink:href="img/sprite.svg#pass-view"></use>
 												</svg>
 											</span>
 										</span>
@@ -73,7 +76,7 @@
 								<button class="auth-form__btn btn" type="submit">
 									Зарегистрироваться
 									<svg class="btn__icon">
-										<use xlink:href="/img/sprite.svg#btn-arrow"></use>
+										<use xlink:href="img/sprite.svg#btn-arrow"></use>
 									</svg>
 								</button>
 
@@ -81,15 +84,25 @@
 							<div class="left-auth__other">
 								<div class="left-auth__cap"><span>Регистрация с помощью соц.сетей</span></div>
 								<div class="left-auth__switch">
-									<a class="left-auth__switch-btn left-auth__switch-btn_ya" href="">Яндекс</a>
-									<a class="left-auth__switch-btn left-auth__switch-btn_vk" href="">VK</a>
+									<a class="left-auth__switch-btn" href="">
+										<svg class="left-auth__switch-btn-icon left-auth__switch-btn-icon_ya">
+											<use xlink:href="/img/sprite.svg#yandex"></use>
+										</svg>
+										Яндекс
+									</a>
+									<a class="left-auth__switch-btn left-auth__switch-btn_vk" href="">
+										<svg class="left-auth__switch-btn-icon">
+											<use xlink:href="/img/sprite.svg#vk"></use>
+										</svg>
+										VK
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="right-auth">
 							<div class="right-auth__label">
 								<svg class="right-auth__icon">
-									<use xlink:href="/img/sprite.svg#auth"></use>
+									<use xlink:href="img/sprite.svg#auth"></use>
 								</svg>
 								Уже есть аккаунт?
 							</div>

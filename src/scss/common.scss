@@ -37,7 +37,10 @@
 		width: rem(64);
 		height: rem(64);
 		border-radius: rem(10);
-		background: #fbfbfb url("@img/icons/slider-arrow.svg") 50% no-repeat;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #fbfbfb;
 		transition: opacity 0.3s;
 		@media (max-width: $pc) {
 			background-color: #fff;
@@ -60,6 +63,11 @@
 			&:hover {
 				opacity: 0.7;
 			}
+		}
+		svg {
+			transform: rotate(90deg);
+			width: rem(12);
+			height: rem(7);
 		}
 	}
 }
@@ -271,25 +279,16 @@
 		@media (max-width: $mobileSmall) {
 			font-size: rem(11);
 		}
-		&::before {
-			content: "";
-		}
 	}
 	&_discount {
 		color: #a100ff;
 		border-color: rgba(162, 0, 255, 0.2);
-		&::before {
-			content: "";
-			flex: 0 0 rem(24);
-			width: rem(24);
-			height: rem(24);
-			background: url("@img/icons/discount-icon.svg") 50% / 100% no-repeat;
-		}
 	}
 	&_stock {
 		color: #0dd359;
 		border-color: rgba(13, 211, 89, 0.2);
 		&::before {
+			content: "";
 			flex: 0 0 rem(12);
 			width: rem(12);
 			height: rem(12);
@@ -305,16 +304,15 @@
 	&_avail {
 		color: #ff3d00;
 		border-color: rgba(255, 61, 0, 0.2);
-		&::before {
-			flex: 0 0 rem(25);
-			width: rem(25);
-			height: rem(25);
-			background: url("@img/icons/avail-icon.svg") 50% / 100% no-repeat;
-			@media (max-width: $tablet) {
-				flex: 0 0 rem(17);
-				width: rem(17);
-				height: rem(17);
-			}
+	}
+	&__icon {
+		flex: 0 0 rem(25);
+		width: rem(25);
+		height: rem(25);
+		@media (max-width: $tablet) {
+			flex: 0 0 rem(17);
+			width: rem(17);
+			height: rem(17);
 		}
 	}
 }
