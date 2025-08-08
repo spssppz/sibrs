@@ -87,11 +87,10 @@
 		display: grid;
 		gap: rem(20);
 		grid-template-columns: 1fr 1fr 1fr;
-		@media (max-width: $pc) {
-			grid-template-columns: repeat(auto-fit, minmax(rem(420), 1fr));
+		@media (max-width: em(1299.98)) {
+			grid-template-columns: 1fr 1fr;
 		}
 		@media (max-width: $tablet) {
-			grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
 			gap: rem(20);
 		}
 		@media (max-width: $mobile) {

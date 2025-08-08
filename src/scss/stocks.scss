@@ -19,12 +19,15 @@
 	&__cols {
 		display: grid;
 		gap: rem(15);
-		grid-template-columns: repeat(auto-fit, minmax(rem(380), 1fr));
-		@media (max-width: $tablet) {
-			grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		@media (max-width: $pc) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media (max-width: em(1299.98)) {
+			grid-template-columns: 1fr 1fr;
 		}
 		@media (max-width: $mobile) {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
 			gap: rem(20);
 		}
 	}

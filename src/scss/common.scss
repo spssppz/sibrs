@@ -401,6 +401,7 @@
 	position: relative;
 	width: 100%;
 	touch-action: pan-y;
+	display: flex;
 }
 .product-track {
 	display: flex;
@@ -415,6 +416,8 @@
 		-webkit-user-drag: none;
 		width: 100%;
 		height: auto;
+		max-height: 100%;
+		object-fit: scale-down;
 	}
 }
 .product-pagination {
