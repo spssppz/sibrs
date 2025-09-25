@@ -8,6 +8,38 @@ instLinks.forEach(instLink => {
 
 // new 17.09
 // new 25.09
+document.addEventListener('DOMContentLoaded', () => {
+	const selects = document.querySelectorAll('.custom-sel')
+
+	selects.forEach(sel => {
+		const btn = sel.querySelector('.custom-sel__btn')
+		const inp = sel.querySelector('.custom-sel__inp')
+		const sub = sel.querySelector('.custom-sel__sub')
+		const options = sub.querySelectorAll('button')
+
+		// 1) Открыть/закрыть по клику на кнопку
+		btn.addEventListener('click', e => {
+			e.stopPropagation()
+			sel.classList.toggle('open')
+		})
+
+		// 2) Выбор значения
+		options.forEach(opt => {
+			opt.addEventListener('click', e => {
+				e.stopPropagation()
+				btn.querySelector('span').textContent = opt.textContent // 3) Меняем текст
+				inp.value = opt.textContent
+				sel.classList.remove('open')
+			})
+		})
+	})
+
+	// Клик вне селекта → закрываем все
+	document.addEventListener('click', () => {
+		document.querySelectorAll('.custom-sel.open')
+			.forEach(sel => sel.classList.remove('open'))
+	})
+})
 
 let lastScroll = window.scrollY
 
