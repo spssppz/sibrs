@@ -18,6 +18,7 @@
 }
 .top-header {
 	padding: rem(9) rem(0);
+	padding: rem(6) rem(0);
 	background: #fafbfa;
 	@media (max-width: $tablet) {
 		display: none;
@@ -89,7 +90,8 @@
 	}
 }
 .middle-header {
-	padding: rem(18) rem(0);
+	// padding: rem(18) rem(0);
+	padding: rem(12) rem(0);
 	border-bottom: rem(1) solid #e8e8e8;
 	@media (max-width: $tablet) {
 		display: none;
@@ -246,6 +248,7 @@ a.header-contacts__link {
 }
 .bottom-header {
 	padding: rem(18) rem(0) rem(27);
+	padding: rem(12) rem(0);
 	@media (max-width: $tablet) {
 		padding: rem(20) rem(0);
 	}
@@ -712,13 +715,41 @@ a.header-contacts__link {
 
 .serv-actions {
 	@media (max-width: $mobile) {
-		display: none;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: #fff;
+		z-index: 2;
+		padding: rem(15) rem(20);
+		border-radius: rem(20) rem(20) 0 0;
+		opacity: 0;
+		transform: translateY(100%);
+		pointer-events: none;
+		will-change: transform, opacity;
+		transition:
+			opacity 0.35s,
+			transform 0.4s;
+	}
+	.show-serv-actions & {
+		@media (max-width: $mobile) {
+			opacity: 1;
+			transform: translate(rem(0), rem(0));
+			pointer-events: auto;
+		}
 	}
 	&__list {
 		display: flex;
 		gap: rem(24);
 		@media (max-width: $tablet) {
 			gap: rem(20);
+		}
+		@media (max-width: $mobile) {
+			gap: rem(12);
+			justify-content: space-around;
+		}
+		@media (max-width: $mobileSmall) {
+			justify-content: space-between;
 		}
 	}
 	&__item {
@@ -730,6 +761,16 @@ a.header-contacts__link {
 			width: rem(40);
 			height: rem(40);
 		}
+		@media (max-width: $mobile) {
+			flex: none;
+			width: auto;
+			height: auto;
+		}
+		&_mob {
+			@media (min-width: $mobile) {
+				display: none;
+			}
+		}
 	}
 	&__btn {
 		width: 100%;
@@ -739,6 +780,13 @@ a.header-contacts__link {
 		align-items: center;
 		position: relative;
 		transition: color 0.3s;
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+			gap: rem(8);
+		}
+		@media (max-width: $mobileSmall) {
+			gap: rem(6);
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: $blue;
@@ -751,25 +799,38 @@ a.header-contacts__link {
 		}
 	}
 	&__descr {
-		position: absolute;
-		top: calc(100% + rem(10));
-		opacity: 0;
-		transition: 0.3s;
-		left: 50%;
-		transform: translate(-50%, 0);
 		font-size: rem(15);
-		pointer-events: none;
+		@media (min-width: $mobile) {
+			pointer-events: none;
+			position: absolute;
+			top: calc(100% + rem(10));
+			opacity: 0;
+			transition: 0.3s;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(13);
+			color: #909195;
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
 	}
 	&__icon {
 		flex: 0 0 rem(24);
 		width: rem(24);
 		height: rem(24);
-		// &_fav {
-		// 	background-image: url("@img/icons/fav-icon.svg");
-		// }
-		// &_comp {
-		// 	background-image: url("@img/icons/comp-icon.svg");
-		// }
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(22);
+			width: rem(22);
+			height: rem(22);
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 rem(20);
+			width: rem(20);
+			height: rem(20);
+		}
 	}
 	&__count {
 		font-size: rem(13);
@@ -789,6 +850,9 @@ a.header-contacts__link {
 		@media (max-width: $tablet) {
 			top: rem(-6);
 			right: rem(-10);
+		}
+		@media (max-width: $mobile) {
+			display: none;
 		}
 	}
 }

@@ -198,9 +198,8 @@
 		li {
 			line-height: 1.4;
 			color: #808080;
-			display: flex;
-			align-items: center;
-			gap: rem(10);
+			position: relative;
+			padding-left: rem(20);
 			@media (max-width: $tablet) {
 				font-size: rem(16);
 			}
@@ -212,11 +211,20 @@
 			}
 			&::before {
 				content: "";
-				flex: 0 0 rem(10);
+				position: absolute;
+				top: rem(13);
+				transform: translate(0, -50%);
+				left: 0;
 				width: rem(10);
 				height: rem(10);
 				border-radius: 50%;
 				background: $green;
+				@media (max-width: $tablet) {
+					top: rem(11);
+				}
+				@media (max-width: $mobileSmall) {
+					top: rem(9);
+				}
 			}
 
 			&:not(:last-child) {
@@ -402,6 +410,7 @@
 	width: 100%;
 	touch-action: pan-y;
 	display: flex;
+	justify-content: center;
 }
 .product-track {
 	display: flex;

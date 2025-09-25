@@ -1191,6 +1191,18 @@
 				}
 			}
 		}
+		&_compare {
+			&.product-actions-active {
+				color: #5d91fe;
+			}
+		}
+		&_fav {
+			&.product-actions-active {
+				color: #c62828;
+			}
+		}
+		&_copy {
+		}
 	}
 	&__btn-icon {
 		width: 100%;

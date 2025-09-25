@@ -94,3 +94,107 @@
 		}
 	}
 }
+
+//========================================================================================================================================================
+
+.radio-wrapper {
+	display: flex;
+	align-items: center;
+	gap: rem(25);
+	@media (max-width: $tablet) {
+		gap: rem(20);
+	}
+	@media (max-width: $mobileSmall) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: rem(15);
+	}
+	&:not(:last-child) {
+		margin-bottom: rem(16);
+		@media (max-width: $tablet) {
+			margin-bottom: rem(12);
+		}
+	}
+	&__descr {
+		font-size: rem(16);
+	}
+}
+.radio-custom {
+	cursor: pointer;
+	position: relative;
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		&:focus + .radio-custom__text::before {
+			box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.2);
+		}
+		&:checked + .radio-custom__text::after {
+			opacity: 1;
+			transform: translate(0, -50%) scale(1);
+		}
+	}
+	&__text {
+		line-height: math.div(21, 17);
+		display: flex;
+		gap: rem(8);
+		position: relative;
+		font-size: rem(16);
+		padding-left: rem(29);
+		color: $gray;
+		@media (max-width: $tablet) {
+			gap: rem(5);
+			font-size: rem(15);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(14);
+			padding-left: rem(24);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(13);
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			border-radius: 50%;
+			width: rem(21);
+			height: rem(21);
+			transition:
+				transform 0.35s,
+				opacity 0.3s,
+				box-shadow 0.3s;
+			@media (max-width: $tablet) {
+				width: rem(20);
+				height: rem(20);
+			}
+			@media (max-width: $mobile) {
+				width: rem(18);
+				height: rem(18);
+			}
+		}
+		&::before {
+			border: rem(2) solid #eaeaea;
+			left: 0;
+		}
+		&::after {
+			background: #5d91fe;
+			left: rem(4);
+			width: rem(13);
+			height: rem(13);
+			opacity: 0;
+			transform: translate(0, -50%) scale(0);
+			@media (max-width: $tablet) {
+				width: rem(12);
+				height: rem(12);
+			}
+			@media (max-width: $mobile) {
+				width: rem(10);
+				height: rem(10);
+			}
+		}
+	}
+}

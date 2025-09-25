@@ -140,7 +140,7 @@ a.post__tag {
 		font-size: rem(13);
 	}
 	@media (min-width: $pc) {
-		margin-left: percent(510, 1100);
+		// margin-left: percent(510, 1100);
 	}
 	@media (any-hover: hover) {
 		&:hover {

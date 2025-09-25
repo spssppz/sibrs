@@ -1,7 +1,47 @@
 import { bodyLockToggle, isMobile, menuClose } from "./functions.js";
 import { flsModules } from "./modules.js";
+// new 17.09
+const instLinks = document.querySelectorAll('[class$="social-icon_inst"]')
+instLinks.forEach(instLink => {
+	instLink.closest('li').style.display = 'none';
+})
 
+// new 17.09
+// new 25.09
+
+let lastScroll = window.scrollY
+
+function toggleMenuOnScroll() {
+	if (window.innerWidth >= 768) return
+
+	const currentScroll = window.scrollY
+
+	if (currentScroll < lastScroll) {
+		// скроллим вверх
+		document.body.classList.add('show-serv-actions')
+	} else if (currentScroll > lastScroll) {
+		// скроллим вниз
+		document.body.classList.remove('show-serv-actions')
+	}
+
+	lastScroll = currentScroll
+}
+
+window.addEventListener('scroll', toggleMenuOnScroll, { passive: true })
+
+// new 25.09
 document.documentElement.addEventListener('click', e => {
+	// new 17.09
+	if (e.target.closest('.product-actions__btn_fav, .product-actions__btn_compare')) {
+		e.target.closest('.product-actions__btn_fav, .product-actions__btn_compare').classList.toggle('product-actions-active')
+	}
+	if (e.target.closest('.product-actions__btn_copy')) {
+		e.target.closest('.product-actions__btn_copy').querySelector('span').textContent = 'Ссылка скопирована'
+		setTimeout(() => {
+			e.target.closest('.product-actions__btn_copy').querySelector('span').innerHTML = `Скопировать ссылку <br> в буфер обмена`
+		}, 3000);
+	}
+	// new 17.09
 	if (e.target.closest('.server__action')) {
 		e.target.closest('.server__action').classList.toggle('active')
 	}
