@@ -7,7 +7,7 @@ instLinks.forEach(instLink => {
 })
 
 // new 17.09
-// new 25.09
+// update 29.09
 document.addEventListener('DOMContentLoaded', () => {
 	const selects = document.querySelectorAll('.custom-sel')
 
@@ -27,8 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		options.forEach(opt => {
 			opt.addEventListener('click', e => {
 				e.stopPropagation()
-				btn.querySelector('span').textContent = opt.textContent // 3) Меняем текст
-				inp.value = opt.textContent
+
+				const value = opt.dataset.value || opt.textContent
+				const label = opt.textContent
+
+				// 3) Меняем текст кнопки
+				btn.querySelector('span').textContent = label
+				// 4) В инпут отправляем data-value
+				inp.value = value
+
 				sel.classList.remove('open')
 			})
 		})
@@ -40,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			.forEach(sel => sel.classList.remove('open'))
 	})
 })
+
+// update 29.09
 
 let lastScroll = window.scrollY
 
