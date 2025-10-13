@@ -127,7 +127,7 @@
 	background: #fff;
 	border-radius: rem(15);
 	// overflow: hidden;
-	padding: rem(30);
+	padding: rem(20) rem(30);
 	@media (max-width: $tablet) {
 		padding: rem(20) rem(13);
 		border-radius: rem(10);
@@ -156,10 +156,7 @@
 			font-size: rem(18);
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(28);
-			@media (max-width: $tablet) {
-				margin-bottom: rem(23);
-			}
+			margin-bottom: rem(24);
 			@media (max-width: $mobile) {
 				margin-bottom: rem(17);
 			}
@@ -167,21 +164,11 @@
 	}
 	&__cols {
 		display: grid;
-		gap: rem(34);
-		@media (max-width: $tablet) {
-			gap: rem(30);
-		}
-		@media (max-width: $mobile) {
-			gap: rem(20);
-		}
+		gap: rem(20);
 		&:not(:last-child) {
-			margin-bottom: rem(30);
-			padding-bottom: rem(30);
+			margin-bottom: rem(20);
+			padding-bottom: rem(20);
 			border-bottom: rem(1) solid #e8e8e8;
-			@media (max-width: $tablet) {
-				margin-bottom: rem(20);
-				padding-bottom: rem(20);
-			}
 		}
 	}
 	&__col {
@@ -200,7 +187,7 @@
 			font-size: rem(13);
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(15);
+			margin-bottom: rem(12);
 			@media (max-width: $tablet) {
 				margin-bottom: rem(10);
 			}
@@ -226,13 +213,9 @@
 		justify-content: space-between;
 		gap: rem(20);
 		&:not(:last-child) {
-			margin-bottom: rem(30);
-			padding-bottom: rem(30);
+			margin-bottom: rem(20);
+			padding-bottom: rem(20);
 			border-bottom: rem(1) solid #e8e8e8;
-			@media (max-width: $tablet) {
-				margin-bottom: rem(20);
-				padding-bottom: rem(20);
-			}
 		}
 	}
 	&__btn {
