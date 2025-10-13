@@ -9145,7 +9145,7 @@ a.auth-form__link {
 .right-calc {
   background: #fff;
   border-radius: 0.9375rem;
-  padding: 1.875rem;
+  padding: 1.25rem 1.875rem;
 }
 
 .right-calc__title {
@@ -9155,18 +9155,18 @@ a.auth-form__link {
 }
 
 .right-calc__title:not(:last-child) {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .right-calc__cols {
   display: -ms-grid;
   display: grid;
-  gap: 2.125rem;
+  gap: 1.25rem;
 }
 
 .right-calc__cols:not(:last-child) {
-  margin-bottom: 1.875rem;
-  padding-bottom: 1.875rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 0.0625rem solid #e8e8e8;
 }
 
@@ -9177,7 +9177,7 @@ a.auth-form__link {
 }
 
 .right-calc__cap:not(:last-child) {
-  margin-bottom: 0.9375rem;
+  margin-bottom: 0.75rem;
 }
 
 .right-calc__descr {
@@ -9202,8 +9202,8 @@ a.auth-form__link {
 }
 
 .right-calc__row:not(:last-child) {
-  margin-bottom: 1.875rem;
-  padding-bottom: 1.875rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 0.0625rem solid #e8e8e8;
 }
 
@@ -12948,19 +12948,6 @@ a.auth-form__link {
     font-size: 1.6875rem;
   }
 
-  .right-calc__title:not(:last-child) {
-    margin-bottom: 1.4375rem;
-  }
-
-  .right-calc__cols {
-    gap: 1.875rem;
-  }
-
-  .right-calc__cols:not(:last-child) {
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
-  }
-
   .right-calc__cap {
     font-size: 0.9375rem;
   }
@@ -12971,11 +12958,6 @@ a.auth-form__link {
 
   .right-calc__descr {
     font-size: 1.0625rem;
-  }
-
-  .right-calc__row:not(:last-child) {
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
   }
 
   .right-calc__btn {
@@ -15127,10 +15109,6 @@ a.auth-form__link {
 
   .right-calc__title:not(:last-child) {
     margin-bottom: 1.0625rem;
-  }
-
-  .right-calc__cols {
-    gap: 1.25rem;
   }
 
   .right-calc__cap {
